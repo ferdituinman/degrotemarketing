@@ -23,10 +23,7 @@ $up = content_url('uploads/2026/05/');
     <div class="shrink-0" style="width:400px">
       <div class="relative">
         <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-5 translate-y-5 rounded-xl -z-10 scale-110"></div>
-        <img src="<?php echo $up; ?>geen-leverancier.png"
-             srcset="<?php echo $up; ?>geen-leverancier.png 1024w,
-                     <?php echo $up; ?>geen-leverancier-768x768.png 768w,
-                     <?php echo $up; ?>geen-leverancier-300x300.png 300w"
+        <img src="<?php echo $up; ?>e14040cb-e85f-4e74-adf8-dd9f9db05a31.png"
              sizes="400px"
              alt="De Grote Marketing aan de keukentafel"
              class="w-full aspect-square object-cover rounded-lg"
