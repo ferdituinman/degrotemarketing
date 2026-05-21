@@ -34,7 +34,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
     </div>
     <figure class="shrink-0" style="width:400px">
       <div class="relative">
-        <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-5 translate-y-5 rounded-xl -z-10 scale-110"></div>
+        <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-6 translate-y-6 rounded-xl -z-10 scale-110"></div>
         <img src="<?php echo esc_url($thumb_url); ?>"
              srcset="<?php echo esc_url($thumb_url); ?> 1536w,
                      <?php echo esc_url($thumb_md); ?> 768w"
@@ -50,7 +50,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
 </header>
 
 <!-- POST BODY -->
-<div class="prose-dgm max-w-2xl mx-auto px-10 md:px-12 pb-16 md:pb-24" style="padding-top:50px">
+<div class="prose-dgm mx-auto px-10 md:px-12 pb-16 md:pb-24" style="max-width:52rem;padding-top:50px">
   <?php the_content(); ?>
 
   <div class="pt-10 border-t border-black/10 flex items-center gap-4" style="margin-top:50px">
