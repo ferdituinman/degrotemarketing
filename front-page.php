@@ -25,7 +25,7 @@ $up = content_url('uploads/2026/05/');
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
-  <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</p>
+  <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Lekker ee'm.</p>
   <div class="space-y-8 text-lg md:text-xl leading-relaxed">
     <p>Je weet dat er meer in internet zit. Je moet alleen de juiste kant op.</p>
     <p>Wij maken online marketing simpel.</p>

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\ferdi\\\\Local Sites\\\\de-grote-marketing\\\\app\\\\public\\\\wp-content\\\\themes\\\\de-grote-marketing\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(Format-Table -AutoSize)",
+      "Skill(update-config)"
+    ]
+  }
+}
