@@ -32,9 +32,9 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
       </h1>
       <p class="text-xl md:text-2xl leading-relaxed opacity-90"><?php echo esc_html(get_the_excerpt()); ?></p>
     </div>
-    <figure class="shrink-0" style="width:400px">
+    <figure class="shrink-0" style="width:440px">
       <div class="relative">
-        <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-6 translate-y-6 rounded-xl -z-10 scale-110"></div>
+        <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-6 translate-y-6 rounded-xl -z-10 scale-[1.2]"></div>
         <img src="<?php echo esc_url($thumb_url); ?>"
              srcset="<?php echo esc_url($thumb_url); ?> 1536w,
                      <?php echo esc_url($thumb_md); ?> 768w"
