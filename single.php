@@ -27,13 +27,13 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
   </nav>
 
   <div class="flex flex-col md:flex-row md:items-center gap-12 md:gap-16">
-    <div class="flex-1">
+    <div class="md:w-1/2">
       <h1 class="blog-h1 font-bold text-on-surface italic mb-8 fade-in-up" style="font-size:60px;line-height:1.20">
         <?php the_title(); ?>
       </h1>
       <div class="text-xl md:text-2xl leading-relaxed opacity-90"><?php echo apply_filters('the_content', $extended['main']); ?></div>
     </div>
-    <figure class="shrink-0" style="width:440px;max-width:100%">
+    <figure class="md:w-1/2" style="max-width:100%">
       <div class="relative">
         <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-6 translate-y-6 rounded-xl -z-10 scale-[1.2]"></div>
         <img src="<?php echo esc_url($thumb_url); ?>"
