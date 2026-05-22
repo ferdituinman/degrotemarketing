@@ -51,7 +51,10 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
 
 <!-- POST BODY -->
 <div class="prose-dgm mx-auto px-10 md:px-12 pb-16 md:pb-24" style="max-width:52rem;padding-top:50px">
-  <?php the_content(); ?>
+  <?php
+  $extended = get_extended(get_post()->post_content);
+  echo apply_filters('the_content', $extended['extended'] ?: $extended['main']);
+  ?>
 
   <div class="pt-10 border-t border-black/10 flex items-center gap-4" style="margin-top:50px">
     <div class="w-24 h-24 bg-primary-container text-white font-black flex items-center justify-center text-2xl shrink-0" style="border-radius:50%">FT</div>
