@@ -4,6 +4,51 @@
  */
 get_header();
 $up = content_url('uploads/2026/05/');
+
+// Posts query early — needed to exclude featured thumb from hero
+$all_posts = new WP_Query([
+    'post_type'      => 'post',
+    'post_status'    => 'publish',
+    'posts_per_page' => 12,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+]);
+$posts_arr         = $all_posts->posts;
+$featured          = !empty($posts_arr) ? array_shift($posts_arr) : null;
+$featured_thumb_id = $featured ? (int) get_post_thumbnail_id($featured) : 0;
+
+// Hero image: one per day, min 400px wide, not the featured post thumbnail
+$att_ids  = get_posts([
+    'post_type'      => 'attachment',
+    'post_mime_type' => 'image',
+    'post_status'    => 'inherit',
+    'posts_per_page' => -1,
+    'post__not_in'   => $featured_thumb_id ? [$featured_thumb_id] : [0],
+    'fields'         => 'ids',
+]);
+$valid_ids = [];
+foreach ($att_ids as $id) {
+    $meta = wp_get_attachment_metadata($id);
+    if (!empty($meta['width']) && $meta['width'] >= 400) {
+        $valid_ids[] = $id;
+    }
+}
+if (!empty($valid_ids)) {
+    sort($valid_ids);
+    $hero_id  = $valid_ids[(int) date('Ymd') % count($valid_ids)];
+    $hero_url = wp_get_attachment_image_url($hero_id, 'full');
+    $hero_alt = get_post_meta($hero_id, '_wp_attachment_image_alt', true) ?: 'De Grote Marketing';
+    $hero_m   = wp_get_attachment_metadata($hero_id);
+    $hero_w   = $hero_m['width']  ?? 1024;
+    $hero_h   = $hero_m['height'] ?? 1024;
+} else {
+    $hero_url = $up . 'e14040cb-e85f-4e74-adf8-dd9f9db05a31.png';
+    $hero_alt = 'De Grote Marketing aan de keukentafel';
+    $hero_w   = 1024;
+    $hero_h   = 1024;
+}
+$rotations_right = ['2deg', '-1deg', '1deg'];
+$ri = 0;
 ?>
 
 <!-- BLOG HERO -->
@@ -23,11 +68,11 @@ $up = content_url('uploads/2026/05/');
     <div class="shrink-0" style="width:400px;max-width:100%">
       <div class="relative">
         <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-5 translate-y-5 rounded-xl -z-10 scale-110"></div>
-        <img src="<?php echo $up; ?>e14040cb-e85f-4e74-adf8-dd9f9db05a31.png"
+        <img src="<?php echo esc_url($hero_url); ?>"
              sizes="400px"
-             alt="De Grote Marketing aan de keukentafel"
+             alt="<?php echo esc_attr($hero_alt); ?>"
              class="w-full aspect-square object-cover rounded-lg"
-             width="1024" height="1024"/>
+             width="<?php echo $hero_w; ?>" height="<?php echo $hero_h; ?>"/>
       </div>
     </div>
   </div>
@@ -35,22 +80,7 @@ $up = content_url('uploads/2026/05/');
 
 <main class="max-w-screen-xl mx-auto px-10 md:px-12">
 
-<?php
-$all_posts = new WP_Query([
-    'post_type'      => 'post',
-    'post_status'    => 'publish',
-    'posts_per_page' => 12,
-    'orderby'        => 'date',
-    'order'          => 'DESC',
-]);
-
-$rotations_right = ['2deg', '-1deg', '1deg'];
-$ri = 0;
-
-if ($all_posts->have_posts()) :
-    $posts_arr = $all_posts->posts;
-    $featured  = array_shift($posts_arr);
-?>
+<?php if ($featured) : ?>
 
 <!-- FEATURED POST -->
 <section style="padding-top:100px;padding-bottom:32px">
