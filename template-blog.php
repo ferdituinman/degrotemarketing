@@ -163,21 +163,21 @@ $ri = 0;
           $cv = $card_v[$vi % 5]; $vi++;
       ?>
       <article class="<?php echo $cv; ?>">
-        <a href="<?php echo get_permalink($rp); ?>" class="group block">
-          <div class="relative mb-6">
-            <div class="bg-[#078930]/10 absolute inset-0 rounded -z-10" style="transform:rotate(<?php echo $rot; ?>)"></div>
+        <a href="<?php echo get_permalink($rp); ?>" class="group flex flex-col">
+          <div class="relative mb-6 order-1 md:order-3">
+            <div class="bg-[#078930]/10 absolute inset-0 rounded" style="transform:rotate(<?php echo $rot; ?>) scale(1.2)"></div>
             <img src="<?php echo esc_url($thumb_url); ?>"
                  alt="<?php echo esc_attr(get_the_title($rp)); ?>"
                  class="w-full object-cover rounded transition-transform duration-500 group-hover:rotate-1"
                  style="aspect-ratio:4/3" width="1024" height="768" loading="lazy"/>
           </div>
-          <div class="flex items-center gap-3 mb-3">
+          <div class="flex items-center gap-3 mb-3 order-2 md:order-2">
             <span class="text-xs opacity-60"><?php echo get_the_date('j F Y', $rp); ?></span>
           </div>
-          <h3 class="text-2xl font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200">
+          <h3 class="text-2xl font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200 order-3 md:order-1">
             <?php echo esc_html(get_the_title($rp)); ?>
           </h3>
-          <p class="text-base leading-relaxed opacity-85"><?php echo esc_html(get_the_excerpt($rp)); ?></p>
+          <p class="text-base leading-relaxed opacity-85 order-4 md:order-4"><?php echo esc_html(get_the_excerpt($rp)); ?></p>
         </a>
       </article>
       <?php endforeach; ?>
