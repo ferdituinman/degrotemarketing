@@ -55,10 +55,32 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
   <?php echo apply_filters('the_content', $extended['extended'] ?: $extended['main']); ?>
 
   <div class="pt-10 border-t border-black/10 flex items-center gap-4" style="margin-top:50px">
-    <div class="w-24 h-24 bg-primary-container text-white font-black flex items-center justify-center text-2xl shrink-0" style="border-radius:50%">FT</div>
+    <?php
+    $authors = [
+      ['name' => 'Ferdi Tuinman',      'initials' => 'FT'],
+      ['name' => 'De Grote Marketing', 'initials' => 'DGM'],
+    ];
+    $author = $authors[get_the_ID() % 2];
+    ?>
+    <div class="w-24 h-24 bg-primary-container text-white font-black flex items-center justify-center text-2xl shrink-0" style="border-radius:50%"><?php echo esc_html($author['initials']); ?></div>
     <div>
-      <p class="font-bold text-base" style="margin:0">Ferdi Tuinman</p>
-      <p class="text-sm opacity-70" style="margin:0">Schreef dit aan de keukentafel.</p>
+      <p class="font-bold text-base" style="margin:0"><?php echo esc_html($author['name']); ?></p>
+      <?php
+      $taglines = [
+        'Schreef dit tussen twee koffies in.',
+        'Bedacht dit op de fiets, uitgeschreven thuis.',
+        'Schreef dit op een doordeweekse ochtend.',
+        'Dit is gewoon eerlijk opgeschreven.',
+        'Bedacht, getwijfeld, toch gepost.',
+        'Schreef dit met te veel koffie op.',
+        'Uitgetypt op een moment dat het klopte.',
+        'Schreef dit zonder het drie keer te checken.',
+        'Schreef dit in één keer, niks herschreven.',
+        'Schreef dit gewoon op.',
+      ];
+      $tagline = $taglines[array_rand($taglines)];
+      ?>
+      <p class="text-sm opacity-70" style="margin:0"><?php echo esc_html($tagline); ?></p>
     </div>
   </div>
 </div>
