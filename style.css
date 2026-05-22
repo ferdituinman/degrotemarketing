@@ -25,7 +25,7 @@ Text Domain: de-grote-marketing
 
 .prose-dgm { font-size: 1.125rem; line-height: 1.8; letter-spacing: -0.2px; }
 .prose-dgm p { margin: 1.75em 0; }
-.prose-dgm h2 { font-weight: 900; font-size: 2rem; line-height: 1.15; margin: 2.75em 0 1em; font-style: italic; letter-spacing: -0.8px; }
+.prose-dgm h2 { font-weight: 900; font-size: 2rem; line-height: 1.15; margin: 1.375em 0 1em; font-style: italic; letter-spacing: -0.8px; }
 .prose-dgm h3 { font-weight: 900; font-size: 1.4rem; line-height: 1.2; margin: 2.25em 0 0.75em; letter-spacing: -0.5px; }
 .prose-dgm ul { margin: 1.75em 0; padding-left: 1.25em; }
 .prose-dgm ul li { list-style: none; position: relative; padding-left: 1.2em; margin: 0.75em 0; }
@@ -36,7 +36,8 @@ Text Domain: de-grote-marketing
 .prose-dgm em { font-style: italic; }
 .prose-dgm img { max-width: 100%; height: auto; display: block; }
 .prose-dgm figure { max-width: 100%; }
-.prose-dgm blockquote { margin: 3rem 0; border-left: 4px solid #078930; padding: 1rem 1.5rem; background: rgba(7,137,48,0.05); border-radius: 0 0.5rem 0.5rem 0; font-style: normal; }
+.prose-dgm > p:first-child { font-weight: 800; font-size: 21px; }
+.prose-dgm blockquote {margin: 3rem 0; border-left: 4px solid #078930; padding: 1rem 1.5rem; background: rgba(7,137,48,0.05); border-radius: 0 0.5rem 0.5rem 0; font-style: normal; }
 .prose-dgm blockquote::before { content: "Kloar-tip"; display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #078930; margin-bottom: 0.5rem; }
 .prose-dgm blockquote p { font-size: 1.125rem; line-height: 1.625; font-style: normal; margin: 0; }
 @media (min-width: 768px) {

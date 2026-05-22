@@ -30,7 +30,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
       <h1 class="blog-h1 font-bold text-on-surface italic mb-8 fade-in-up" style="font-size:60px;line-height:1.20">
         <?php the_title(); ?>
       </h1>
-      <p class="text-xl md:text-2xl leading-relaxed opacity-90"><?php echo esc_html(get_the_excerpt()); ?></p>
+      <div class="text-xl md:text-2xl leading-relaxed opacity-90"><?php echo apply_filters('the_content', get_extended(get_post()->post_content)['main']); ?></div>
     </div>
     <figure class="shrink-0" style="width:440px;max-width:100%">
       <div class="relative">
