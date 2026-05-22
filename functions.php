@@ -11,7 +11,6 @@ add_action('after_setup_theme', function () {
 // Title separator → "Title — Sitenaam"
 add_filter('document_title_separator', fn() => '—');
 
-add_filter('show_admin_bar', '__return_false');
 
 // ─── Assets ────────────────────────────────────────────────────────────────────
 add_action('wp_enqueue_scripts', function () {
