@@ -14,6 +14,14 @@ Text Domain: de-grote-marketing
 .archief-links{flex:0 0 60%;display:flex;flex-direction:column;gap:64px}
 .archief-rechts{flex:1;display:flex;flex-direction:column;gap:64px;margin-top:80px}
 @media(max-width:767px){.archief-kolommen{flex-direction:column}.archief-rechts{margin-top:0}}
+@media(max-width:767px){.featured-post{flex-direction:column!important;min-height:0!important}.featured-post-img{flex:none!important;min-height:280px}}
+@media(max-width:767px){.blog-h1{font-size:40px!important}}
+@media(max-width:767px){
+  .card-v1{transform:rotate(-1.5deg);transform-origin:left bottom;margin-left:4px}
+  .card-v2{transform:rotate(1deg);margin-right:6px}
+  .card-v3{transform:rotate(-0.6deg);margin-left:8px}
+  .card-v4{transform:rotate(0.9deg);margin-right:4px}
+}
 
 .prose-dgm { font-size: 1.125rem; line-height: 1.8; letter-spacing: -0.2px; }
 .prose-dgm p { margin: 1.75em 0; }
@@ -26,6 +34,8 @@ Text Domain: de-grote-marketing
 .prose-dgm a { color: #078930; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 .prose-dgm a:hover { text-decoration-thickness: 3px; }
 .prose-dgm em { font-style: italic; }
+.prose-dgm img { max-width: 100%; height: auto; display: block; }
+.prose-dgm figure { max-width: 100%; }
 @media (min-width: 768px) {
   .prose-dgm { font-size: 1.2rem; max-width: 46.2rem; }
   .prose-dgm h2 { font-size: 2.5rem; }

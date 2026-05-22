@@ -12,7 +12,7 @@ $up = content_url('uploads/2026/05/');
   <div class="relative z-10 flex flex-col md:flex-row md:items-center gap-12 md:gap-16 fade-in-up">
     <div class="flex-1">
       <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-4">Lezen. Dan doen.</p>
-      <h1 class="font-bold text-on-surface italic mb-8" style="font-size:60px;line-height:1.20">Blogs.<br>Kiek moar.</h1>
+      <h1 class="blog-h1 font-bold text-on-surface italic mb-8" style="font-size:60px;line-height:1.20">Blogs.<br>Kiek moar.</h1>
       <div class="text-lg md:text-xl leading-relaxed max-w-2xl">
         <p>We bloggen alleen als er wat te zeggen valt. Geen blogs over CTR of CPC. Wel wat werkt voor Groningse ondernemers, en waarom een rapport van 80 pagina's nergens op slaat.</p>
       </div>
@@ -20,7 +20,7 @@ $up = content_url('uploads/2026/05/');
         <p class="text-base font-bold">Kloar.</p>
       </div>
     </div>
-    <div class="shrink-0" style="width:400px">
+    <div class="shrink-0" style="width:400px;max-width:100%">
       <div class="relative">
         <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-5 translate-y-5 rounded-xl -z-10 scale-110"></div>
         <img src="<?php echo $up; ?>e14040cb-e85f-4e74-adf8-dd9f9db05a31.png"
@@ -55,7 +55,7 @@ if ($all_posts->have_posts()) :
 <!-- FEATURED POST -->
 <section style="padding-top:100px;padding-bottom:32px">
   <a href="<?php echo get_permalink($featured); ?>" class="group block">
-    <article style="display:flex;align-items:stretch;min-height:480px">
+    <article class="featured-post" style="display:flex;align-items:stretch;min-height:480px">
       <div style="flex:1;background:rgba(7,137,48,0.1);padding:48px 40px;display:flex;flex-direction:column;justify-content:center;gap:20px;transform:rotate(-1deg);transform-origin:center center">
         <p class="text-sm font-bold uppercase tracking-widest text-primary-container">Mooi verhaal. Lekker kort.</p>
         <h2 class="group-hover:text-primary-container transition-colors duration-200" style="font-size:40px;font-weight:700;line-height:1.05">
@@ -67,7 +67,7 @@ if ($all_posts->have_posts()) :
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="transition-transform duration-300 group-hover:translate-x-1"><path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6z"/></svg>
         </div>
       </div>
-      <div style="flex:0 0 60%;position:relative;overflow:hidden">
+      <div class="featured-post-img" style="flex:0 0 60%;position:relative;overflow:hidden">
         <?php if (has_post_thumbnail($featured)) : ?>
           <?php echo get_the_post_thumbnail($featured, 'full', [
               'class'     => 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105',
@@ -96,11 +96,14 @@ if ($all_posts->have_posts()) :
           if ($idx % 2 === 0) $left_posts[]  = $p;
           else                $right_posts[] = $p;
       }
+      $card_v = ['', 'card-v1', 'card-v2', 'card-v3', 'card-v4'];
+      $vi = 0;
       foreach ($left_posts as $lp) :
           $thumb_url = get_the_post_thumbnail_url($lp, 'full') ?: ($up . 'geen-leverancier.png');
           $ri++;
+          $cv = $card_v[$vi % 5]; $vi++;
       ?>
-      <article>
+      <article class="<?php echo $cv; ?>">
         <a href="<?php echo get_permalink($lp); ?>" class="group block">
           <div style="background:rgba(7,137,48,0.08);border-radius:2px;margin-bottom:16px">
             <img src="<?php echo esc_url($thumb_url); ?>"
@@ -127,8 +130,9 @@ if ($all_posts->have_posts()) :
           $thumb_url = get_the_post_thumbnail_url($rp, 'full') ?: ($up . 'voorgroningers.png');
           $rot       = $rotations_right[$ri % count($rotations_right)];
           $ri++;
+          $cv = $card_v[$vi % 5]; $vi++;
       ?>
-      <article>
+      <article class="<?php echo $cv; ?>">
         <a href="<?php echo get_permalink($rp); ?>" class="group block">
           <div class="relative mb-6">
             <div class="bg-[#078930]/10 absolute inset-0 rounded -z-10" style="transform:rotate(<?php echo $rot; ?>)"></div>
