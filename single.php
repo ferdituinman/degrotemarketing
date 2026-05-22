@@ -30,7 +30,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
       <h1 class="blog-h1 font-bold text-on-surface italic mb-8 fade-in-up" style="font-size:60px;line-height:1.20">
         <?php the_title(); ?>
       </h1>
-      <div class="text-xl md:text-2xl leading-relaxed opacity-90"><?php echo apply_filters('the_content', get_extended(get_post()->post_content)['main']); ?></div>
+      <p class="text-xl md:text-2xl leading-relaxed opacity-90"><?php echo esc_html(get_the_excerpt()); ?></p>
     </div>
     <figure class="shrink-0" style="width:440px;max-width:100%">
       <div class="relative">
@@ -51,10 +51,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
 
 <!-- POST BODY -->
 <div class="prose-dgm mx-auto px-10 md:px-12 pb-16 md:pb-24" style="max-width:52rem;padding-top:50px">
-  <?php
-  $extended = get_extended(get_post()->post_content);
-  echo apply_filters('the_content', $extended['extended'] ?: $extended['main']);
-  ?>
+  <?php the_content(); ?>
 
   <div class="pt-10 border-t border-black/10 flex items-center gap-4" style="margin-top:50px">
     <div class="w-24 h-24 bg-primary-container text-white font-black flex items-center justify-center text-2xl shrink-0" style="border-radius:50%">FT</div>
