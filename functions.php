@@ -543,8 +543,6 @@ function dgm_post1_content(): string {
 
 <p>Vergeet linkbuilding-tools, vergeet "Tier 2 outreach", vergeet Fiverr. Eén echte vermelding per maand op een plek die er toe doet — lokale krant, brancheorganisatie, een klant die je noemt — is meer waard dan 100 obscure forum-links.</p>
 
-<blockquote class="my-10 text-2xl md:text-3xl font-bold italic leading-tight text-primary-container border-l-4 border-primary-container pl-6">"Eén echte vermelding is meer waard dan honderd gekochte. Gewoon doen."</blockquote>
-
 <p>Bel een paar mensen die je kent. Vraag of ze je noemen in een blog, een lijstje, of op hun "partners"-pagina. Klaar. Volgende maand weer iemand.</p>
 
 <h2>Dat was \'m.</h2>
