@@ -5,7 +5,7 @@
 get_header();
 $up = content_url('uploads/2026/05/');
 
-// Posts query early — needed to exclude featured thumb from hero
+// Posts query early - needed to exclude featured thumb from hero
 $all_posts = new WP_Query([
     'post_type'      => 'post',
     'post_status'    => 'publish',

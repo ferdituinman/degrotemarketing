@@ -8,13 +8,20 @@ add_action('after_setup_theme', function () {
     add_image_size('dgm-square-md', 512, 512, true);
 });
 
-// Title separator → "Title — Sitenaam"
-add_filter('document_title_separator', fn() => '—');
+// Title separator → "Title - Sitenaam"
+add_filter('document_title_separator', fn() => '-');
 
-// Em dash verboden in frontend
-add_filter('the_title',   fn($t) => str_replace(['—', '–'], '-', $t));
-add_filter('the_excerpt', fn($t) => str_replace(['—', '–'], '-', $t));
-add_filter('the_content', fn($t) => str_replace(['—', '–'], '-', $t));
+// Em dash verboden. Overal. Altijd.
+add_action('template_redirect', function () {
+    ob_start(fn($html) => str_replace(['—', '–'], '-', $html));
+});
+add_filter('the_title',         fn($t) => str_replace(['—', '–'], '-', $t));
+add_filter('the_excerpt',       fn($t) => str_replace(['—', '–'], '-', $t));
+add_filter('the_content',       fn($t) => str_replace(['—', '–'], '-', $t));
+add_filter('wp_title',          fn($t) => str_replace(['—', '–'], '-', $t));
+add_filter('document_title_parts', function($p) {
+    return array_map(fn($v) => str_replace(['—', '–'], '-', $v), $p);
+});
 
 
 // ─── Assets ────────────────────────────────────────────────────────────────────
@@ -53,7 +60,7 @@ function dgm_social_meta() {
     if (is_singular('post')) {
         $post_obj = get_queried_object();
         $post_id  = $post_obj->ID;
-        $title    = get_the_title($post_id) . ' — ' . $site_name;
+        $title    = get_the_title($post_id) . ' - ' . $site_name;
         $raw_exc  = $post_obj->post_excerpt ?: wp_trim_words(strip_tags($post_obj->post_content), 30);
         $desc     = $raw_exc;
         $url      = get_permalink($post_id);
@@ -71,13 +78,13 @@ function dgm_social_meta() {
             $img_url = $default_img; $img_w = 1347; $img_h = 444; $img_alt = $site_name;
         }
     } elseif (is_front_page()) {
-        $title   = 'De Grote Marketing — Online marketing voor ondernemers in Groningen';
+        $title   = 'De Grote Marketing -Online marketing voor ondernemers in Groningen';
         $desc    = 'De Grote Marketing helpt ondernemers in Groningen met eerlijke, simpele online marketing. Geen bullshit, wel resultaat.';
         $url     = home_url('/');
         $type    = 'website';
         $img_url = $default_img; $img_w = 1347; $img_h = 444; $img_alt = $site_name;
     } else {
-        $title   = get_the_title() . ' — ' . $site_name;
+        $title   = get_the_title() . ' - ' . $site_name;
         $desc    = 'Online marketing voor ondernemers in Groningen.';
         $url     = get_permalink() ?: home_url('/');
         $type    = 'website';
@@ -317,7 +324,7 @@ function dgm_schema() {
             '@type'             => 'WebPage',
             '@id'               => $permalink . '#webpage',
             'url'               => $permalink,
-            'name'              => get_the_title($post) . ' — De Grote Marketing',
+            'name'              => get_the_title($post) . ' -De Grote Marketing',
             'description'       => $excerpt,
             'isPartOf'          => ['@id' => $base_url . '/#website'],
             'about'             => ['@id' => $base_url . '/#organization'],
@@ -346,7 +353,7 @@ function dgm_schema() {
             'image'           => ['@id' => $base_url . '/#primaryimage'],
             'author'          => ['@id' => $base_url . '/#person-ferdi-tuinman'],
             'publisher'       => ['@id' => $base_url . '/#organization'],
-            'isPartOf'        => ['@type' => 'Blog', 'name' => 'Blog — De Grote Marketing', 'url' => $base_url . '/blog/'],
+            'isPartOf'        => ['@type' => 'Blog', 'name' => 'Blog -De Grote Marketing', 'url' => $base_url . '/blog/'],
             'about'           => array_map(fn($t) => ['@type' => 'Thing', 'name' => $t->name], $tags ?: []),
             'keywords'        => $tags ? array_map(fn($t) => $t->name, $tags) : [],
         ];
@@ -376,7 +383,7 @@ function dgm_schema() {
             '@type'              => 'WebPage',
             '@id'                => $base_url . ($is_home ? '/' : '/blog/') . '#webpage',
             'url'                => $base_url . ($is_home ? '/' : '/blog/'),
-            'name'               => $is_home ? 'Online marketing voor ondernemers in Groningen' : 'Blog — De Grote Marketing',
+            'name'               => $is_home ? 'Online marketing voor ondernemers in Groningen' : 'Blog -De Grote Marketing',
             'description'        => $is_home
                 ? 'De Grote Marketing helpt ondernemers in Groningen met eerlijke, simpele online marketing.'
                 : 'Lezen of doen? Schrijven doen we alleen als er wat te zeggen is.',
@@ -587,12 +594,12 @@ function dgm_post1_content(): string {
 <p>Klinkt gek, maar 8 op de 10 sites die ik open weet Google niet eens wat ze precies doen. Geen duidelijke titels, geen plaatsnaam, geen schema. Begin hier:</p>
 
 <ul>
-<li>Eén pagina, één onderwerp. Niet "Wij doen alles" — wel "Loodgieter in Helpman".</li>
+<li>Eén pagina, één onderwerp. Niet "Wij doen alles" -wel "Loodgieter in Helpman".</li>
 <li>Plaatsnaam in titel, h1, en in de eerste alinea. Gewoon zeggen waar je zit.</li>
 <li>Google Mijn Bedrijf compleet invullen. Openingstijden, foto\'s, recente reviews.</li>
 </ul>
 
-<p>Dat eerste punt is goud. De helft van de Groningse zzp\'ers timmert pagina\'s vol met "wij zijn een ervaren team" — terwijl Google gewoon wil weten <strong>wat</strong> je doet en <strong>waar</strong>.</p>
+<p>Dat eerste punt is goud. De helft van de Groningse zzp\'ers timmert pagina\'s vol met "wij zijn een ervaren team" -terwijl Google gewoon wil weten <strong>wat</strong> je doet en <strong>waar</strong>.</p>
 
 <aside class="my-12 border-l-4 border-primary-container pl-6 py-4 bg-[#078930]/5 rounded-r-lg">
 <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-2">Kloar-tip</p>
@@ -611,7 +618,7 @@ function dgm_post1_content(): string {
 
 <h2>3. Eén goede backlink per maand. Meer niet.</h2>
 
-<p>Vergeet linkbuilding-tools, vergeet "Tier 2 outreach", vergeet Fiverr. Eén echte vermelding per maand op een plek die er toe doet — lokale krant, brancheorganisatie, een klant die je noemt — is meer waard dan 100 obscure forum-links.</p>
+<p>Vergeet linkbuilding-tools, vergeet "Tier 2 outreach", vergeet Fiverr. Eén echte vermelding per maand op een plek die er toe doet -lokale krant, brancheorganisatie, een klant die je noemt -is meer waard dan 100 obscure forum-links.</p>
 
 <p>Bel een paar mensen die je kent. Vraag of ze je noemen in een blog, een lijstje, of op hun "partners"-pagina. Klaar. Volgende maand weer iemand.</p>
 
