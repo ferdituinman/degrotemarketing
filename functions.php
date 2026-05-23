@@ -11,6 +11,11 @@ add_action('after_setup_theme', function () {
 // Title separator → "Title — Sitenaam"
 add_filter('document_title_separator', fn() => '—');
 
+// Em dash verboden in frontend
+add_filter('the_title',   fn($t) => str_replace(['—', '–'], '-', $t));
+add_filter('the_excerpt', fn($t) => str_replace(['—', '–'], '-', $t));
+add_filter('the_content', fn($t) => str_replace(['—', '–'], '-', $t));
+
 
 // ─── Assets ────────────────────────────────────────────────────────────────────
 add_action('wp_enqueue_scripts', function () {
@@ -38,6 +43,69 @@ add_action('wp_head', function () {
 <?php endif; ?>
     <?php
 }, 1);
+
+// ─── Social & SEO meta tags ────────────────────────────────────────────────────
+add_action('wp_head', 'dgm_social_meta', 2);
+function dgm_social_meta() {
+    $site_name   = 'De Grote Marketing';
+    $default_img = content_url('uploads/2026/05/logo.png');
+
+    if (is_singular('post')) {
+        $title    = get_the_title() . ' — ' . $site_name;
+        $desc     = wp_trim_words(wp_strip_all_tags(get_the_excerpt()), 30, '');
+        $url      = get_permalink();
+        $type     = 'article';
+        $date_pub = get_the_date('c');
+        $date_mod = get_the_modified_date('c');
+        $cats     = get_the_category();
+        $cat      = $cats ? esc_attr($cats[0]->name) : '';
+        $img_id   = get_post_thumbnail_id();
+        if ($img_id) {
+            $src     = wp_get_attachment_image_src($img_id, 'full');
+            $img_url = $src[0]; $img_w = $src[1]; $img_h = $src[2];
+            $img_alt = get_post_meta($img_id, '_wp_attachment_image_alt', true) ?: $title;
+        } else {
+            $img_url = $default_img; $img_w = 1347; $img_h = 444; $img_alt = $site_name;
+        }
+    } elseif (is_front_page()) {
+        $title   = 'De Grote Marketing — Online marketing voor ondernemers in Groningen';
+        $desc    = 'De Grote Marketing helpt ondernemers in Groningen met eerlijke, simpele online marketing. Geen bullshit, wel resultaat.';
+        $url     = home_url('/');
+        $type    = 'website';
+        $img_url = $default_img; $img_w = 1347; $img_h = 444; $img_alt = $site_name;
+    } else {
+        $title   = get_the_title() . ' — ' . $site_name;
+        $desc    = 'Online marketing voor ondernemers in Groningen.';
+        $url     = get_permalink() ?: home_url('/');
+        $type    = 'website';
+        $img_url = $default_img; $img_w = 1347; $img_h = 444; $img_alt = $site_name;
+    }
+
+    $desc = esc_attr(substr(strip_tags($desc), 0, 155));
+    ?>
+<meta name="description" content="<?php echo $desc; ?>"/>
+<link rel="canonical" href="<?php echo esc_url($url); ?>"/>
+<meta property="og:type" content="<?php echo esc_attr($type); ?>"/>
+<meta property="og:site_name" content="<?php echo esc_attr($site_name); ?>"/>
+<meta property="og:locale" content="nl_NL"/>
+<meta property="og:title" content="<?php echo esc_attr($title); ?>"/>
+<meta property="og:description" content="<?php echo $desc; ?>"/>
+<meta property="og:url" content="<?php echo esc_url($url); ?>"/>
+<meta property="og:image" content="<?php echo esc_url($img_url); ?>"/>
+<meta property="og:image:width" content="<?php echo (int)$img_w; ?>"/>
+<meta property="og:image:height" content="<?php echo (int)$img_h; ?>"/>
+<meta property="og:image:alt" content="<?php echo esc_attr($img_alt); ?>"/>
+<?php if ($type === 'article') : ?>
+<meta property="article:published_time" content="<?php echo esc_attr($date_pub); ?>"/>
+<meta property="article:modified_time" content="<?php echo esc_attr($date_mod); ?>"/>
+<?php if ($cat) : ?><meta property="article:section" content="<?php echo $cat; ?>"/><?php endif; ?>
+<?php endif; ?>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="<?php echo esc_attr($title); ?>"/>
+<meta name="twitter:description" content="<?php echo $desc; ?>"/>
+<meta name="twitter:image" content="<?php echo esc_url($img_url); ?>"/>
+<?php
+}
 
 // ─── Schema JSON-LD (sitebreed) ────────────────────────────────────────────────
 add_action('wp_head', 'dgm_schema', 5);
