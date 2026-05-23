@@ -45,7 +45,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
              width="<?php echo $thumb_w; ?>" height="<?php echo $thumb_h; ?>"
              fetchpriority="high"/>
       </div>
-      <figcaption class="text-sm opacity-60 italic"><?php echo esc_html(get_the_excerpt() ?: 'Kop d\'r veur'); ?></figcaption>
+      <figcaption class="opacity-60 italic" style="margin-top:5px;font-size:17px"><?php echo esc_html(get_the_excerpt() ?: 'Kop d\'r veur'); ?></figcaption>
     </figure>
   </div>
 </header>
@@ -54,13 +54,15 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
 <div class="prose-dgm mx-auto px-10 md:px-12 pb-16 md:pb-24" style="max-width:52rem;padding-top:50px">
   <?php echo apply_filters('the_content', $extended['extended'] ?: $extended['main']); ?>
 
-  <div class="pt-10 border-t border-black/10 flex items-center gap-4" style="margin-top:50px">
+  <hr style="border:none;border-top:1px solid rgba(0,0,0,0.1);margin-top:50px;transform:rotate(-1deg);transform-origin:left center"/>
+  <div class="flex items-center gap-4" style="padding-top:10px;margin-top:10px">
     <?php
     $authors = [
       ['name' => 'Ferdi Tuinman',      'initials' => 'FT'],
       ['name' => 'De Grote Marketing', 'initials' => 'DGM'],
     ];
-    $author = $authors[get_the_ID() % 2];
+    $pinned = get_post_meta(get_the_ID(), 'dgm_author', true);
+    $author = $authors[($pinned !== '') ? (int)$pinned : absint(hexdec(substr(md5(get_the_ID()), 0, 4))) % 2];
     ?>
     <div class="w-24 h-24 bg-primary-container text-white font-black flex items-center justify-center text-2xl shrink-0" style="border-radius:50%"><?php echo esc_html($author['initials']); ?></div>
     <div>
@@ -77,6 +79,11 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
         'Schreef dit zonder het drie keer te checken.',
         'Schreef dit in één keer, niks herschreven.',
         'Schreef dit gewoon op.',
+        'Schreef dit op de mooiste dinsdag van de week.',
+        'Had geen GPT nodig om dit te bedenken.',
+        'Drinkt koffie zwart.',
+        'Altijd op de fiets.',
+        'Spreekt vloeiend html.',
       ];
       $tagline = $taglines[array_rand($taglines)];
       ?>
@@ -112,32 +119,63 @@ if ($related->have_posts()) :
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6z"/></svg>
     </a>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12" style="column-gap:25px">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12" style="column-gap:25px;align-items:start">
   <?php $ri = 0; while ($related->have_posts()) : $related->the_post(); ?>
     <?php
-    $rel_thumb = get_the_post_thumbnail_url(null, 'full') ?: ($up . 'geen-leverancier.png');
+    $rel_thumb = get_the_post_thumbnail_url(null, 'dgm-square-md') ?: ($up . 'geen-leverancier.png');
     $rot_cls   = $rotations_rel[$ri % 3];
     $hov_cls   = $hover_rel[$ri % 3];
-    $ri++;
     ?>
+
+    <?php if ($ri === 0) : // afbeelding eerst, 4:3 ?>
     <article>
       <a href="<?php the_permalink(); ?>" class="group block">
-        <div class="relative mb-6">
+        <div class="relative mb-4">
           <div class="bg-[#078930]/10 absolute inset-0 <?php echo $rot_cls; ?> rounded -z-10"></div>
           <img src="<?php echo esc_url($rel_thumb); ?>"
                alt="<?php echo esc_attr(get_the_title()); ?>"
                class="w-full object-cover rounded transition-transform duration-500 <?php echo $hov_cls; ?>"
-               style="aspect-ratio:4/3" width="1024" height="768" loading="lazy"/>
-        </div>
-        <div class="flex items-center gap-3 mb-2">
-          <span class="text-xs opacity-60"><?php echo get_the_date('j F Y'); ?></span>
+               style="aspect-ratio:4/3" width="512" height="384" loading="lazy"/>
         </div>
         <h3 class="text-2xl font-black leading-tight group-hover:text-primary-container transition-colors duration-200">
           <?php the_title(); ?>
         </h3>
       </a>
     </article>
-  <?php endwhile; wp_reset_postdata(); ?>
+
+    <?php elseif ($ri === 1) : // titel eerst, afbeelding onder, naar beneden geduwd ?>
+    <article style="margin-top:40px;padding-left:16px;border-left:3px solid #078930">
+      <a href="<?php the_permalink(); ?>" class="group block">
+        <h3 class="text-2xl font-black leading-tight mb-4 group-hover:text-primary-container transition-colors duration-200">
+          <?php the_title(); ?>
+        </h3>
+        <div style="overflow:hidden;border-radius:6px">
+          <img src="<?php echo esc_url($rel_thumb); ?>"
+               alt="<?php echo esc_attr(get_the_title()); ?>"
+               class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+               style="aspect-ratio:3/2;display:block" width="512" height="341" loading="lazy"/>
+        </div>
+      </a>
+    </article>
+
+    <?php else : // afbeelding eerst, vierkant ?>
+    <article>
+      <a href="<?php the_permalink(); ?>" class="group block">
+        <div class="relative mb-4">
+          <div class="bg-[#078930]/10 absolute inset-0 <?php echo $rot_cls; ?> rounded -z-10"></div>
+          <img src="<?php echo esc_url($rel_thumb); ?>"
+               alt="<?php echo esc_attr(get_the_title()); ?>"
+               class="w-full object-cover rounded transition-transform duration-500 <?php echo $hov_cls; ?>"
+               style="aspect-ratio:1/1" width="512" height="512" loading="lazy"/>
+        </div>
+        <h3 class="text-2xl font-black leading-tight group-hover:text-primary-container transition-colors duration-200">
+          <?php the_title(); ?>
+        </h3>
+      </a>
+    </article>
+
+    <?php endif; ?>
+    <?php $ri++; endwhile; wp_reset_postdata(); ?>
   </div>
 </section>
 <?php endif; ?>

@@ -231,7 +231,7 @@ if (!empty($recent_posts)) :
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8" style="align-items:start">
     <?php foreach ($recent_posts as $i => $rpost) :
-      $rthumb   = get_the_post_thumbnail_url($rpost, 'full') ?: ($up . 'voorgroningers.png');
+      $rthumb   = get_the_post_thumbnail_url($rpost, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
       $rtitle   = esc_html(get_the_title($rpost));
       $rexcerpt = wp_trim_words(get_the_excerpt($rpost), 18);
       $rlink    = get_permalink($rpost);
@@ -247,7 +247,7 @@ if (!empty($recent_posts)) :
                alt="<?php echo $rtitle; ?>"
                class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                style="aspect-ratio:3/2;display:block"
-               width="1024" height="683" loading="lazy"/>
+               width="512" height="341" loading="lazy"/>
         </div>
         <div class="flex items-center gap-2 text-primary-container font-bold mt-4">
           <span class="border-b-2 border-primary-container pb-0.5 text-sm">Lees het artikel</span>
@@ -265,7 +265,7 @@ if (!empty($recent_posts)) :
                alt="<?php echo $rtitle; ?>"
                class="w-full object-cover rounded-t-lg"
                style="aspect-ratio:4/3;display:block"
-               width="1024" height="768" loading="lazy"/>
+               width="512" height="384" loading="lazy"/>
         </div>
         <div style="background:rgba(7,137,48,0.07);padding:24px 20px 20px;border-radius:0 0 8px 8px">
           <h3 class="text-2xl font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200"><?php echo $rtitle; ?></h3>
@@ -285,7 +285,7 @@ if (!empty($recent_posts)) :
                alt="<?php echo $rtitle; ?>"
                class="w-full object-cover rounded-lg transition-transform duration-500 group-hover:-rotate-1"
                style="aspect-ratio:1/1;display:block"
-               width="768" height="768" loading="lazy"/>
+               width="512" height="512" loading="lazy"/>
         </div>
       </a>
     </article>
