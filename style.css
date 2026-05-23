@@ -14,7 +14,7 @@ Text Domain: de-grote-marketing
 .archief-links{flex:0 0 60%;display:flex;flex-direction:column;gap:64px}
 .archief-rechts{flex:1;display:flex;flex-direction:column;gap:64px;margin-top:80px}
 @media(max-width:767px){.archief-kolommen{flex-direction:column}.archief-rechts{margin-top:0}}
-@media(max-width:767px){.featured-post{flex-direction:column!important;min-height:0!important}.featured-post-img{flex:none!important;min-height:280px}}
+@media(max-width:767px){.featured-post{flex-direction:column!important;min-height:0!important;margin-left:-20px!important;margin-right:-20px!important}.featured-post-img{flex:none!important;min-height:280px}.card-groen-vlak{margin-left:-40px!important;margin-right:-40px!important;margin-bottom:82px!important;border-radius:0}.card-groen-vlak>a{padding:0 20px}.archief-rechts{gap:0!important}.archief-rechts>article{margin-bottom:64px}.archief-rechts article:nth-child(2){transform:none!important;margin-left:0!important;margin-right:0!important}.archief-links article:nth-child(2){margin-left:-40px!important;margin-right:-40px!important}.archief-links article:nth-child(2)>a>p{padding-left:20px!important;padding-right:20px!important}}
 @media(max-width:767px){.blog-h1{font-size:40px!important}}
 @media(max-width:767px){
   .card-v1{transform:rotate(-1.5deg);transform-origin:left bottom;margin-left:4px}
