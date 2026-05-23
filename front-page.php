@@ -207,6 +207,95 @@ $up = content_url('uploads/2026/05/');
   </div>
 </section>
 
+<!-- RECENT BLOGS -->
+<?php
+$recent_posts = get_posts([
+    'post_type'      => 'post',
+    'post_status'    => 'publish',
+    'posts_per_page' => 3,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+]);
+if (!empty($recent_posts)) :
+?>
+<section class="py-16 md:py-[100px]">
+  <div class="flex items-end justify-between mb-12 gap-8 flex-wrap">
+    <div>
+      <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
+      <h2 class="text-4xl font-black" style="margin-bottom:50px">Blogs. Zelf geschreven.</h2>
+    </div>
+    <a href="<?php echo home_url('/blog/'); ?>" class="text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">
+      Alle blogs →
+    </a>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8" style="align-items:start">
+    <?php foreach ($recent_posts as $i => $rpost) :
+      $rthumb   = get_the_post_thumbnail_url($rpost, 'full') ?: ($up . 'voorgroningers.png');
+      $rtitle   = esc_html(get_the_title($rpost));
+      $rexcerpt = wp_trim_words(get_the_excerpt($rpost), 18);
+      $rlink    = get_permalink($rpost);
+    ?>
+
+    <?php if ($i === 0) : ?>
+    <article style="padding-left:20px;border-left:4px solid #078930">
+      <a href="<?php echo esc_url($rlink); ?>" class="group block">
+        <h3 class="font-black leading-tight mb-4 group-hover:text-primary-container transition-colors duration-200" style="font-size:26px;line-height:1.1"><?php echo $rtitle; ?></h3>
+        <p class="text-base leading-relaxed opacity-80 mb-5"><?php echo $rexcerpt; ?></p>
+        <div style="overflow:hidden;border-radius:8px">
+          <img src="<?php echo esc_url($rthumb); ?>"
+               alt="<?php echo $rtitle; ?>"
+               class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+               style="aspect-ratio:3/2;display:block"
+               width="1024" height="683" loading="lazy"/>
+        </div>
+        <div class="flex items-center gap-2 text-primary-container font-bold mt-4">
+          <span class="border-b-2 border-primary-container pb-0.5 text-sm">Lees het artikel</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="transition-transform duration-300 group-hover:translate-x-1"><path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6z"/></svg>
+        </div>
+      </a>
+    </article>
+
+    <?php elseif ($i === 1) : ?>
+    <article style="transform:rotate(-1deg);transform-origin:top left;margin-top:48px">
+      <a href="<?php echo esc_url($rlink); ?>" class="group block">
+        <div class="relative">
+          <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-3 translate-y-3 rounded-xl -z-10 scale-105"></div>
+          <img src="<?php echo esc_url($rthumb); ?>"
+               alt="<?php echo $rtitle; ?>"
+               class="w-full object-cover rounded-t-lg"
+               style="aspect-ratio:4/3;display:block"
+               width="1024" height="768" loading="lazy"/>
+        </div>
+        <div style="background:rgba(7,137,48,0.07);padding:24px 20px 20px;border-radius:0 0 8px 8px">
+          <h3 class="text-2xl font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200"><?php echo $rtitle; ?></h3>
+          <p class="text-base leading-relaxed opacity-80"><?php echo $rexcerpt; ?></p>
+        </div>
+      </a>
+    </article>
+
+    <?php else : ?>
+    <article style="transform:rotate(1deg);transform-origin:top right">
+      <a href="<?php echo esc_url($rlink); ?>" class="group block">
+        <h3 class="font-black leading-tight mb-4 group-hover:text-primary-container transition-colors duration-200" style="font-size:26px;line-height:1.1"><?php echo $rtitle; ?></h3>
+        <p class="text-base leading-relaxed opacity-80 mb-5"><?php echo $rexcerpt; ?></p>
+        <div class="relative">
+          <div class="bg-[#078930]/10 absolute inset-0 rotate-2 rounded-lg -z-10 scale-105"></div>
+          <img src="<?php echo esc_url($rthumb); ?>"
+               alt="<?php echo $rtitle; ?>"
+               class="w-full object-cover rounded-lg transition-transform duration-500 group-hover:-rotate-1"
+               style="aspect-ratio:1/1;display:block"
+               width="768" height="768" loading="lazy"/>
+        </div>
+      </a>
+    </article>
+
+    <?php endif; ?>
+    <?php endforeach; ?>
+  </div>
+</section>
+<?php endif; ?>
+
 </main>
 
 <script>
