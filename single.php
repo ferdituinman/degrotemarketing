@@ -144,7 +144,7 @@ if ($related->have_posts()) :
     </article>
 
     <?php elseif ($ri === 1) : // titel eerst, afbeelding onder, naar beneden geduwd ?>
-    <article style="margin-top:40px;padding-left:16px;border-left:3px solid #078930">
+    <article style="margin-top:40px;background:rgba(7,137,48,0.07);border-radius:10px;padding:24px">
       <a href="<?php the_permalink(); ?>" class="group block">
         <h3 class="text-2xl font-black leading-tight mb-4 group-hover:text-primary-container transition-colors duration-200">
           <?php the_title(); ?>

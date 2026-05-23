@@ -146,9 +146,6 @@ $ri = 0;
               </h3>
             </div>
           </div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs opacity-60"><?php echo get_the_date('j F Y', $lp); ?></span>
-          </div>
           <p class="text-base leading-relaxed opacity-85"><?php echo esc_html(get_the_excerpt($lp)); ?></p>
         </a>
       </article>
@@ -156,21 +153,21 @@ $ri = 0;
     </div>
 
     <div class="archief-rechts">
-      <?php foreach ($right_posts as $rp) :
+      <?php $rvi = 0; foreach ($right_posts as $rp) :
           $thumb_url = get_the_post_thumbnail_url($rp, 'full') ?: ($up . 'voorgroningers.png');
           $rot       = $rotations_right[$ri % count($rotations_right)];
           $ri++;
           $cv = $card_v[$vi % 5]; $vi++;
+          $variant = $rvi % 3; $rvi++;
       ?>
+
+      <?php if ($variant === 0) : // titel → afbeelding 4:3 → excerpt ?>
       <article class="<?php echo $cv; ?>">
         <a href="<?php echo get_permalink($rp); ?>" class="group block">
           <h3 class="text-2xl font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200">
             <?php echo esc_html(get_the_title($rp)); ?>
           </h3>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs opacity-60"><?php echo get_the_date('j F Y', $rp); ?></span>
-          </div>
-          <div class="relative mb-6">
+          <div class="relative mb-4">
             <div class="bg-[#078930]/10 absolute inset-0 rounded" style="transform:rotate(<?php echo $rot; ?>) scale(1.2)"></div>
             <img src="<?php echo esc_url($thumb_url); ?>"
                  alt="<?php echo esc_attr(get_the_title($rp)); ?>"
@@ -180,6 +177,42 @@ $ri = 0;
           <p class="text-base leading-relaxed opacity-85"><?php echo esc_html(get_the_excerpt($rp)); ?></p>
         </a>
       </article>
+
+      <?php elseif ($variant === 1) : // groen vlak met tilt als achtergrond ?>
+      <article class="<?php echo $cv; ?>" style="position:relative">
+        <div style="position:absolute;inset:-16px;background:#078930;border-radius:12px;transform:rotate(-2deg);z-index:0"></div>
+        <a href="<?php echo get_permalink($rp); ?>" class="group block" style="position:relative;z-index:1">
+          <div style="overflow:hidden;border-radius:8px;margin-bottom:16px">
+            <img src="<?php echo esc_url($thumb_url); ?>"
+                 alt="<?php echo esc_attr(get_the_title($rp)); ?>"
+                 class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                 style="aspect-ratio:4/3" width="1024" height="768" loading="lazy"/>
+          </div>
+          <h3 class="text-2xl font-black leading-tight mb-3 group-hover:opacity-80 transition-opacity duration-200" style="color:#fff">
+            <?php echo esc_html(get_the_title($rp)); ?>
+          </h3>
+          <p class="text-base leading-relaxed" style="color:rgba(255,255,255,0.85)"><?php echo esc_html(get_the_excerpt($rp)); ?></p>
+        </a>
+      </article>
+
+      <?php else : // titel → excerpt → afbeelding 3:2 ?>
+      <article class="<?php echo $cv; ?>" style="background:rgba(7,137,48,0.06);border-radius:10px;padding:20px">
+        <a href="<?php echo get_permalink($rp); ?>" class="group block">
+          <h3 class="text-2xl font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200">
+            <?php echo esc_html(get_the_title($rp)); ?>
+          </h3>
+          <p class="text-base leading-relaxed opacity-85 mb-4"><?php echo esc_html(get_the_excerpt($rp)); ?></p>
+          <div class="relative">
+            <div class="bg-[#078930]/10 absolute inset-0 rounded" style="transform:rotate(<?php echo $rot; ?>) scale(1.1)"></div>
+            <img src="<?php echo esc_url($thumb_url); ?>"
+                 alt="<?php echo esc_attr(get_the_title($rp)); ?>"
+                 class="w-full object-cover rounded transition-transform duration-500 group-hover:-rotate-1"
+                 style="aspect-ratio:3/2" width="1024" height="683" loading="lazy"/>
+          </div>
+        </a>
+      </article>
+
+      <?php endif; ?>
       <?php endforeach; ?>
     </div>
   </div>
