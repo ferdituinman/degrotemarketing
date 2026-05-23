@@ -212,14 +212,14 @@ $up = content_url('uploads/2026/05/');
 $recent_posts = get_posts([
     'post_type'      => 'post',
     'post_status'    => 'publish',
-    'posts_per_page' => 3,
+    'posts_per_page' => 2,
     'orderby'        => 'date',
     'order'          => 'DESC',
 ]);
 if (!empty($recent_posts)) :
 ?>
-<section class="py-16 md:py-[100px]">
-  <div class="flex items-end justify-between mb-12 gap-8 flex-wrap">
+<section class="py-16 md:py-[140px]">
+  <div class="flex items-end justify-between gap-8 flex-wrap" style="margin-bottom:64px">
     <div>
       <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
       <h2 class="text-4xl font-black" style="margin-bottom:50px">Blogs. Zelf geschreven.</h2>
@@ -229,7 +229,7 @@ if (!empty($recent_posts)) :
     </a>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8" style="align-items:start">
+  <div style="display:grid;grid-template-columns:1.265fr 1.265fr 0.47fr;gap:96px;align-items:start">
     <?php foreach ($recent_posts as $i => $rpost) :
       $rthumb   = get_the_post_thumbnail_url($rpost, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
       $rtitle   = esc_html(get_the_title($rpost));
@@ -238,55 +238,47 @@ if (!empty($recent_posts)) :
     ?>
 
     <?php if ($i === 0) : ?>
-    <article style="padding-left:20px;border-left:4px solid #078930">
+    <article style="margin-top:0;background:rgba(7,137,48,0.07);border-radius:12px;padding:24px 20px 20px">
       <a href="<?php echo esc_url($rlink); ?>" class="group block">
-        <h3 class="font-black leading-tight mb-4 group-hover:text-primary-container transition-colors duration-200" style="font-size:26px;line-height:1.1"><?php echo $rtitle; ?></h3>
-        <p class="text-base leading-relaxed opacity-80 mb-5"><?php echo $rexcerpt; ?></p>
-        <div style="overflow:hidden;border-radius:8px">
+        <h3 class="font-black leading-tight mb-5 group-hover:text-primary-container transition-colors duration-200" style="font-size:22px;line-height:1.15"><?php echo $rtitle; ?></h3>
+        <div style="overflow:hidden;border-radius:10px;margin-bottom:24px">
+          <img src="<?php echo esc_url($rthumb); ?>"
+               alt="<?php echo $rtitle; ?>"
+               class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+               style="aspect-ratio:1/1;display:block"
+               width="512" height="512" loading="lazy"/>
+        </div>
+        <p class="text-base leading-relaxed opacity-70"><?php echo $rexcerpt; ?></p>
+      </a>
+    </article>
+
+    <?php elseif ($i === 1) : ?>
+    <article>
+      <a href="<?php echo esc_url($rlink); ?>" class="group block">
+        <div style="overflow:hidden;border-radius:10px;margin-bottom:24px">
           <img src="<?php echo esc_url($rthumb); ?>"
                alt="<?php echo $rtitle; ?>"
                class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                style="aspect-ratio:3/2;display:block"
                width="512" height="341" loading="lazy"/>
         </div>
-        <div class="flex items-center gap-2 text-primary-container font-bold mt-4">
-          <span class="border-b-2 border-primary-container pb-0.5 text-sm">Lees het artikel</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="transition-transform duration-300 group-hover:translate-x-1"><path d="M8.59 16.59L13.17 12L8.59 7.41L10 6l6 6-6 6z"/></svg>
-        </div>
-      </a>
-    </article>
-
-    <?php elseif ($i === 1) : ?>
-    <article style="transform:rotate(-1deg);transform-origin:top left;margin-top:48px">
-      <a href="<?php echo esc_url($rlink); ?>" class="group block">
-        <div class="relative">
-          <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-3 translate-y-3 rounded-xl -z-10 scale-105"></div>
-          <img src="<?php echo esc_url($rthumb); ?>"
-               alt="<?php echo $rtitle; ?>"
-               class="w-full object-cover rounded-t-lg"
-               style="aspect-ratio:4/3;display:block"
-               width="512" height="384" loading="lazy"/>
-        </div>
-        <div style="background:rgba(7,137,48,0.07);padding:24px 20px 20px;border-radius:0 0 8px 8px">
-          <h3 class="text-2xl font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200"><?php echo $rtitle; ?></h3>
-          <p class="text-base leading-relaxed opacity-80"><?php echo $rexcerpt; ?></p>
-        </div>
+        <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200" style="font-size:22px;line-height:1.15"><?php echo $rtitle; ?></h3>
+        <p class="text-base leading-relaxed opacity-70"><?php echo $rexcerpt; ?></p>
       </a>
     </article>
 
     <?php else : ?>
-    <article style="transform:rotate(1deg);transform-origin:top right">
+    <article style="margin-top:32px">
       <a href="<?php echo esc_url($rlink); ?>" class="group block">
-        <h3 class="font-black leading-tight mb-4 group-hover:text-primary-container transition-colors duration-200" style="font-size:26px;line-height:1.1"><?php echo $rtitle; ?></h3>
-        <p class="text-base leading-relaxed opacity-80 mb-5"><?php echo $rexcerpt; ?></p>
-        <div class="relative">
-          <div class="bg-[#078930]/10 absolute inset-0 rotate-2 rounded-lg -z-10 scale-105"></div>
+        <div style="overflow:hidden;border-radius:10px;margin-bottom:24px">
           <img src="<?php echo esc_url($rthumb); ?>"
                alt="<?php echo $rtitle; ?>"
-               class="w-full object-cover rounded-lg transition-transform duration-500 group-hover:-rotate-1"
-               style="aspect-ratio:1/1;display:block"
-               width="512" height="512" loading="lazy"/>
+               class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+               style="aspect-ratio:4/3;display:block"
+               width="512" height="384" loading="lazy"/>
         </div>
+        <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200" style="font-size:22px;line-height:1.15"><?php echo $rtitle; ?></h3>
+        <p class="text-base leading-relaxed opacity-70"><?php echo $rexcerpt; ?></p>
       </a>
     </article>
 
