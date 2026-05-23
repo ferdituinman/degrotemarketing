@@ -51,15 +51,18 @@ function dgm_social_meta() {
     $default_img = content_url('uploads/2026/05/logo.png');
 
     if (is_singular('post')) {
-        $title    = get_the_title() . ' — ' . $site_name;
-        $desc     = wp_trim_words(wp_strip_all_tags(get_the_excerpt()), 30, '');
-        $url      = get_permalink();
+        $post_obj = get_queried_object();
+        $post_id  = $post_obj->ID;
+        $title    = get_the_title($post_id) . ' — ' . $site_name;
+        $raw_exc  = $post_obj->post_excerpt ?: wp_trim_words(strip_tags($post_obj->post_content), 30);
+        $desc     = $raw_exc;
+        $url      = get_permalink($post_id);
         $type     = 'article';
-        $date_pub = get_the_date('c');
-        $date_mod = get_the_modified_date('c');
-        $cats     = get_the_category();
+        $date_pub = get_post_datetime($post_obj, 'date', 'gmt')->format('c');
+        $date_mod = get_post_datetime($post_obj, 'modified', 'gmt')->format('c');
+        $cats     = get_the_category($post_id);
         $cat      = $cats ? esc_attr($cats[0]->name) : '';
-        $img_id   = get_post_thumbnail_id();
+        $img_id   = get_post_thumbnail_id($post_id);
         if ($img_id) {
             $src     = wp_get_attachment_image_src($img_id, 'full');
             $img_url = $src[0]; $img_w = $src[1]; $img_h = $src[2];
