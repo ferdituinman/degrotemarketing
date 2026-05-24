@@ -233,7 +233,7 @@ if (!empty($recent_posts)) :
       <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
       <h2 class="text-4xl font-black" style="margin-bottom:50px">Blogs. Zelf geschreven.</h2>
     </div>
-    <a href="<?php echo home_url('/blog/'); ?>" class="text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">
+    <a href="<?php echo home_url('/blog/'); ?>" class="hidden md:block text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">
       Alle blogs →
     </a>
   </div>
@@ -253,8 +253,8 @@ if (!empty($recent_posts)) :
         <div style="overflow:hidden;border-radius:10px;margin-bottom:24px">
           <img src="<?php echo esc_url($rthumb); ?>"
                alt="<?php echo $rtitle; ?>"
-               class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-               style="aspect-ratio:1/1;display:block"
+               class="w-full transition-transform duration-500 group-hover:scale-105"
+               style="display:block"
                width="512" height="512" loading="lazy"/>
         </div>
         <p class="text-base leading-relaxed opacity-70"><?php echo $rexcerpt; ?></p>
@@ -267,8 +267,8 @@ if (!empty($recent_posts)) :
         <div style="overflow:hidden;border-radius:10px;margin-bottom:24px">
           <img src="<?php echo esc_url($rthumb); ?>"
                alt="<?php echo $rtitle; ?>"
-               class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-               style="aspect-ratio:3/2;display:block"
+               class="w-full transition-transform duration-500 group-hover:scale-105"
+               style="display:block"
                width="512" height="341" loading="lazy"/>
         </div>
         <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200" style="font-size:22px;line-height:1.15"><?php echo $rtitle; ?></h3>
@@ -282,8 +282,8 @@ if (!empty($recent_posts)) :
         <div style="overflow:hidden;border-radius:10px;margin-bottom:24px">
           <img src="<?php echo esc_url($rthumb); ?>"
                alt="<?php echo $rtitle; ?>"
-               class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-               style="aspect-ratio:4/3;display:block"
+               class="w-full transition-transform duration-500 group-hover:scale-105"
+               style="display:block"
                width="512" height="384" loading="lazy"/>
         </div>
         <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200" style="font-size:22px;line-height:1.15"><?php echo $rtitle; ?></h3>

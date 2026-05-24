@@ -18,6 +18,14 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
     : dirname($thumb_url) . '/' . $thumb_md;
 ?>
 
+<style>
+@media (max-width:767px){
+  #post-hero-figure{margin-left:-40px;margin-right:-40px}
+  #post-hero-figure img{border-radius:0}
+  #post-hero-figure .absolute{display:none}
+}
+</style>
+
 <article>
 
 <!-- POST HEADER -->
@@ -33,7 +41,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
       </h1>
       <div class="text-xl md:text-2xl leading-relaxed opacity-90"><?php echo apply_filters('the_content', $extended['main']); ?></div>
     </div>
-    <figure style="flex:52;min-width:0">
+    <figure id="post-hero-figure" style="flex:52;min-width:0">
       <div class="relative">
         <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-6 translate-y-6 rounded-xl -z-10 scale-[1.44]"></div>
         <img src="<?php echo esc_url($thumb_url); ?>"
