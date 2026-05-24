@@ -227,7 +227,7 @@ $recent_posts = get_posts([
 ]);
 if (!empty($recent_posts)) :
 ?>
-<section class="hidden md:block py-16 md:py-[140px]">
+<section id="blog-section" class="py-16 md:py-[140px]">
   <div class="flex items-end justify-between gap-8 flex-wrap" style="margin-bottom:64px">
     <div>
       <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
