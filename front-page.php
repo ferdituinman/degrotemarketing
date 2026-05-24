@@ -3,6 +3,7 @@
 $up = content_url('uploads/2026/05/');
 ?>
 <style>
+#blog-grid{grid-template-columns:1fr;gap:48px}
 @media (min-width:768px){
   #herov2{
     background-image:url('<?php echo $up; ?>horizontale-strip.png');
@@ -231,7 +232,7 @@ if (!empty($recent_posts)) :
     </a>
   </div>
 
-  <div id="blog-grid" style="display:grid;grid-template-columns:1fr;gap:48px;align-items:start">
+  <div id="blog-grid" style="display:grid;align-items:start">
     <?php foreach ($recent_posts as $i => $rpost) :
       $rthumb   = get_the_post_thumbnail_url($rpost, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
       $rtitle   = esc_html(get_the_title($rpost));
@@ -242,7 +243,7 @@ if (!empty($recent_posts)) :
     <?php if ($i === 0) : ?>
     <article style="margin-top:0;background:rgba(7,137,48,0.07);border-radius:12px;padding:24px 20px 20px">
       <a href="<?php echo esc_url($rlink); ?>" class="group block">
-        <h3 class="font-black leading-tight mb-5 group-hover:text-primary-container transition-colors duration-200" style="font-size:22px;line-height:1.15"><?php echo $rtitle; ?></h3>
+        <h3 class="font-black leading-tight group-hover:text-primary-container transition-colors duration-200" style="font-size:22px;line-height:1.15;margin-bottom:25px"><?php echo $rtitle; ?></h3>
         <div style="overflow:hidden;border-radius:10px;margin-bottom:24px">
           <img src="<?php echo esc_url($rthumb); ?>"
                alt="<?php echo $rtitle; ?>"
