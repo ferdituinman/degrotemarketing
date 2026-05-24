@@ -22,7 +22,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
 
 <!-- POST HEADER -->
 <header class="max-w-screen-xl mx-auto px-10 md:px-12 pb-16 md:pb-24" style="padding-top:39px">
-  <nav class="mb-10 flex items-center gap-2 flex-wrap" aria-label="Broodkruimels">
+  <nav class="mb-10 hidden md:flex items-center gap-2 flex-wrap" aria-label="Broodkruimels">
     <a href="<?php echo $blog_url; ?>" class="text-sm font-bold uppercase tracking-widest text-primary-container hover:underline underline-offset-4">← Alle blogs</a>
   </nav>
 
@@ -41,7 +41,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
                      <?php echo esc_url($thumb_md); ?> 768w"
              sizes="(min-width: 1280px) 615px, (min-width: 768px) 52vw, 100vw"
              alt="<?php echo $thumb_alt; ?>"
-             class="w-full aspect-square object-cover rounded-lg"
+             class="w-full rounded-lg"
              width="<?php echo $thumb_w; ?>" height="<?php echo $thumb_h; ?>"
              fetchpriority="high"/>
       </div>
@@ -134,8 +134,8 @@ if ($related->have_posts()) :
           <div class="bg-[#078930]/10 absolute inset-0 <?php echo $rot_cls; ?> rounded -z-10"></div>
           <img src="<?php echo esc_url($rel_thumb); ?>"
                alt="<?php echo esc_attr(get_the_title()); ?>"
-               class="w-full object-cover rounded transition-transform duration-500 <?php echo $hov_cls; ?>"
-               style="aspect-ratio:4/3" width="512" height="384" loading="lazy"/>
+               class="w-full rounded transition-transform duration-500 <?php echo $hov_cls; ?>"
+               width="512" height="384" loading="lazy"/>
         </div>
         <h3 class="text-2xl font-black leading-tight group-hover:text-primary-container transition-colors duration-200">
           <?php the_title(); ?>
@@ -152,8 +152,8 @@ if ($related->have_posts()) :
         <div style="overflow:hidden;border-radius:6px">
           <img src="<?php echo esc_url($rel_thumb); ?>"
                alt="<?php echo esc_attr(get_the_title()); ?>"
-               class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-               style="aspect-ratio:3/2;display:block" width="512" height="341" loading="lazy"/>
+               class="w-full transition-transform duration-500 group-hover:scale-105"
+               style="display:block" width="512" height="341" loading="lazy"/>
         </div>
       </a>
     </article>
@@ -165,8 +165,8 @@ if ($related->have_posts()) :
           <div class="bg-[#078930]/10 absolute inset-0 <?php echo $rot_cls; ?> rounded -z-10"></div>
           <img src="<?php echo esc_url($rel_thumb); ?>"
                alt="<?php echo esc_attr(get_the_title()); ?>"
-               class="w-full object-cover rounded transition-transform duration-500 <?php echo $hov_cls; ?>"
-               style="aspect-ratio:1/1" width="512" height="512" loading="lazy"/>
+               class="w-full rounded transition-transform duration-500 <?php echo $hov_cls; ?>"
+               width="512" height="512" loading="lazy"/>
         </div>
         <h3 class="text-2xl font-black leading-tight group-hover:text-primary-container transition-colors duration-200">
           <?php the_title(); ?>

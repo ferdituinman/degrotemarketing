@@ -27,7 +27,7 @@ $up = content_url('uploads/2026/05/');
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
-  <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Online marketing voor Groningen</h1>
+  <h1 class="hidden md:block text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Online marketing voor Groningen</h1>
   <h2 class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</h2>
   <div class="space-y-8 text-lg md:text-xl leading-relaxed">
     <p>Je weet dat er meer in internet zit. Je moet alleen de juiste kant op.</p>
@@ -44,6 +44,8 @@ $up = content_url('uploads/2026/05/');
 </div>
 
 <main class="max-w-screen-xl mx-auto px-10 md:px-12">
+
+<p class="block md:hidden text-sm font-semibold uppercase tracking-widest text-primary-container mt-10 mb-0">Online marketing voor Groningen</p>
 
 <!-- BESLISSEN AAN DE KEUKENTAFEL -->
 <section id="aanpak" class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
@@ -221,7 +223,7 @@ $recent_posts = get_posts([
 ]);
 if (!empty($recent_posts)) :
 ?>
-<section class="py-16 md:py-[140px]">
+<section class="hidden md:block py-16 md:py-[140px]">
   <div class="flex items-end justify-between gap-8 flex-wrap" style="margin-bottom:64px">
     <div>
       <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
@@ -236,7 +238,7 @@ if (!empty($recent_posts)) :
     <?php foreach ($recent_posts as $i => $rpost) :
       $rthumb   = get_the_post_thumbnail_url($rpost, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
       $rtitle   = esc_html(get_the_title($rpost));
-      $rexcerpt = wp_trim_words(get_the_excerpt($rpost), 18);
+      $rexcerpt = get_the_excerpt($rpost);
       $rlink    = get_permalink($rpost);
     ?>
 
