@@ -180,7 +180,7 @@ $ri = 0;
 
       <?php elseif ($variant === 1) : // groen vlak met tilt als achtergrond ?>
       <article class="<?php echo $cv; ?> card-groen-vlak" style="position:relative">
-        <div style="position:absolute;inset:-32px;background:rgba(7,137,48,0.5);border-radius:16px;transform:rotate(-3deg);z-index:0"></div>
+        <div style="position:absolute;inset:-32px;background:#fff;border:2px solid #078930;border-radius:16px;transform:rotate(-3deg);z-index:0"></div>
         <a href="<?php echo get_permalink($rp); ?>" class="group block" style="position:relative;z-index:1">
           <div style="overflow:hidden;border-radius:8px;margin-bottom:16px">
             <img src="<?php echo esc_url($thumb_url); ?>"
@@ -188,10 +188,10 @@ $ri = 0;
                  class="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                  style="aspect-ratio:4/3" width="1024" height="768" loading="lazy"/>
           </div>
-          <h3 class="text-2xl font-black leading-tight mb-3 group-hover:opacity-80 transition-opacity duration-200" style="color:#fff">
+          <h3 class="text-2xl font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200">
             <?php echo esc_html(get_the_title($rp)); ?>
           </h3>
-          <p class="text-base leading-relaxed" style="color:rgba(255,255,255,0.85)"><?php echo esc_html(get_the_excerpt($rp)); ?></p>
+          <p class="text-base leading-relaxed opacity-85"><?php echo esc_html(get_the_excerpt($rp)); ?></p>
         </a>
       </article>
 

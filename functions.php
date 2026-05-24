@@ -26,8 +26,6 @@ add_filter('document_title_parts', function($p) {
 
 // ─── Assets ────────────────────────────────────────────────────────────────────
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('dgm-style', get_stylesheet_uri(), [], '1.0.0');
-
     // Remove unused default WordPress styles
     wp_dequeue_style('wp-block-library');
     wp_dequeue_style('wp-block-library-theme');
@@ -35,14 +33,17 @@ add_action('wp_enqueue_scripts', function () {
     wp_dequeue_style('global-styles');
 });
 
-// ─── Head: GA4 + preconnect + font preloads + verification ───────────────────
+// Inline style.css to eliminate render-blocking request
+add_action('wp_head', function () {
+    echo '<style>';
+    readfile(get_template_directory() . '/style.css');
+    echo '</style>';
+}, 0);
+
+// ─── Head: verification + font preloads ──────────────────────────────────────
 add_action('wp_head', function () {
     ?>
 <meta name="google-site-verification" content="yfsgohLvLDdEnLOHycjThYYCaC5mqpuqkScdLOVmaRE" />
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="dns-prefetch" href="https://www.google-analytics.com">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SK0CH84LW3"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SK0CH84LW3');</script>
 <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/fonts/public-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/fonts/public-sans-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
 <?php if (is_front_page()) : ?>
@@ -50,6 +51,14 @@ add_action('wp_head', function () {
 <?php endif; ?>
     <?php
 }, 1);
+
+// ─── Footer: GA4 (uitgesteld, na render) ─────────────────────────────────────
+add_action('wp_footer', function () {
+    ?>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SK0CH84LW3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SK0CH84LW3');</script>
+    <?php
+}, 99);
 
 // ─── Social & SEO meta tags ────────────────────────────────────────────────────
 add_action('wp_head', 'dgm_social_meta', 2);
