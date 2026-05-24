@@ -13,6 +13,7 @@ $up = content_url('uploads/2026/05/');
     align-items:center
   }
   #herov2 section{width:100%;padding-top:0;padding-bottom:0}
+  #blog-grid{grid-template-columns:1.265fr 1.265fr 0.47fr;gap:96px}
 }
 </style>
 
@@ -25,7 +26,8 @@ $up = content_url('uploads/2026/05/');
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
-  <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</p>
+  <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Online marketing voor Groningen</h1>
+  <h2 class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</h2>
   <div class="space-y-8 text-lg md:text-xl leading-relaxed">
     <p>Je weet dat er meer in internet zit. Je moet alleen de juiste kant op.</p>
     <p>Wij maken online marketing simpel.</p>
@@ -229,7 +231,7 @@ if (!empty($recent_posts)) :
     </a>
   </div>
 
-  <div style="display:grid;grid-template-columns:1.265fr 1.265fr 0.47fr;gap:96px;align-items:start">
+  <div id="blog-grid" style="display:grid;grid-template-columns:1fr;gap:48px;align-items:start">
     <?php foreach ($recent_posts as $i => $rpost) :
       $rthumb   = get_the_post_thumbnail_url($rpost, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
       $rtitle   = esc_html(get_the_title($rpost));
