@@ -65,8 +65,10 @@ function dgm_social_meta() {
         $desc     = $raw_exc;
         $url      = get_permalink($post_id);
         $type     = 'article';
-        $date_pub = get_post_datetime($post_obj, 'date', 'gmt')->format('c');
-        $date_mod = get_post_datetime($post_obj, 'modified', 'gmt')->format('c');
+        $dt_pub   = get_post_datetime($post_obj, 'date', 'gmt') ?: get_post_datetime($post_obj, 'date', 'local');
+        $date_pub = $dt_pub ? $dt_pub->format('c') : '';
+        $dt_mod   = get_post_datetime($post_obj, 'modified', 'gmt') ?: get_post_datetime($post_obj, 'modified', 'local');
+        $date_mod = $dt_mod ? $dt_mod->format('c') : '';
         $cats     = get_the_category($post_id);
         $cat      = $cats ? esc_attr($cats[0]->name) : '';
         $img_id   = get_post_thumbnail_id($post_id);

@@ -180,7 +180,7 @@ $ri = 0;
 
       <?php elseif ($variant === 1) : // groen vlak met tilt als achtergrond ?>
       <article class="<?php echo $cv; ?> card-groen-vlak" style="position:relative">
-        <div style="position:absolute;inset:-32px;background:#078930;border-radius:16px;transform:rotate(-3deg);z-index:0"></div>
+        <div style="position:absolute;inset:-32px;background:rgba(7,137,48,0.5);border-radius:16px;transform:rotate(-3deg);z-index:0"></div>
         <a href="<?php echo get_permalink($rp); ?>" class="group block" style="position:relative;z-index:1">
           <div style="overflow:hidden;border-radius:8px;margin-bottom:16px">
             <img src="<?php echo esc_url($thumb_url); ?>"
