@@ -39,6 +39,12 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
       <h1 class="blog-h1 font-bold text-on-surface italic mb-8 fade-in-up" style="font-size:60px;line-height:1.20">
         <?php the_title(); ?>
       </h1>
+      <p class="text-sm font-semibold uppercase tracking-widest opacity-50 mb-6" style="letter-spacing:0.08em">
+        <time datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('j F Y'); ?></time>
+        <?php $mod = get_the_modified_date('c'); $pub = get_the_date('c'); if ($mod !== $pub) : ?>
+          <span class="opacity-60"> &middot; bijgewerkt <time datetime="<?php echo $mod; ?>"><?php echo get_the_modified_date('j F Y'); ?></time></span>
+        <?php endif; ?>
+      </p>
       <div class="text-xl md:text-2xl leading-relaxed opacity-90"><?php echo apply_filters('the_content', $extended['main']); ?></div>
     </div>
     <figure id="post-hero-figure" style="flex:52;min-width:0">
@@ -75,6 +81,9 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
     <div class="w-24 h-24 bg-primary-container text-white font-black flex items-center justify-center text-2xl shrink-0" style="border-radius:50%"><?php echo esc_html($author['initials']); ?></div>
     <div>
       <p class="font-bold text-base" style="margin:0"><?php echo esc_html($author['name']); ?></p>
+      <?php if ($author['name'] === 'Ferdi Tuinman') : ?>
+      <p class="text-xs opacity-50 mt-1 mb-1" style="margin:2px 0 4px">Online marketeer &middot; GA4-gecertificeerd &middot; Moz-gecertificeerd</p>
+      <?php endif; ?>
       <?php
       $taglines = [
         'Schreef dit tussen twee koffies in.',

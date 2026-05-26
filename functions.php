@@ -1,5 +1,13 @@
 <?php
 
+// ─── robots.txt: blokkeer AI-trainingscrawlers ─────────────────────────────────
+add_filter('robots_txt', function (string $output): string {
+    $output .= "\nUser-agent: CCBot\nDisallow: /\n";
+    $output .= "\nUser-agent: Bytespider\nDisallow: /\n";
+    $output .= "\nUser-agent: anthropic-ai\nDisallow: /\n";
+    return $output;
+}, 99);
+
 // ─── Theme setup ───────────────────────────────────────────────────────────────
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
@@ -89,7 +97,7 @@ function dgm_social_meta() {
             $img_url = $default_img; $img_w = 1347; $img_h = 444; $img_alt = $site_name;
         }
     } elseif (is_front_page()) {
-        $title   = 'De Grote Marketing -Online marketing voor ondernemers in Groningen';
+        $title   = 'De Grote Marketing - Online marketing voor ondernemers in Groningen';
         $desc    = 'De Grote Marketing helpt ondernemers in Groningen met eerlijke, simpele online marketing. Geen bullshit, wel resultaat.';
         $url     = home_url('/');
         $type    = 'website';
@@ -146,7 +154,8 @@ function dgm_schema() {
                 'https://www.linkedin.com/in/ferdituinman/',
             ],
             'logo'          => ['@id' => $base_url . '/#logo'],
-            'image'         => ['@id' => $base_url . '/#primaryimage'],
+            'image'         => ['@id' => $base_url . '/#orgimage'],
+            'hasMap'        => 'https://www.google.com/maps?q=Leonard+Springerlaan+35,+9727+KB+Groningen,+NL',
             'email'         => 'ferdi@degrotemarketing.nl',
             'telephone'     => '+31624602947',
             'priceRange'    => '€€-€€€',
@@ -225,7 +234,7 @@ function dgm_schema() {
                     'name'        => 'Contact via e-mail',
                     'itemOffered' => ['@type' => 'Service', 'name' => 'Marketing sparringsessie'],
                     'availability'=> 'https://schema.org/InStock',
-                    'url'         => 'mailto:ferdi@degrotemarketing.nl',
+                    'url'         => $base_url . '/#contact',
                 ],
             ],
         ],
@@ -233,6 +242,8 @@ function dgm_schema() {
             '@type'     => 'Person',
             '@id'       => $base_url . '/#person-ferdi-tuinman',
             'name'      => 'Ferdi Tuinman',
+            'url'       => 'https://www.ferdituinman.nl',
+            'image'     => 'https://www.ferdituinman.nl/wp-content/uploads/2024/03/ferdi-tuinman-online-marketing-profiel-300x300.jpg.webp',
             'jobTitle'  => 'Online marketeer',
             'email'     => 'ferdi@degrotemarketing.nl',
             'telephone' => '+31624602947',
@@ -256,7 +267,7 @@ function dgm_schema() {
         [
             '@type'       => 'ContactPoint',
             '@id'         => $base_url . '/#contact',
-            'contactType' => 'general',
+            'contactType' => 'customer service',
             'email'       => 'ferdi@degrotemarketing.nl',
             'telephone'   => '+31624602947',
             'availableLanguage' => ['nl-NL'],
@@ -270,7 +281,22 @@ function dgm_schema() {
             'description' => 'De Grote Marketing helpt ondernemers in Groningen met eerlijke, simpele online marketing.',
             'inLanguage'  => 'nl-NL',
             'publisher'   => ['@id' => $base_url . '/#organization'],
-            'about'       => ['@id' => $base_url . '/#organization'],
+            'about'           => ['@id' => $base_url . '/#organization'],
+            'potentialAction' => [
+                '@type'       => 'SearchAction',
+                'target'      => [
+                    '@type'       => 'EntryPoint',
+                    'urlTemplate' => $base_url . '/?s={search_term_string}',
+                ],
+                'query-input' => 'required name=search_term_string',
+            ],
+        ],
+        [
+            '@type'      => 'ImageObject',
+            '@id'        => $base_url . '/#orgimage',
+            'url'        => content_url('uploads/2026/05/horizontale-strip.png'),
+            'contentUrl' => content_url('uploads/2026/05/horizontale-strip.png'),
+            'caption'    => 'De Grote Marketing - online marketing Groningen',
         ],
         [
             '@type'        => 'ImageObject',
@@ -335,22 +361,24 @@ function dgm_schema() {
             '@type'             => 'WebPage',
             '@id'               => $permalink . '#webpage',
             'url'               => $permalink,
-            'name'              => get_the_title($post) . ' -De Grote Marketing',
+            'name'              => get_the_title($post) . ' - De Grote Marketing',
             'description'       => $excerpt,
             'isPartOf'          => ['@id' => $base_url . '/#website'],
             'about'             => ['@id' => $base_url . '/#organization'],
-            'primaryImageOfPage'=> ['@id' => $base_url . '/#primaryimage'],
+            'primaryImageOfPage'=> ['@id' => $permalink . '#primaryimage'],
             'inLanguage'        => 'nl-NL',
             'breadcrumb'        => ['@id' => $permalink . '#breadcrumb'],
         ];
         $org_nodes[] = [
             '@type'  => 'ImageObject',
-            '@id'    => $base_url . '/#primaryimage',
+            '@id'    => $permalink . '#primaryimage',
             'url'    => $img_url,
             'contentUrl'          => $img_url,
             'caption'             => get_the_title($post),
             'representativeOfPage'=> true,
         ];
+        $word_count    = str_word_count(strip_tags(get_the_content()));
+        $read_min      = max(1, (int) ceil($word_count / 200));
         $org_nodes[] = [
             '@type'           => 'BlogPosting',
             '@id'             => $permalink . '#article',
@@ -361,12 +389,15 @@ function dgm_schema() {
             'inLanguage'      => 'nl-NL',
             'url'             => $permalink,
             'mainEntityOfPage'=> ['@id' => $permalink . '#webpage'],
-            'image'           => ['@id' => $base_url . '/#primaryimage'],
+            'image'           => ['@id' => $permalink . '#primaryimage'],
             'author'          => ['@id' => $base_url . '/#person-ferdi-tuinman'],
             'publisher'       => ['@id' => $base_url . '/#organization'],
-            'isPartOf'        => ['@type' => 'Blog', 'name' => 'Blog -De Grote Marketing', 'url' => $base_url . '/blog/'],
+            'isPartOf'        => ['@type' => 'Blog', 'name' => 'Blog - De Grote Marketing', 'url' => $base_url . '/blog/'],
             'about'           => array_map(fn($t) => ['@type' => 'Thing', 'name' => $t->name], $tags ?: []),
             'keywords'        => $tags ? array_map(fn($t) => $t->name, $tags) : [],
+            'wordCount'       => $word_count,
+            'articleSection'  => $cat_name,
+            'timeRequired'    => 'PT' . $read_min . 'M',
         ];
         $org_nodes[] = [
             '@type' => 'BreadcrumbList',
@@ -394,7 +425,7 @@ function dgm_schema() {
             '@type'              => 'WebPage',
             '@id'                => $base_url . ($is_home ? '/' : '/blog/') . '#webpage',
             'url'                => $base_url . ($is_home ? '/' : '/blog/'),
-            'name'               => $is_home ? 'Online marketing voor ondernemers in Groningen' : 'Blog -De Grote Marketing',
+            'name'               => $is_home ? 'Online marketing voor ondernemers in Groningen' : 'Blog - De Grote Marketing',
             'description'        => $is_home
                 ? 'De Grote Marketing helpt ondernemers in Groningen met eerlijke, simpele online marketing.'
                 : 'Lezen of doen? Schrijven doen we alleen als er wat te zeggen is.',
@@ -403,7 +434,17 @@ function dgm_schema() {
             'mainEntity'         => ['@id' => $base_url . '/#organization'],
             'primaryImageOfPage' => ['@id' => $base_url . '/#primaryimage'],
             'inLanguage'         => 'nl-NL',
-        ];
+        ] + ($is_home ? [] : ['breadcrumb' => ['@id' => $base_url . '/blog/#breadcrumb']]);
+        if (!$is_home) {
+            $org_nodes[] = [
+                '@type' => 'BreadcrumbList',
+                '@id'   => $base_url . '/blog/#breadcrumb',
+                'itemListElement' => [
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => $base_url . '/'],
+                    ['@type' => 'ListItem', 'position' => 2, 'name' => 'Blog'],
+                ],
+            ];
+        }
     }
 
     echo '<script type="application/ld+json">' . wp_json_encode([
