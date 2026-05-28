@@ -889,8 +889,8 @@ function dgm_post2_content(): string {
 }
 
 function dgm_get_service_hero_image(string $page_key): ?array {
-    // Anchor = eerste rotatie: 2026-05-29 00:12:45 UTC (deploy + 3u)
-    $anchor = 1780013565;
+    // Anchor = eerste rotatie: 2026-05-28 21:18:00 UTC
+    $anchor = 1780003080;
     $now    = time();
 
     if ($now < $anchor) return null;
