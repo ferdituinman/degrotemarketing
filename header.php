@@ -26,10 +26,10 @@ $home_url    = home_url('/');
 $blog_url    = home_url('/blog/');
 $contact_url = home_url('/contact/');
 $services = [
-  ['label' => 'SEO Groningen',       'url' => home_url('/seo-groningen/')],
-  ['label' => 'Google Ads',          'url' => home_url('/google-ads-groningen/')],
-  ['label' => 'Contentmarketing',    'url' => home_url('/contentmarketing-groningen/')],
-  ['label' => 'Website',             'url' => home_url('/website-groningen/')],
+  ['label' => 'Google, tammo',        'url' => home_url('/seo-groningen/')],
+  ['label' => 'Advertising',         'url' => home_url('/google-ads-groningen/')],
+  ['label' => 'Facebouk',       'url' => home_url('/contentmarketing-groningen/')],
+  ['label' => 'Webstek, doun?',      'url' => home_url('/website-groningen/')],
 ];
 $lnk  = "font-['Public_Sans'] text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 opacity-80 hover:translate-y-[-2px] transition-transform duration-200";
 $lnka = "font-['Public_Sans'] text-lg font-bold tracking-tight text-[#078930] underline decoration-wavy decoration-2 underline-offset-4 hover:translate-y-[-2px] transition-transform duration-200";
