@@ -70,9 +70,6 @@ $lnka = "font-['Public_Sans'] text-lg font-bold tracking-tight text-[#078930] un
     </div>
   </div>
 
-  <a class="<?php echo $lnk; ?>"
-     href="#">Tiswat</a>
-
   <a class="<?php echo $is_blog_active ? $lnka : $lnk; ?>"
      href="<?php echo $blog_url; ?>">Blog</a>
 
@@ -105,3 +102,19 @@ $lnka = "font-['Public_Sans'] text-lg font-bold tracking-tight text-[#078930] un
      href="<?php echo $contact_url; ?>">Contact</a>
 </div>
 </header>
+<script>
+(function(){
+  var wrap = document.querySelector('.nav-dropdown');
+  var btn = wrap && wrap.querySelector('button');
+  if(!btn) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = wrap.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', function(){
+    wrap.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  });
+})();
+</script>
