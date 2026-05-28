@@ -14,11 +14,7 @@ $seo_img2 = $_s2 ? wp_get_attachment_image_url($_s2, 'large') : $up . 'reviews.p
 $seo_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'iedereen-belooft-hetzelfde.png';
 ?>
 <style>
-#hero-eyebrow{display:none}
-#mobile-eyebrow{display:block}
 @media (min-width:768px){
-  #hero-eyebrow{display:block}
-  #mobile-eyebrow{display:none}
   #herov2{
     background-image:url('<?php echo $up; ?>horizontale-strip.png');
     background-position:50%;
@@ -42,7 +38,6 @@ $seo_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'iedereen-
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
-  <p id="hero-eyebrow" class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">SEO bureau Groningen</p>
   <h1 class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</h1>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Je weet dat meer mensen jou moeten kunnen vinden. Maar hoe dat werkt met Google, dat is een ander verhaal.</p>
@@ -59,11 +54,10 @@ $seo_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'iedereen-
 
 <main class="max-w-screen-xl mx-auto px-10 md:px-12">
 
-<p id="mobile-eyebrow" class="text-sm font-semibold uppercase tracking-widest text-primary-container mt-10 mb-0">SEO bureau Groningen</p>
-
 <!-- GEVONDEN WORDEN OF NIET -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
+    <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">SEO bureau Groningen</p>
     <h2 class="text-4xl font-black mb-8">GEVONDEN WORDEN OF NIET</h2>
     <p class="text-lg md:text-xl leading-relaxed">Als iemand googelt op jouw dienst in Groningen, wil je erbij zijn. Niet op pagina 2. Niet als vijfde. Bovenaan.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is waar SEO over gaat. Gevonden worden door mensen die al zoeken naar wat jij doet. Niet adverteren. Niet betalen per klik. Gewoon gevonden worden.</p>

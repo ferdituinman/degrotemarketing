@@ -13,11 +13,7 @@ $cm_img2 = $_s2 ? wp_get_attachment_image_url($_s2, 'large') : $up . 'bijna-vier
 $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgroningers.png';
 ?>
 <style>
-#hero-eyebrow{display:none}
-#mobile-eyebrow{display:block}
 @media (min-width:768px){
-  #hero-eyebrow{display:block}
-  #mobile-eyebrow{display:none}
   #herov2{
     background-image:url('<?php echo $up; ?>horizontale-strip.png');
     background-position:50%;
@@ -40,7 +36,6 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
-  <p id="hero-eyebrow" class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Content marketing Groningen</p>
   <h1 class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</h1>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Jij weet wat je doet. Maar hoe zeg je dat online op een manier die mensen aanspreekt?</p>
@@ -57,11 +52,10 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
 
 <main class="max-w-screen-xl mx-auto px-10 md:px-12">
 
-<p id="mobile-eyebrow" class="text-sm font-semibold uppercase tracking-widest text-primary-container mt-10 mb-0">Content marketing Groningen</p>
-
 <!-- ALS CONTENT VOELT ALS WERK -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
+    <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Content marketing Groningen</p>
     <h2 class="text-4xl font-black mb-8">ALS MARKETING VOELT ALS WERK</h2>
     <p class="text-lg md:text-xl leading-relaxed">Je hebt al geprobeerd iets te schrijven voor je website. Het voelde als een schooltaak. Dat is het probleem.</p>
     <p class="text-lg md:text-xl leading-relaxed">Teksten die aanvoelen als werk, voelen ook zo voor de lezer. Mensen haken af. Ze klikken weg. Niet omdat ze niet geinteresseerd zijn, maar omdat de tekst ze niet aanspreekt.</p>

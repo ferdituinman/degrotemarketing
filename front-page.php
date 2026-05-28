@@ -4,11 +4,7 @@ $up = content_url('uploads/2026/05/');
 ?>
 <style>
 #blog-grid{grid-template-columns:1fr;gap:48px}
-#hero-eyebrow{display:none}
-#mobile-eyebrow{display:block}
 @media (min-width:768px){
-  #hero-eyebrow{display:block}
-  #mobile-eyebrow{display:none}
   #herov2{
     background-image:url('<?php echo $up; ?>horizontale-strip.png');
     background-position:50%;
@@ -31,7 +27,6 @@ $up = content_url('uploads/2026/05/');
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
-  <h1 id="hero-eyebrow" class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Online marketing voor Groningen</h1>
   <h2 class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</h2>
   <div class="space-y-8 text-lg md:text-xl leading-relaxed">
     <p>Je weet dat er meer in internet zit. Je moet alleen de juiste kant op.</p>
@@ -49,11 +44,10 @@ $up = content_url('uploads/2026/05/');
 
 <main class="max-w-screen-xl mx-auto px-10 md:px-12">
 
-<p id="mobile-eyebrow" class="text-sm font-semibold uppercase tracking-widest text-primary-container mt-10 mb-0">Online marketing voor Groningen</p>
-
 <!-- BESLISSEN AAN DE KEUKENTAFEL -->
 <section id="aanpak" class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
+    <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Online marketing voor Groningen</h1>
     <h2 class="text-4xl font-black mb-8">BESLISSEN AAN DE KEUKENTAFEL</h2>
     <p class="text-lg md:text-xl leading-relaxed">We doen het samen. Zonder hierarchie, zonder dikke rapporten die in een lade belanden. Wij staan naast jou, niet boven je.</p>
     <p class="text-lg md:text-xl leading-relaxed">We zitten bij jou aan tafel. Dezelfde hoogte, dezelfde taal.</p>
