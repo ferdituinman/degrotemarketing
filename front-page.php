@@ -18,12 +18,12 @@ $up = content_url('uploads/2026/05/');
 }
 </style>
 
-<!-- Hero mobile image -->
+<!-- BLOK: Hero mobiel - achtergrondafbeelding zichtbaar op telefoon, verborgen op desktop -->
 <img src="<?php echo $up; ?>horizontale-strip-mobiel.webp"
      alt="" class="w-full block md:hidden" style="width:100%;max-width:100%;"
      fetchpriority="high" width="700" height="320" sizes="100vw"/>
 
-<!-- Hero -->
+<!-- BLOK: Hero - grote intro met CTA-knop "Bak pleur?" en achtergrondafbeelding op desktop -->
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
@@ -44,7 +44,7 @@ $up = content_url('uploads/2026/05/');
 
 <main class="max-w-screen-xl mx-auto px-10 md:px-12">
 
-<!-- BESLISSEN AAN DE KEUKENTAFEL -->
+<!-- BLOK: Aanpak - tekst links/rechts met foto; nadruk op samenwerken zonder hierarchie -->
 <section id="aanpak" class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
     <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Online marketing voor Groningen</h1>
@@ -65,7 +65,7 @@ $up = content_url('uploads/2026/05/');
   </div>
 </section>
 
-<!-- VOOR GRONINGEN -->
+<!-- BLOK: Voor Groningen - lokaal argument; foto van stad; tekst over fiets/geen beeldbellen -->
 <section class="py-16 md:pt-[80px] md:pb-[130px] grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
   <div class="space-y-6">
     <h2 class="text-4xl font-black mb-8">Wij komen hier vandaan.</h2>
@@ -86,7 +86,7 @@ $up = content_url('uploads/2026/05/');
   </div>
 </section>
 
-<!-- PLEZIER ALS RICHTING -->
+<!-- BLOK: Plezier als richting - gecentreerd tekstblok; marketing moet leuk zijn -->
 <section id="plezier" class="py-16 md:py-[100px] relative">
   <div class="absolute -left-20 top-0 text-[10rem] font-black text-black/5 select-none -z-10 rotate-12">FUN</div>
   <div class="max-w-2xl mx-auto text-center space-y-8">
@@ -98,7 +98,7 @@ $up = content_url('uploads/2026/05/');
   </div>
 </section>
 
-<!-- VAN DENKEN NAAR DOEN -->
+<!-- BLOK: Van denken naar doen - tekst + roterend kaartje (slider) met 3 kernwaarden -->
 <section class="py-16 md:py-[100px] border-none">
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-24">
     <div class="flex-1 space-y-8 md:translate-y-6">
@@ -125,7 +125,7 @@ $up = content_url('uploads/2026/05/');
   </div>
 </section>
 
-<!-- NAIT SOEZEN -->
+<!-- BLOK: Nait soezen - Gronings statement; foto links; CTA "Kop d'r veur" -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
   <div class="space-y-8 text-xl leading-relaxed order-1 md:order-2">
     <h2 class="text-4xl font-black leading-tight mb-4">Nait soezen.<br/>Deurbroezen.</h2>
@@ -147,7 +147,7 @@ $up = content_url('uploads/2026/05/');
   </div>
 </section>
 
-<!-- LOKAAL > GEEN PAK -->
+<!-- BLOK: Lokaal - geen pak - quote-stijl met groene border links; nuchter/eerlijk statement -->
 <section class="py-16 md:py-[100px] text-left">
   <div class="max-w-4xl border-l-4 border-primary-container pl-6 md:pl-12 py-8 ml-0 md:ml-14">
     <h2 class="text-4xl font-black mb-8">LOKAAL > Geen pak</h2>
@@ -158,7 +158,7 @@ $up = content_url('uploads/2026/05/');
   </div>
 </section>
 
-<!-- ECHTE DINGEN -->
+<!-- BLOK: Echte dingen - genummerde punten (01/02/03) naast foto van Simone -->
 <section class="py-16 md:py-[100px]">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch md:gap-0">
     <div class="bg-surface-container-low p-6 md:p-12 flex flex-col justify-center md:rounded-r rounded relative overflow-hidden order-1 md:order-2">
@@ -189,7 +189,7 @@ $up = content_url('uploads/2026/05/');
   </div>
 </section>
 
-<!-- CONTACT CTA -->
+<!-- BLOK: Contact CTA - grote afsluitende uitnodiging met e-mailknop "Nodig ons uit" -->
 <section id="contact" class="py-16 md:py-[100px] text-center relative overflow-hidden">
   <div class="relative z-10 space-y-12">
     <div class="space-y-4">
@@ -210,7 +210,7 @@ $up = content_url('uploads/2026/05/');
   </div>
 </section>
 
-<!-- RECENT BLOGS -->
+<!-- BLOK: Recente blogs - toont 2 meest recente gepubliceerde posts; verborgen als er geen zijn -->
 <?php
 $recent_posts = get_posts([
     'post_type'      => 'post',

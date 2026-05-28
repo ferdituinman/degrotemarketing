@@ -28,12 +28,12 @@ $ads_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'geen-leve
 }
 </style>
 
-<!-- Hero mobile -->
+<!-- BLOK: hero-mobiel - achtergrondafbeelding zichtbaar op telefoon, verborgen op desktop -->
 <img src="<?php echo $up; ?>horizontale-strip-mobiel.webp"
      alt="" class="w-full block md:hidden" style="width:100%;max-width:100%;"
      fetchpriority="high" width="700" height="320" sizes="100vw"/>
 
-<!-- Hero -->
+<!-- BLOK: hero - intro "Gewoon doen." met service-specifieke CTA-knop -->
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
@@ -53,7 +53,7 @@ $ads_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'geen-leve
 
 <main class="max-w-screen-xl mx-auto px-10 md:px-12">
 
-<!-- DIRECT BOVENAAN -->
+<!-- BLOK: s1 - eerste inhoudssectie: eyebrow + H2 + paragrafen + foto links (12-kol grid) -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
     <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Google Ads bureau Groningen</p>
@@ -72,7 +72,7 @@ $ads_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'geen-leve
   </div>
 </section>
 
-<!-- GEEN BLINDE BUDGETTEN -->
+<!-- BLOK: s2 - tweede sectie 55/45: tekst links + foto rechts -->
 <section class="py-16 md:pt-[80px] md:pb-[130px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
   <div class="space-y-6">
     <h2 class="text-4xl font-black mb-8">Jouw budget gaat naar klanten. Niet naar lucht.</h2>
@@ -90,7 +90,7 @@ $ads_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'geen-leve
   </div>
 </section>
 
-<!-- WAT WE DOEN -->
+<!-- BLOK: s3 - tekst links + stappenkaart rechts (01-04 genummerde stappen) -->
 <section class="py-16 md:py-[100px] relative">
   <div class="absolute -left-20 top-0 text-[10rem] font-black text-black/5 select-none -z-10 rotate-12">ADS</div>
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-24">
@@ -123,7 +123,7 @@ $ads_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'geen-leve
   </div>
 </section>
 
-<!-- GEEN LEVERANCIER -->
+<!-- BLOK: s4 - foto-split: gekleurde tekst links + foto rechts; geen s5 op deze pagina -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch md:gap-0">
   <div class="bg-surface-container-low p-6 md:p-12 flex flex-col justify-center md:rounded-l rounded relative overflow-hidden order-1 md:order-1">
     <span class="absolute -top-8 -right-4 text-[10rem] font-black text-black/5 select-none leading-none">Ads</span>
@@ -141,7 +141,7 @@ $ads_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'geen-leve
        width="1024" height="1024" loading="lazy"/>
 </section>
 
-<!-- CONTACT CTA -->
+<!-- BLOK: contact-cta - grote afsluitende uitnodiging met e-mailknop -->
 <section id="contact" class="py-16 md:py-[100px] text-center relative overflow-hidden">
   <div class="relative z-10 space-y-12">
     <div class="space-y-4">
@@ -163,7 +163,7 @@ $ads_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'geen-leve
 </section>
 
 
-<!-- RECENT BLOGS -->
+<!-- BLOK: blogs-recent - 3 meest recente posts; verborgen als er geen zijn -->
 <?php
 $dgm_posts = get_posts(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'date','order'=>'DESC']);
 if (!empty($dgm_posts)) :

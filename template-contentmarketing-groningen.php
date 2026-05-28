@@ -27,12 +27,12 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
 }
 </style>
 
-<!-- Hero mobile -->
+<!-- BLOK: hero-mobiel - achtergrondafbeelding zichtbaar op telefoon, verborgen op desktop -->
 <img src="<?php echo $up; ?>horizontale-strip-mobiel.webp"
      alt="" class="w-full block md:hidden" style="width:100%;max-width:100%;"
      fetchpriority="high" width="700" height="320" sizes="100vw"/>
 
-<!-- Hero -->
+<!-- BLOK: hero - intro "Gewoon doen." met service-specifieke CTA-knop -->
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
@@ -52,7 +52,7 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
 
 <main class="max-w-screen-xl mx-auto px-10 md:px-12">
 
-<!-- ALS CONTENT VOELT ALS WERK -->
+<!-- BLOK: s1 - eerste inhoudssectie: eyebrow + H2 + paragrafen + foto links (12-kol grid) -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
     <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Content marketing Groningen</p>
@@ -71,7 +71,7 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
   </div>
 </section>
 
-<!-- JOUW VERHAAL -->
+<!-- BLOK: s2 - tweede sectie 55/45: tekst links + foto rechts -->
 <section class="py-16 md:pt-[80px] md:pb-[130px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
   <div class="space-y-6">
     <h2 class="text-4xl font-black mb-8">Jouw verhaal is beter dan wat wij bedenken.</h2>
@@ -89,7 +89,7 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
   </div>
 </section>
 
-<!-- GRONINGSE TEKST -->
+<!-- BLOK: s3 - gecentreerd statement-blok met achtergrondtekst en "Gewoon doen." badge -->
 <section class="py-16 md:py-[100px] relative">
   <div class="absolute -left-20 top-0 text-[10rem] font-black text-black/5 select-none -z-10 rotate-12">TEKST</div>
   <div class="max-w-2xl mx-auto text-center space-y-8">
@@ -102,7 +102,7 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
   </div>
 </section>
 
-<!-- WAT WE DOEN -->
+<!-- BLOK: s4 - statement 55/45: tekst rechts + stappenkaart links + inline CTA-knop -->
 <section class="py-16 md:py-[100px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
   <div class="space-y-8 text-xl leading-relaxed order-1 md:order-2">
     <h2 class="text-4xl font-black leading-tight mb-4">Content die werkt.<br/>Niet content die er staat.</h2>
@@ -134,7 +134,7 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
   </div>
 </section>
 
-<!-- VOOR GRONINGEN -->
+<!-- BLOK: s5 - foto links + tekst rechts; lokaal argument (Voor Groningers, door Groningers) -->
 <section class="py-16 md:py-[100px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
   <div class="relative">
     <div class="bg-[#078930]/5 absolute inset-0 -rotate-1 -translate-x-4 translate-y-4 rounded-xl -z-10 scale-110"></div>
@@ -151,7 +151,7 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
   </div>
 </section>
 
-<!-- CONTACT CTA -->
+<!-- BLOK: contact-cta - grote afsluitende uitnodiging met e-mailknop -->
 <section id="contact" class="py-16 md:py-[100px] text-center relative overflow-hidden">
   <div class="relative z-10 space-y-12">
     <div class="space-y-4">
@@ -173,7 +173,7 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
 </section>
 
 
-<!-- RECENT BLOGS -->
+<!-- BLOK: blogs-recent - 3 meest recente posts; verborgen als er geen zijn -->
 <?php
 $dgm_posts = get_posts(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'date','order'=>'DESC']);
 if (!empty($dgm_posts)) :
