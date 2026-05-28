@@ -49,3 +49,47 @@ Text Domain: de-grote-marketing
   .prose-dgm h2 { font-size: 2.5rem; }
   .prose-dgm h3 { font-size: 1.6rem; }
 }
+
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: #fff;
+  min-width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.11);
+  padding: 6px 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 100;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-family: 'Public Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #18181b;
+  letter-spacing: -0.4px;
+  white-space: nowrap;
+  transition: background 0.1s, color 0.1s;
+}
+.nav-dropdown-menu a:hover { background: rgba(7,137,48,0.06); color: #078930; }
+.nav-mobile-section {
+  font-family: 'Public Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #78716c;
+  padding-top: 4px;
+}

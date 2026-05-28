@@ -18,7 +18,8 @@
       <p class="bg-primary-container text-white font-bold italic text-2xl mb-2 inline-block px-3 py-1">Gewoon echt.</p>
       <p class="text-white text-lg max-w-2xl">De Grote Marketing. Online marketing voor ondernemers in Groningen.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 mb-8 md:mb-16">
+    <style>#footer-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-bottom:32px}@media(min-width:768px){#footer-cols{grid-template-columns:repeat(4,1fr);gap:48px;margin-bottom:64px}}</style>
+    <div id="footer-cols">
       <div>
         <p class="text-xs font-bold uppercase tracking-widest bg-primary-container text-white mb-6 inline-block px-2 py-1">Contact</p>
         <div class="space-y-4">
@@ -39,6 +40,15 @@
           <p>KVK: 93155042</p>
           <p>BTW: NL005003057B57</p>
         </div>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest bg-primary-container text-white mb-6 inline-block px-2 py-1">Diensten</p>
+        <nav class="space-y-3">
+          <p><a href="<?php echo home_url('/seo-groningen/'); ?>" class="text-white/80 hover:text-white transition-colors text-lg">SEO Groningen</a></p>
+          <p><a href="<?php echo home_url('/google-ads-groningen/'); ?>" class="text-white/80 hover:text-white transition-colors text-lg">Google Ads</a></p>
+          <p><a href="<?php echo home_url('/contentmarketing-groningen/'); ?>" class="text-white/80 hover:text-white transition-colors text-lg">Contentmarketing</a></p>
+          <p><a href="<?php echo home_url('/website-groningen/'); ?>" class="text-white/80 hover:text-white transition-colors text-lg">Website laten maken</a></p>
+        </nav>
       </div>
     </div>
     <div class="pt-6 md:pt-12 border-t border-white/10 flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-8">

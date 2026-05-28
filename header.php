@@ -8,9 +8,23 @@
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white overflow-x-hidden tracking-[-0.8px]">
 <?php
-$is_blog_active = is_singular('post') || (is_page() && get_query_var('pagename') === 'blog') || is_category() || is_tag() || is_archive();
-$home_url = home_url('/');
-$blog_url = home_url('/blog/');
+$service_slugs = ['seo-groningen', 'google-ads-groningen', 'contentmarketing-groningen', 'website-groningen'];
+$current_slug  = get_post_field('post_name', get_queried_object_id());
+$is_home_active    = is_front_page();
+$is_blog_active    = is_singular('post') || (is_page() && get_query_var('pagename') === 'blog') || is_category() || is_tag() || is_archive();
+$is_contact_active = is_page('contact');
+$is_service_active = in_array($current_slug, $service_slugs);
+$home_url    = home_url('/');
+$blog_url    = home_url('/blog/');
+$contact_url = home_url('/contact/');
+$services = [
+  ['label' => 'SEO Groningen',       'url' => home_url('/seo-groningen/')],
+  ['label' => 'Google Ads',          'url' => home_url('/google-ads-groningen/')],
+  ['label' => 'Contentmarketing',    'url' => home_url('/contentmarketing-groningen/')],
+  ['label' => 'Website',             'url' => home_url('/website-groningen/')],
+];
+$lnk  = "font-['Public_Sans'] text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 opacity-80 hover:translate-y-[-2px] transition-transform duration-200";
+$lnka = "font-['Public_Sans'] text-lg font-bold tracking-tight text-[#078930] underline decoration-wavy decoration-2 underline-offset-4 hover:translate-y-[-2px] transition-transform duration-200";
 ?>
 <header class="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-sm docked full-width top-0 sticky z-50 no-border">
 <nav class="flex justify-between items-center w-full px-8 py-4 md:py-3 max-w-full">
@@ -26,20 +40,35 @@ $blog_url = home_url('/blog/');
      width="1347" height="444"
      fetchpriority="high"/>
 </a>
+
 <div class="hidden md:flex items-center space-x-12">
-  <a data-spy-link="aanpak" class="font-['Public_Sans'] text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 opacity-80 hover:translate-y-[-2px] transition-transform duration-200"
-     href="<?php echo $home_url; ?>#aanpak">Aanpak</a>
-  <a data-spy-link="plezier" class="font-['Public_Sans'] text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 opacity-80 hover:translate-y-[-2px] transition-transform duration-200"
-     href="<?php echo $home_url; ?>#plezier">Plezier</a>
-  <a data-spy-link="contact" class="font-['Public_Sans'] text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 opacity-80 hover:translate-y-[-2px] transition-transform duration-200"
-     href="<?php echo $home_url; ?>#contact">Contact</a>
-  <a class="font-['Public_Sans'] text-lg font-bold tracking-tight<?php echo $is_blog_active ? ' text-[#078930] underline decoration-wavy decoration-2 underline-offset-4' : ' text-zinc-900 dark:text-zinc-100 opacity-80'; ?> hover:translate-y-[-2px] transition-transform duration-200"
+  <a class="<?php echo $is_home_active ? $lnka : $lnk; ?>"
+     href="<?php echo $home_url; ?>">Aanpak</a>
+
+  <div class="nav-dropdown">
+    <button class="<?php echo $is_service_active ? $lnka : $lnk; ?>" style="background:none;border:0;padding:0;cursor:pointer;display:flex;align-items:center;gap:4px;" aria-haspopup="true" aria-expanded="false">
+      Dingen
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="opacity:.65;flex-shrink:0;margin-top:2px" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+    </button>
+    <div class="nav-dropdown-menu" role="menu">
+      <?php foreach ($services as $s):
+        $is_active_service = ($current_slug === basename(rtrim($s['url'], '/')));
+      ?>
+      <a href="<?php echo esc_url($s['url']); ?>"
+         role="menuitem"
+         <?php if ($is_active_service): ?>style="color:#078930"<?php endif; ?>
+      ><?php echo esc_html($s['label']); ?></a>
+      <?php endforeach; ?>
+    </div>
+  </div>
+
+  <a class="<?php echo $is_blog_active ? $lnka : $lnk; ?>"
      href="<?php echo $blog_url; ?>">Blog</a>
-  <a href="mailto:ferdi@degrotemarketing.nl"
-     class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold drift-on-hover transition-all active:scale-95">
-    Koffie<span class="sr-only"> (opent e-mailprogramma)</span>
-  </a>
+
+  <a class="<?php echo $is_contact_active ? $lnka : $lnk; ?>"
+     href="<?php echo $contact_url; ?>">Contact</a>
 </div>
+
 <button id="hamburger" class="md:hidden text-primary-container" aria-label="Menu openen" aria-expanded="false">
   <span id="hamburger-icon" style="display:flex;align-items:center;">
     <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
@@ -47,18 +76,21 @@ $blog_url = home_url('/blog/');
   </span>
 </button>
 </nav>
+
 <div id="mobile-menu" class="hidden md:hidden fixed top-[120px] left-0 right-0 bg-white border-b border-black/5 px-8 py-6 flex flex-col gap-5 z-40" aria-hidden="true">
+  <a class="font-['Public_Sans'] text-lg font-bold tracking-tight<?php echo $is_home_active ? ' text-[#078930]' : ' text-zinc-900 opacity-80'; ?>"
+     href="<?php echo $home_url; ?>">Aanpak</a>
+  <span class="nav-mobile-section">Dingen</span>
+  <?php foreach ($services as $s):
+    $is_active_service = ($current_slug === basename(rtrim($s['url'], '/')));
+  ?>
+  <a class="font-['Public_Sans'] text-base font-bold tracking-tight<?php echo $is_active_service ? ' text-[#078930]' : ' text-zinc-900 opacity-80'; ?>"
+     href="<?php echo esc_url($s['url']); ?>"
+     style="padding-left:1rem"><?php echo esc_html($s['label']); ?></a>
+  <?php endforeach; ?>
   <a class="font-['Public_Sans'] text-lg font-bold tracking-tight<?php echo $is_blog_active ? ' text-[#078930]' : ' text-zinc-900 opacity-80'; ?>"
      href="<?php echo $blog_url; ?>">Blog</a>
-  <a class="font-['Public_Sans'] text-lg font-bold tracking-tight text-zinc-900 opacity-80"
-     href="<?php echo $home_url; ?>#aanpak">Aanpak</a>
-  <a class="font-['Public_Sans'] text-lg font-bold tracking-tight text-zinc-900 opacity-80"
-     href="<?php echo $home_url; ?>#plezier">Plezier</a>
-  <a class="font-['Public_Sans'] text-lg font-bold tracking-tight text-zinc-900 opacity-80"
-     href="<?php echo $home_url; ?>#contact">Contact</a>
-  <a href="mailto:ferdi@degrotemarketing.nl"
-     class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold w-fit">
-    Koffie<span class="sr-only"> (opent e-mailprogramma)</span>
-  </a>
+  <a class="font-['Public_Sans'] text-lg font-bold tracking-tight<?php echo $is_contact_active ? ' text-[#078930]' : ' text-zinc-900 opacity-80'; ?>"
+     href="<?php echo $contact_url; ?>">Contact</a>
 </div>
 </header>

@@ -408,6 +408,80 @@ function dgm_schema() {
                 ['@type' => 'ListItem', 'position' => 3, 'name' => get_the_title($post)],
             ],
         ];
+    } elseif (is_page_template([
+        'template-seo-groningen.php',
+        'template-google-ads-groningen.php',
+        'template-contentmarketing-groningen.php',
+        'template-website-groningen.php',
+    ])) {
+        $tpl         = get_page_template_slug();
+        $permalink   = get_permalink();
+        $page_title  = get_the_title();
+        $page_desc   = get_the_excerpt();
+
+        $service_map = [
+            'template-seo-groningen.php'             => ['slug' => 'seo',              'name' => 'SEO Groningen',                  'type' => 'SEO'],
+            'template-google-ads-groningen.php'      => ['slug' => 'google-ads',       'name' => 'Google Ads Groningen',           'type' => 'Google Ads'],
+            'template-contentmarketing-groningen.php'=> ['slug' => 'contentmarketing', 'name' => 'Contentmarketing Groningen',     'type' => 'Contentmarketing'],
+            'template-website-groningen.php'         => ['slug' => 'websites',         'name' => 'Website laten maken Groningen',  'type' => 'Webdesign'],
+        ];
+        $svc = $service_map[$tpl];
+
+        $org_nodes[] = [
+            '@type'              => 'WebPage',
+            '@id'                => $permalink . '#webpage',
+            'url'                => $permalink,
+            'name'               => $page_title . ' - De Grote Marketing',
+            'description'        => $page_desc ?: 'Online marketing voor ondernemers in Groningen.',
+            'isPartOf'           => ['@id' => $base_url . '/#website'],
+            'about'              => ['@id' => $base_url . '/#service-' . $svc['slug']],
+            'primaryImageOfPage' => ['@id' => $base_url . '/#primaryimage'],
+            'inLanguage'         => 'nl-NL',
+            'breadcrumb'         => ['@id' => $permalink . '#breadcrumb'],
+        ];
+        $org_nodes[] = [
+            '@type'       => 'Service',
+            '@id'         => $permalink . '#service',
+            'name'        => $svc['name'],
+            'serviceType' => $svc['type'],
+            'url'         => $permalink,
+            'provider'    => ['@id' => $base_url . '/#organization'],
+            'areaServed'  => [
+                ['@type' => 'City', 'name' => 'Groningen'],
+                ['@type' => 'AdministrativeArea', 'name' => 'Provincie Groningen'],
+            ],
+            'availableLanguage' => [['@type' => 'Language', 'name' => 'Nederlands', 'alternateName' => 'nl-NL']],
+            'audience'    => ['@type' => 'Audience', 'audienceType' => 'MKB-ondernemers in Groningen'],
+        ];
+        $org_nodes[] = [
+            '@type' => 'BreadcrumbList',
+            '@id'   => $permalink . '#breadcrumb',
+            'itemListElement' => [
+                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',      'item' => $base_url . '/'],
+                ['@type' => 'ListItem', 'position' => 2, 'name' => $svc['name'],'item' => $permalink],
+            ],
+        ];
+    } elseif (is_page_template('template-contact.php')) {
+        $contact_url = $base_url . '/contact/';
+        $org_nodes[] = [
+            '@type'              => 'ContactPage',
+            '@id'                => $contact_url . '#webpage',
+            'url'                => $contact_url,
+            'name'               => 'Contact - De Grote Marketing',
+            'description'        => 'Neem contact op met De Grote Marketing. Eerlijk gesprek, geen verplichtingen.',
+            'isPartOf'           => ['@id' => $base_url . '/#website'],
+            'about'              => ['@id' => $base_url . '/#organization'],
+            'inLanguage'         => 'nl-NL',
+            'breadcrumb'         => ['@id' => $contact_url . '#breadcrumb'],
+        ];
+        $org_nodes[] = [
+            '@type' => 'BreadcrumbList',
+            '@id'   => $contact_url . '#breadcrumb',
+            'itemListElement' => [
+                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',    'item' => $base_url . '/'],
+                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Contact', 'item' => $contact_url],
+            ],
+        ];
     } else {
         $current_url = home_url(add_query_arg(null, null));
         $is_home     = is_front_page();
@@ -454,6 +528,13 @@ function dgm_schema() {
 }
 
 function dgm_offer_catalog_items(string $base_url): array {
+    $service_pages = [
+        'seo'              => '/seo-groningen/',
+        'google-ads'       => '/google-ads-groningen/',
+        'contentmarketing' => '/contentmarketing-groningen/',
+        'websites'         => '/website-groningen/',
+    ];
+
     $services = [
         'seo'                    => 'SEO',
         'contentmarketing'       => 'Contentmarketing',
@@ -483,17 +564,20 @@ function dgm_offer_catalog_items(string $base_url): array {
         'powersessies'           => 'Powersessies',
     ];
 
-    return array_map(fn($slug, $name) => [
-        '@type'       => 'Offer',
-        'itemOffered' => [
+    return array_map(function ($slug, $name) use ($base_url, $service_pages) {
+        $item = [
             '@type'       => 'Service',
             '@id'         => $base_url . '/#service-' . $slug,
             'name'        => $name,
             'serviceType' => $name,
             'provider'    => ['@id' => $base_url . '/#organization'],
             'areaServed'  => ['@type' => 'City', 'name' => 'Groningen'],
-        ],
-    ], array_keys($services), array_values($services));
+        ];
+        if (isset($service_pages[$slug])) {
+            $item['url'] = $base_url . $service_pages[$slug];
+        }
+        return ['@type' => 'Offer', 'itemOffered' => $item];
+    }, array_keys($services), array_values($services));
 }
 
 // ─── Footer JS: mobile menu + scroll-spy ──────────────────────────────────────
@@ -544,6 +628,94 @@ mobileMenu.querySelectorAll('a').forEach(function(link){
 })();
 </script>
     <?php
+});
+
+// ─── Sectie-afbeeldingen meta box (native WP, geen plugin) ────────────────────
+add_action('add_meta_boxes', function () {
+    $service_templates = [
+        'template-seo-groningen.php',
+        'template-google-ads-groningen.php',
+        'template-contentmarketing-groningen.php',
+        'template-website-groningen.php',
+    ];
+    add_meta_box(
+        'dgm_section_images',
+        'Sectie-afbeeldingen',
+        function ($post) use ($service_templates) {
+            $tpl = get_page_template_slug($post->ID);
+            if (!in_array($tpl, $service_templates, true)) {
+                echo '<p style="color:#888">Alleen beschikbaar op servicepaginas.</p>';
+                return;
+            }
+            wp_nonce_field('dgm_section_images_save', 'dgm_section_images_nonce');
+            $labels = ['Sectie-afbeelding 1', 'Sectie-afbeelding 2', 'Sectie-afbeelding 3'];
+            for ($i = 1; $i <= 3; $i++) :
+                $val = (int) get_post_meta($post->ID, '_dgm_section_img_' . $i, true);
+                $preview = $val ? wp_get_attachment_image_url($val, 'thumbnail') : '';
+                ?>
+                <div style="margin-bottom:16px">
+                  <label style="display:block;font-weight:600;margin-bottom:6px"><?php echo esc_html($labels[$i-1]); ?></label>
+                  <input type="hidden" name="dgm_section_img_<?php echo $i; ?>" id="dgm_section_img_<?php echo $i; ?>" value="<?php echo esc_attr($val ?: ''); ?>"/>
+                  <?php if ($preview) : ?>
+                  <img id="dgm_section_img_<?php echo $i; ?>_preview" src="<?php echo esc_url($preview); ?>" style="display:block;max-width:120px;height:auto;margin-bottom:6px;border-radius:4px"/>
+                  <?php else : ?>
+                  <img id="dgm_section_img_<?php echo $i; ?>_preview" src="" style="display:none;max-width:120px;height:auto;margin-bottom:6px;border-radius:4px"/>
+                  <?php endif; ?>
+                  <button type="button" class="button dgm-img-select" data-field="dgm_section_img_<?php echo $i; ?>">Afbeelding kiezen</button>
+                  <button type="button" class="button dgm-img-remove" data-field="dgm_section_img_<?php echo $i; ?>" style="margin-left:4px<?php echo $val ? '' : ';display:none'; ?>">Verwijderen</button>
+                </div>
+                <?php
+            endfor;
+        },
+        'page',
+        'side',
+        'default'
+    );
+});
+
+add_action('admin_enqueue_scripts', function ($hook) {
+    if (!in_array($hook, ['post.php', 'post-new.php'], true)) return;
+    wp_enqueue_media();
+    wp_add_inline_script('media-upload', "
+jQuery(function($){
+  $('.dgm-img-select').on('click', function(){
+    var field = $(this).data('field');
+    var frame = wp.media({ title: 'Kies afbeelding', button: { text: 'Selecteren' }, multiple: false });
+    frame.on('select', function(){
+      var att = frame.state().get('selection').first().toJSON();
+      $('#'+field).val(att.id);
+      var thumb = att.sizes && att.sizes.thumbnail ? att.sizes.thumbnail.url : att.url;
+      $('#'+field+'_preview').attr('src', thumb).show();
+      $('[data-field=\"'+field+'\"].dgm-img-remove').show();
+    });
+    frame.open();
+  });
+  $('.dgm-img-remove').on('click', function(){
+    var field = $(this).data('field');
+    $('#'+field).val('');
+    $('#'+field+'_preview').attr('src','').hide();
+    $(this).hide();
+  });
+});
+");
+});
+
+add_action('save_post_page', function ($post_id) {
+    if (!isset($_POST['dgm_section_images_nonce'])) return;
+    if (!wp_verify_nonce($_POST['dgm_section_images_nonce'], 'dgm_section_images_save')) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (!current_user_can('edit_page', $post_id)) return;
+    for ($i = 1; $i <= 3; $i++) {
+        $key = 'dgm_section_img_' . $i;
+        if (isset($_POST[$key])) {
+            $val = absint($_POST[$key]);
+            if ($val) {
+                update_post_meta($post_id, '_' . $key, $val);
+            } else {
+                delete_post_meta($post_id, '_' . $key);
+            }
+        }
+    }
 });
 
 // ─── Content setup on theme activation ────────────────────────────────────────
