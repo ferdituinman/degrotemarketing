@@ -54,20 +54,21 @@ html,body{font-family:"Public Sans",ui-sans-serif,system-ui,sans-serif}
 .nav-dropdown { position: relative; }
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(6px);
   background: #fff;
   min-width: 220px;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.11);
-  padding: 6px 0;
+  padding: 18px 0 6px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s ease, transform 0.15s ease;
   z-index: 100;
 }
-.nav-dropdown.open .nav-dropdown-menu {
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
