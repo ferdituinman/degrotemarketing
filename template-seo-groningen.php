@@ -12,11 +12,14 @@ $_s3  = (int) get_post_meta($pid, '_dgm_section_img_3', true);
 $seo_img1 = $_s1 ? wp_get_attachment_image_url($_s1, 'large') : $up04 . 'seo-groningen.png';
 $seo_img2 = $_s2 ? wp_get_attachment_image_url($_s2, 'large') : $up . 'reviews.png';
 $seo_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'iedereen-belooft-hetzelfde.png';
+$_hero = dgm_get_service_hero_image('seo');
+$_hero_url = $_hero ? esc_url($_hero['url']) : esc_url($up . 'horizontale-strip.png');
+$_hero_mob = $_hero ?? ['url' => $up . 'horizontale-strip-mobiel.webp', 'width' => 700, 'height' => 320];
 ?>
 <style>
 @media (min-width:768px){
   #herov2{
-    background-image:url('<?php echo $up; ?>horizontale-strip.png');
+    background-image:url('<?php echo $_hero_url; ?>');
     background-position:50%;
     background-size:cover;
     height:660px;
@@ -30,9 +33,9 @@ $seo_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'iedereen-
 </style>
 
 <!-- BLOK: hero-mobiel - achtergrondafbeelding zichtbaar op telefoon, verborgen op desktop -->
-<img src="<?php echo $up; ?>horizontale-strip-mobiel.webp"
+<img src="<?php echo esc_url($_hero_mob['url']); ?>"
      alt="" class="w-full block md:hidden" style="width:100%;max-width:100%;"
-     fetchpriority="high" width="700" height="320" sizes="100vw"/>
+     fetchpriority="high" width="<?php echo (int)$_hero_mob['width']; ?>" height="<?php echo (int)$_hero_mob['height']; ?>" sizes="100vw"/>
 
 <!-- BLOK: hero - intro "Gewoon doen." met service-specifieke CTA-knop -->
 <div id="herov2" class="w-full">

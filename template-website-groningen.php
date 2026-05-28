@@ -11,11 +11,14 @@ $_s3 = (int) get_post_meta($pid, '_dgm_section_img_3', true);
 $web_img1 = $_s1 ? wp_get_attachment_image_url($_s1, 'large') : $up . 'nieuwe-website.png';
 $web_img2 = $_s2 ? wp_get_attachment_image_url($_s2, 'large') : $up . 'geen-dure-website.png';
 $web_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'simone.png';
+$_hero = dgm_get_service_hero_image('website');
+$_hero_url = $_hero ? esc_url($_hero['url']) : esc_url($up . 'horizontale-strip.png');
+$_hero_mob = $_hero ?? ['url' => $up . 'horizontale-strip-mobiel.webp', 'width' => 700, 'height' => 320];
 ?>
 <style>
 @media (min-width:768px){
   #herov2{
-    background-image:url('<?php echo $up; ?>horizontale-strip.png');
+    background-image:url('<?php echo $_hero_url; ?>');
     background-position:50%;
     background-size:cover;
     height:660px;
@@ -29,9 +32,9 @@ $web_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'simone.pn
 </style>
 
 <!-- BLOK: hero-mobiel - achtergrondafbeelding zichtbaar op telefoon, verborgen op desktop -->
-<img src="<?php echo $up; ?>horizontale-strip-mobiel.webp"
+<img src="<?php echo esc_url($_hero_mob['url']); ?>"
      alt="" class="w-full block md:hidden" style="width:100%;max-width:100%;"
-     fetchpriority="high" width="700" height="320" sizes="100vw"/>
+     fetchpriority="high" width="<?php echo (int)$_hero_mob['width']; ?>" height="<?php echo (int)$_hero_mob['height']; ?>" sizes="100vw"/>
 
 <!-- BLOK: hero - intro "Gewoon doen." met service-specifieke CTA-knop -->
 <div id="herov2" class="w-full">
@@ -39,7 +42,7 @@ $web_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'simone.pn
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
   <h1 class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</h1>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
-    <p>Geen jaar wachten. Geen onnodig duur. Een website die doet wat hij moet doen.</p>
+    <p>Geen jaar wachten. Niet onnodig duur. Een website die doet wat hij moet doen.</p>
     <p>Wij bouwen websites voor Groningse ondernemers. Snel te vinden, makkelijk te begrijpen, klaar voor klanten.</p>
   </div>
   <div class="mt-12">
