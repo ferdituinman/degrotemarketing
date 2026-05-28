@@ -70,6 +70,9 @@ $lnka = "font-['Public_Sans'] text-lg font-bold tracking-tight text-[#078930] un
     </div>
   </div>
 
+  <a class="<?php echo $lnk; ?>"
+     href="#">Tiswat</a>
+
   <a class="<?php echo $is_blog_active ? $lnka : $lnk; ?>"
      href="<?php echo $blog_url; ?>">Blog</a>
 
