@@ -63,9 +63,9 @@ $web_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'simone.pn
     <p class="text-lg md:text-xl leading-relaxed">Niet de duurste. Wel de beste voor jou.</p>
     <div class="h-1 w-24 bg-primary-container"></div>
   </div>
-  <div class="md:col-start-2 md:col-span-5 relative order-2 md:order-1 md:-translate-y-12">
-    <div class="bg-[#078930]/5 absolute inset-0 -rotate-2 -translate-x-4 translate-y-4 rounded-xl -z-10 scale-110"></div>
-    <img class="w-full object-cover rounded scale-90 md:-rotate-1"
+  <div class="md:col-start-2 md:col-span-5 relative order-2 md:order-1">
+    <div class="bg-[#078930]/5 absolute inset-0 rotate-2 translate-x-3 translate-y-6 rounded-xl -z-10 scale-90"></div>
+    <img class="w-full object-cover rounded scale-90" style="transform:rotate(2deg)"
          src="<?php echo esc_url($web_img1); ?>"
          sizes="(min-width: 768px) 42vw, 100vw"
          alt="Nieuwe website laten maken in Groningen" width="1024" height="768" loading="lazy"/>
@@ -81,8 +81,8 @@ $web_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'simone.pn
     <p class="text-lg md:text-xl leading-relaxed">Hoe simpeler de uitleg, hoe meer mensen je bellen. Hoe meer mensen je bellen, hoe minder je hoeft te adverteren. Hoe minder je adverteert, hoe meer je overhoudt.</p>
     <div class="h-1 w-36 bg-primary-container -rotate-1 translate-x-2"></div>
   </div>
-  <div class="relative md:translate-y-12">
-    <div class="bg-[#078930]/5 absolute inset-0 rotate-2 translate-x-4 -translate-y-3 rounded-xl -z-10 scale-90"></div>
+  <div class="relative">
+    <div class="bg-[#078930]/5 absolute inset-0 -rotate-2 -translate-x-3 translate-y-5 rounded-xl -z-10 scale-110"></div>
     <img class="w-full object-cover rounded"
          src="<?php echo esc_url($web_img2); ?>"
          sizes="(min-width: 768px) 42vw, 100vw"
@@ -144,7 +144,7 @@ $web_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'simone.pn
 
 <!-- BLOK: s5 - quote-blok met groene border links; lokaal argument -->
 <section class="py-16 md:py-[100px] text-left">
-  <div class="max-w-4xl border-l-4 border-primary-container pl-6 md:pl-12 py-8 ml-0 md:ml-14">
+  <div class="max-w-2xl border-l-4 border-primary-container pl-6 md:pl-12 py-8 ml-0 md:ml-14">
     <h2 class="text-4xl font-black mb-8">Gronings webdesign. Geen pak.</h2>
     <div class="space-y-6 text-xl leading-relaxed opacity-90">
       <p>We komen gewoon bij je langs. We praten met je over je klanten. We kijken naar wat je nu hebt. En dan bouwen we iets beters.</p>

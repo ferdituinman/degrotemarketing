@@ -54,7 +54,7 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
 
 <!-- BLOK: s1 - eerste inhoudssectie: eyebrow + H2 + paragrafen + foto links (12-kol grid) -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-  <div class="md:col-span-5 space-y-6 order-1 md:order-2">
+  <div class="md:col-start-2 md:col-span-5 space-y-6">
     <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Content marketing Groningen</p>
     <h2 class="text-4xl font-black mb-8">ALS MARKETING VOELT ALS WERK</h2>
     <p class="text-lg md:text-xl leading-relaxed">Je hebt al geprobeerd iets te schrijven voor je website. Het voelde als een schooltaak. Dat is het probleem.</p>
@@ -62,9 +62,9 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
     <p class="text-lg md:text-xl leading-relaxed">Wij schrijven zoals jij praat. En dat werkt.</p>
     <div class="h-1 w-24 bg-primary-container"></div>
   </div>
-  <div class="md:col-start-2 md:col-span-5 relative order-2 md:order-1 md:-translate-y-12">
-    <div class="bg-[#078930]/5 absolute inset-0 -rotate-2 -translate-x-4 translate-y-4 rounded-xl -z-10 scale-110"></div>
-    <img class="w-full object-cover rounded scale-90 md:-rotate-1"
+  <div class="md:col-span-5 relative" style="transform:translateY(16px)">
+    <div class="bg-[#078930]/5 absolute inset-0 rotate-1 translate-x-3 -translate-y-4 rounded-xl -z-10 scale-90"></div>
+    <img class="w-full object-cover rounded scale-90"
          src="<?php echo esc_url($cm_img1); ?>"
          sizes="(min-width: 768px) 42vw, 100vw"
          alt="Content marketing die wel werkt" width="768" height="768" loading="lazy"/>
@@ -73,15 +73,15 @@ $cm_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'voorgronin
 
 <!-- BLOK: s2 - tweede sectie 55/45: tekst links + foto rechts -->
 <section class="py-16 md:pt-[80px] md:pb-[130px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-  <div class="space-y-6">
+  <div class="space-y-6 order-2">
     <h2 class="text-4xl font-black mb-8">Jouw verhaal is beter dan wat wij bedenken.</h2>
     <p class="text-lg md:text-xl leading-relaxed">Je hebt bestaande klanten die blij zijn. Concrete resultaten die je geleverd hebt. Dingen die echt zijn.</p>
     <p class="text-lg md:text-xl leading-relaxed">Een goed idee voelt te simpel omdat je er zelf al jaren middenin zit. Maar een buitenstaander ziet het meteen.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is precies wat wij doen. Wij kijken naar buiten. Wij zien wat jij al hebt. En wij schrijven dat op een manier die mensen herkennen.</p>
     <div class="h-1 w-36 bg-primary-container -rotate-1 translate-x-2"></div>
   </div>
-  <div class="relative md:translate-y-12">
-    <div class="bg-[#078930]/5 absolute inset-0 rotate-2 translate-x-4 -translate-y-3 rounded-xl -z-10 scale-90"></div>
+  <div class="relative order-1" style="transform:translateY(32px)">
+    <div class="bg-[#078930]/5 absolute inset-0 rotate-3 -translate-x-3 translate-y-3 rounded-xl -z-10 scale-90"></div>
     <img class="w-full object-cover rounded"
          src="<?php echo esc_url($cm_img2); ?>"
          sizes="(min-width: 768px) 42vw, 100vw"

@@ -63,9 +63,9 @@ $ads_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'geen-leve
     <p class="text-lg md:text-xl leading-relaxed">Dat is precies waarom het werkt. Je bereikt mensen die nu al zoeken naar wat jij levert in Groningen.</p>
     <div class="h-1 w-24 bg-primary-container"></div>
   </div>
-  <div class="md:col-start-2 md:col-span-5 relative order-2 md:order-1 md:-translate-y-12">
-    <div class="bg-[#078930]/5 absolute inset-0 -rotate-2 -translate-x-4 translate-y-4 rounded-xl -z-10 scale-110"></div>
-    <img class="w-full object-cover rounded scale-90 md:-rotate-1"
+  <div class="md:col-start-2 md:col-span-5 relative order-2 md:order-1" style="transform:translateY(24px)">
+    <div class="bg-[#078930]/5 absolute inset-0 -rotate-1 -translate-x-5 translate-y-6 rounded-xl -z-10 scale-110"></div>
+    <img class="w-full object-cover rounded scale-90 md:rotate-1"
          src="<?php echo esc_url($ads_img1); ?>"
          sizes="(min-width: 768px) 42vw, 100vw"
          alt="Geen dikke rapporten, gewoon resultaten" width="1024" height="768" loading="lazy"/>
@@ -81,8 +81,8 @@ $ads_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'geen-leve
     <p class="text-lg md:text-xl leading-relaxed">Geen rapport van 80 pagina's die in een la belandt. Gewoon een gesprek over wat het heeft opgeleverd.</p>
     <div class="h-1 w-36 bg-primary-container -rotate-1 translate-x-2"></div>
   </div>
-  <div class="relative md:translate-y-12">
-    <div class="bg-[#078930]/5 absolute inset-0 rotate-2 translate-x-4 -translate-y-3 rounded-xl -z-10 scale-90"></div>
+  <div class="relative" style="transform:translateY(-24px)">
+    <div class="bg-[#078930]/5 absolute inset-0 -rotate-1 translate-x-2 translate-y-5 rounded-xl -z-10 scale-110"></div>
     <img class="w-full object-cover rounded"
          src="<?php echo esc_url($ads_img2); ?>"
          sizes="(min-width: 768px) 42vw, 100vw"
@@ -94,13 +94,13 @@ $ads_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'geen-leve
 <section class="py-16 md:py-[100px] relative">
   <div class="absolute -left-20 top-0 text-[10rem] font-black text-black/5 select-none -z-10 rotate-12">ADS</div>
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-24">
-    <div class="flex-1 space-y-8 md:translate-y-6">
+    <div class="flex-1 space-y-8 md:translate-y-6 order-2">
       <h2 class="text-4xl font-black italic">WAT WE DOEN</h2>
       <p class="text-xl leading-relaxed">Google Ads is niet ingewikkeld. Maar het kost wel aandacht. Verkeerde instellingen en je gooit geld weg.</p>
       <p class="text-xl leading-relaxed">Wij doen het goed. Van het begin af aan.</p>
       <p class="font-bold text-primary-container">Kloar.</p>
     </div>
-    <div class="w-full kaartje-45">
+    <div class="w-full kaartje-45 order-1">
       <div class="p-8 bg-surface-container-low border border-black/5 rounded-lg shadow-sm" style="transform: rotate(1deg)">
         <div class="flex gap-4 items-start mt-2">
           <span class="text-primary-container font-black text-xl w-8 shrink-0">01</span>

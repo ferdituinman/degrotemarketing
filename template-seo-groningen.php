@@ -56,7 +56,7 @@ $seo_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'iedereen-
 
 <!-- BLOK: s1 - eerste inhoudssectie: eyebrow + H2 + paragrafen + foto links (12-kol grid) -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-  <div class="md:col-span-5 space-y-6 order-1 md:order-2">
+  <div class="md:col-start-2 md:col-span-5 space-y-6">
     <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">SEO bureau Groningen</p>
     <h2 class="text-4xl font-black mb-8">GEVONDEN WORDEN OF NIET</h2>
     <p class="text-lg md:text-xl leading-relaxed">Als iemand googelt op jouw dienst in Groningen, wil je erbij zijn. Niet op pagina 2. Niet als vijfde. Bovenaan.</p>
@@ -64,9 +64,9 @@ $seo_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'iedereen-
     <p class="text-lg md:text-xl leading-relaxed">Kijkers zijn geen kopers. Maar mensen die googelen op "loodgieter Groningen" of "boekhouder Groningen centrum" - die zijn er klaar voor.</p>
     <div class="h-1 w-24 bg-primary-container"></div>
   </div>
-  <div class="md:col-start-2 md:col-span-5 relative order-2 md:order-1 md:-translate-y-12">
-    <div class="bg-[#078930]/5 absolute inset-0 -rotate-2 -translate-x-4 translate-y-4 rounded-xl -z-10 scale-110"></div>
-    <img class="w-full object-cover rounded scale-90 md:-rotate-1"
+  <div class="md:col-span-5 relative" style="transform:translateY(32px)">
+    <div class="bg-[#078930]/5 absolute inset-0 rotate-2 translate-x-4 -translate-y-3 rounded-xl -z-10 scale-90"></div>
+    <img class="w-full object-cover rounded scale-90 md:rotate-1"
          src="<?php echo esc_url($seo_img1); ?>"
          sizes="(min-width: 768px) 42vw, 100vw"
          alt="SEO in Groningen" width="1024" height="683" loading="lazy"/>
@@ -75,15 +75,15 @@ $seo_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'iedereen-
 
 <!-- BLOK: s2 - tweede sectie 55/45: tekst links + foto rechts -->
 <section class="py-16 md:pt-[80px] md:pb-[130px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-  <div class="space-y-6">
+  <div class="space-y-6 order-2">
     <h2 class="text-4xl font-black mb-8">Reviews tellen mee. Echt.</h2>
     <p class="text-lg md:text-xl leading-relaxed">Hoe meer reviews, hoe vaker gevonden. Hoe vaker gevonden, hoe meer klanten. Hoe meer klanten, hoe meer reviews.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is de cirkel waar je in wilt zitten. Reviews zijn niet alleen voor je gevoel. Ze zijn onderdeel van hoe Google beslist wie er bovenaan staat in Groningen.</p>
     <p class="text-lg md:text-xl leading-relaxed">En het begint gewoon met vragen. Niet met een dure tool.</p>
     <div class="h-1 w-36 bg-primary-container -rotate-1 translate-x-2"></div>
   </div>
-  <div class="relative md:translate-y-12">
-    <div class="bg-[#078930]/5 absolute inset-0 rotate-2 translate-x-4 -translate-y-3 rounded-xl -z-10 scale-90"></div>
+  <div class="relative order-1" style="transform:translateY(16px)">
+    <div class="bg-[#078930]/5 absolute inset-0 -rotate-3 -translate-x-4 translate-y-2 rounded-xl -z-10 scale-110"></div>
     <img class="w-full object-cover rounded"
          src="<?php echo esc_url($seo_img2); ?>"
          sizes="(min-width: 768px) 42vw, 100vw"
@@ -145,7 +145,7 @@ $seo_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'iedereen-
 
 <!-- BLOK: s5 - quote-blok met groene border links; lokaal argument -->
 <section class="py-16 md:py-[100px] text-left">
-  <div class="max-w-4xl border-l-4 border-primary-container pl-6 md:pl-12 py-8 ml-0 md:ml-14">
+  <div class="max-w-4xl border-l-4 border-primary-container pl-6 md:pl-12 py-8 ml-0" style="margin-left:24px">
     <h2 class="text-4xl font-black mb-8">Lokaal SEO bureau. Geen pak.</h2>
     <div class="space-y-6 text-xl leading-relaxed opacity-90">
       <p>We kennen Groningen. We weten hoe Stadjers zoeken. We weten welke buurten er toe doen voor jouw bedrijf.</p>
