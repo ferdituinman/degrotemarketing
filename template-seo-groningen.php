@@ -12,9 +12,10 @@ $_s3  = (int) get_post_meta($pid, '_dgm_section_img_3', true);
 $seo_img1 = $_s1 ? wp_get_attachment_image_url($_s1, 'large') : $up04 . 'seo-groningen.png';
 $seo_img2 = $_s2 ? wp_get_attachment_image_url($_s2, 'large') : $up . 'reviews.png';
 $seo_img3 = $_s3 ? wp_get_attachment_image_url($_s3, 'large') : $up . 'iedereen-belooft-hetzelfde.png';
-$_hero = dgm_get_service_hero_image('seo');
-$_hero_url = $_hero ? esc_url($_hero['url']) : esc_url($up . 'horizontale-strip.png');
-$_hero_mob = $_hero ?? ['url' => $up . 'horizontale-strip-mobiel.webp', 'width' => 700, 'height' => 320];
+$_thumb_id  = get_post_thumbnail_id($pid);
+$_hero_full = $_thumb_id ? wp_get_attachment_image_src($_thumb_id, 'full') : null;
+$_hero_url  = $_hero_full ? esc_url($_hero_full[0]) : esc_url($up . 'horizontale-strip.png');
+$_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_full[1], 'height' => (int)$_hero_full[2]] : ['url' => $up . 'horizontale-strip-mobiel.webp', 'width' => 700, 'height' => 320];
 ?>
 <style>
 @media (min-width:768px){
