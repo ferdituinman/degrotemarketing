@@ -185,36 +185,64 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 $dgm_posts = get_posts(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'date','order'=>'DESC']);
 if (!empty($dgm_posts)) :
 ?>
+<style>.web-blog-duo{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}.web-hcard{display:flex}.web-hcard-img{width:40%;flex-shrink:0}@media(max-width:767px){.web-blog-duo{grid-template-columns:1fr}.web-hcard{flex-direction:column}.web-hcard-img{width:100%}}</style>
 <section class="py-16 md:py-[100px]">
-  <div class="flex items-end justify-between gap-8 flex-wrap mb-12">
+  <div class="flex items-end justify-between gap-8 flex-wrap" style="margin-bottom:50px">
     <div>
       <h2 class="text-4xl font-black">Blogs. Zelf geschreven.</h2>
     </div>
     <a href="<?php echo home_url('/blog/'); ?>" class="hidden md:block text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">Alle blogs &rarr;</a>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <?php foreach ($dgm_posts as $dgm_i => $dgm_post) :
-      $dgm_thumb   = get_the_post_thumbnail_url($dgm_post, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
-      $dgm_title   = esc_html(get_the_title($dgm_post));
-      $dgm_excerpt = get_the_excerpt($dgm_post);
-      $dgm_link    = get_permalink($dgm_post);
-      if ($dgm_i === 1)     { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border-left:3px solid #078930'; }
-      elseif ($dgm_i === 2) { $dgm_card = 'background:#f9fafb;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb'; }
-      else                  { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb'; }
-    ?>
-    <article style="<?php echo $dgm_card; ?>">
-      <a href="<?php echo esc_url($dgm_link); ?>" class="group block">
-        <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
-             class="w-full"
-             width="512" height="512" loading="lazy"/>
+  <?php
+  $dgm_items = [];
+  foreach ($dgm_posts as $dgm_post) {
+    $dgm_items[] = [
+      'thumb'   => get_the_post_thumbnail_url($dgm_post, 'medium_large') ?: ($up . 'voorgroningers-768x768.png'),
+      'title'   => esc_html(get_the_title($dgm_post)),
+      'excerpt' => get_the_excerpt($dgm_post),
+      'link'    => esc_url(get_permalink($dgm_post)),
+    ];
+  }
+  ?>
+  <?php if (!empty($dgm_items[0]) || !empty($dgm_items[1])) : ?>
+  <div class="web-blog-duo">
+    <?php if (!empty($dgm_items[0])) : $p = $dgm_items[0]; ?>
+    <article style="background:white;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb">
+      <a href="<?php echo $p['link']; ?>" class="group block">
+        <img src="<?php echo esc_url($p['thumb']); ?>" alt="<?php echo $p['title']; ?>" class="w-full" width="768" height="560" loading="lazy"/>
         <div class="p-6">
-          <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors" style="font-size:20px;line-height:1.2"><?php echo $dgm_title; ?></h3>
-          <p class="text-base leading-relaxed opacity-70"><?php echo $dgm_excerpt; ?></p>
+          <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors" style="font-size:20px;line-height:1.2"><?php echo $p['title']; ?></h3>
+          <p class="text-base leading-relaxed opacity-70"><?php echo $p['excerpt']; ?></p>
         </div>
       </a>
     </article>
-    <?php endforeach; ?>
+    <?php endif; ?>
+    <?php if (!empty($dgm_items[1])) : $p = $dgm_items[1]; ?>
+    <article style="background:white;border-radius:12px;overflow:hidden;border-left:3px solid #078930">
+      <a href="<?php echo $p['link']; ?>" class="group block">
+        <img src="<?php echo esc_url($p['thumb']); ?>" alt="<?php echo $p['title']; ?>" class="w-full" width="768" height="560" loading="lazy"/>
+        <div class="p-6">
+          <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors" style="font-size:20px;line-height:1.2"><?php echo $p['title']; ?></h3>
+          <p class="text-base leading-relaxed opacity-70"><?php echo $p['excerpt']; ?></p>
+        </div>
+      </a>
+    </article>
+    <?php endif; ?>
   </div>
+  <?php endif; ?>
+  <?php if (!empty($dgm_items[2])) : $p = $dgm_items[2]; ?>
+  <article style="background:#f9fafb;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb">
+    <a href="<?php echo $p['link']; ?>" class="group web-hcard">
+      <div class="web-hcard-img">
+        <img src="<?php echo esc_url($p['thumb']); ?>" alt="<?php echo $p['title']; ?>" style="width:100%;display:block" width="768" height="560" loading="lazy"/>
+      </div>
+      <div style="flex:1;padding:36px;display:flex;flex-direction:column;justify-content:center">
+        <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors" style="font-size:22px;line-height:1.2"><?php echo $p['title']; ?></h3>
+        <p class="text-base leading-relaxed opacity-70"><?php echo $p['excerpt']; ?></p>
+      </div>
+    </a>
+  </article>
+  <?php endif; ?>
 </section>
 <?php endif; ?>
 

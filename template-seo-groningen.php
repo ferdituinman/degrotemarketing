@@ -47,10 +47,11 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Je weet dat meer mensen jou moeten kunnen vinden. Maar hoe dat werkt met Google, dat is een ander verhaal.</p>
     <p>Wij maken dat makkelijk. Geen abracadabra. Gewoon gevonden worden. SEO noemen we dat, maar die term mag je gelijk weer vergeten.</p>
+    <p>We gaan doen wat werkt.</p>
   </div>
   <div class="mt-12">
     <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
-      Benieuwd wat jouw website scoort?<span class="sr-only"> (opent e-mailprogramma)</span>
+      Hoger in Google?<span class="sr-only"> (opent e-mailprogramma)</span>
     </a>
   </div>
 </div>
@@ -64,7 +65,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="md:col-start-2 md:col-span-5 space-y-6">
     <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">SEO bureau Groningen</p>
     <h2 class="text-4xl font-black mb-8">GEVONDEN WORDEN OF NIET</h2>
-    <p class="text-lg md:text-xl leading-relaxed">Als iemand googelt op jouw dienst in Groningen, wil je erbij zijn. Niet op pagina 2. Niet op de tweede pagina. Op de eerste en in het kaartje.</p>
+    <p class="text-lg md:text-xl leading-relaxed">Als iemand googelt op jouw dienst in Groningen, wil je erbij zijn. Niet op pagina 2. Op de eerste pagina. En in het kaartje.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is waar SEO over gaat. Gevonden worden door mensen die al zoeken naar wat jij doet. Niet adverteren. Niet betalen per klik. Gewoon gevonden worden.</p>
     <p class="text-lg md:text-xl leading-relaxed">Kijkers zijn geen kopers. Maar mensen die googelen op "loodgieter Groningen" of "boekhouder Groningen centrum" - die zijn er klaar voor.</p>
     <div class="h-1 w-24 bg-primary-container"></div>
@@ -186,8 +187,9 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 $dgm_posts = get_posts(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'date','order'=>'DESC']);
 if (!empty($dgm_posts)) :
 ?>
+<style>.seo-blog-duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}@media(max-width:767px){.seo-blog-duo{grid-template-columns:1fr}}</style>
 <section class="py-16 md:py-[100px]">
-  <div class="flex items-end justify-between gap-8 flex-wrap mb-12">
+  <div class="flex items-end justify-between gap-8 flex-wrap" style="margin-bottom:50px">
     <div>
       <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
       <h2 class="text-3xl font-black">Blogs. Zelf geschreven.</h2>
@@ -195,29 +197,54 @@ if (!empty($dgm_posts)) :
     </div>
     <a href="<?php echo home_url('/blog/'); ?>" class="hidden md:block text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">Alle blogs &rarr;</a>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <?php foreach ($dgm_posts as $dgm_i => $dgm_post) :
-      $dgm_thumb   = get_the_post_thumbnail_url($dgm_post, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
-      $dgm_title   = esc_html(get_the_title($dgm_post));
-      $dgm_excerpt = get_the_excerpt($dgm_post);
-      $dgm_link    = get_permalink($dgm_post);
-      if ($dgm_i === 0)     { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border-top:4px solid #078930'; }
-      elseif ($dgm_i === 2) { $dgm_card = 'background:#f9fafb;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb'; }
-      else                  { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb'; }
-    ?>
-    <article style="<?php echo $dgm_card; ?>">
-      <a href="<?php echo esc_url($dgm_link); ?>" class="group block">
-        <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
-             class="w-full"
-             width="512" height="512" loading="lazy"/>
-        <div class="p-6">
-          <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors" style="font-size:20px;line-height:1.2"><?php echo $dgm_title; ?></h3>
-          <p class="text-base leading-relaxed opacity-70"><?php echo $dgm_excerpt; ?></p>
+  <?php
+  $dgm_items = [];
+  foreach ($dgm_posts as $dgm_post) {
+    $dgm_items[] = [
+      'thumb_lg' => get_the_post_thumbnail_url($dgm_post, 'large') ?: ($up . 'voorgroningers-768x768.png'),
+      'thumb'    => get_the_post_thumbnail_url($dgm_post, 'medium_large') ?: ($up . 'voorgroningers-768x768.png'),
+      'title'    => esc_html(get_the_title($dgm_post)),
+      'excerpt'  => get_the_excerpt($dgm_post),
+      'link'     => esc_url(get_permalink($dgm_post)),
+    ];
+  }
+  if (!empty($dgm_items[0])) : $p = $dgm_items[0]; ?>
+  <article style="background:white;border-radius:12px;overflow:hidden;border-top:4px solid #078930;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;border-left:1px solid #e5e7eb;margin-bottom:24px">
+    <a href="<?php echo $p['link']; ?>" class="group block">
+      <img src="<?php echo esc_url($p['thumb_lg']); ?>" alt="<?php echo $p['title']; ?>" class="w-full" width="1024" height="748" loading="lazy"/>
+      <div style="padding:32px 36px">
+        <h3 class="font-black group-hover:text-primary-container transition-colors" style="font-size:28px;line-height:1.15;margin-bottom:14px"><?php echo $p['title']; ?></h3>
+        <p class="text-base leading-relaxed opacity-70"><?php echo $p['excerpt']; ?></p>
+      </div>
+    </a>
+  </article>
+  <?php endif; ?>
+  <?php if (!empty($dgm_items[1]) || !empty($dgm_items[2])) : ?>
+  <div class="seo-blog-duo">
+    <?php if (!empty($dgm_items[1])) : $p = $dgm_items[1]; ?>
+    <article style="background:white;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb">
+      <a href="<?php echo $p['link']; ?>" class="group block">
+        <img src="<?php echo esc_url($p['thumb']); ?>" alt="<?php echo $p['title']; ?>" class="w-full" width="768" height="560" loading="lazy"/>
+        <div class="p-5">
+          <h3 class="font-black leading-tight mb-2 group-hover:text-primary-container transition-colors" style="font-size:18px;line-height:1.2"><?php echo $p['title']; ?></h3>
+          <p class="text-sm leading-relaxed opacity-70"><?php echo $p['excerpt']; ?></p>
         </div>
       </a>
     </article>
-    <?php endforeach; ?>
+    <?php endif; ?>
+    <?php if (!empty($dgm_items[2])) : $p = $dgm_items[2]; ?>
+    <article style="background:#f9fafb;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb">
+      <a href="<?php echo $p['link']; ?>" class="group block">
+        <img src="<?php echo esc_url($p['thumb']); ?>" alt="<?php echo $p['title']; ?>" class="w-full" width="768" height="560" loading="lazy"/>
+        <div class="p-5">
+          <h3 class="font-black leading-tight mb-2 group-hover:text-primary-container transition-colors" style="font-size:18px;line-height:1.2"><?php echo $p['title']; ?></h3>
+          <p class="text-sm leading-relaxed opacity-70"><?php echo $p['excerpt']; ?></p>
+        </div>
+      </a>
+    </article>
+    <?php endif; ?>
   </div>
+  <?php endif; ?>
 </section>
 <?php endif; ?>
 
