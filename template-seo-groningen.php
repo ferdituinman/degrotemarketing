@@ -42,11 +42,11 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
-  <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3"><?php the_title(); ?></h1>
+  <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Hoger in Google</h1>
   <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</p>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Je weet dat meer mensen jou moeten kunnen vinden. Maar hoe dat werkt met Google, dat is een ander verhaal.</p>
-    <p>Wij maken dat makkelijk. Geen abracadabra. Gewoon gevonden worden.</p>
+    <p>Wij maken dat makkelijk. Geen abracadabra. Gewoon gevonden worden. SEO noemen we dat, maar die term mag je gelijk weer vergeten.</p>
   </div>
   <div class="mt-12">
     <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
@@ -64,7 +64,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="md:col-start-2 md:col-span-5 space-y-6">
     <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">SEO bureau Groningen</p>
     <h2 class="text-4xl font-black mb-8">GEVONDEN WORDEN OF NIET</h2>
-    <p class="text-lg md:text-xl leading-relaxed">Als iemand googelt op jouw dienst in Groningen, wil je erbij zijn. Niet op pagina 2. Niet als vijfde. Bovenaan.</p>
+    <p class="text-lg md:text-xl leading-relaxed">Als iemand googelt op jouw dienst in Groningen, wil je erbij zijn. Niet op pagina 2. Niet op de tweede pagina. Op de eerste en in het kaartje.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is waar SEO over gaat. Gevonden worden door mensen die al zoeken naar wat jij doet. Niet adverteren. Niet betalen per klik. Gewoon gevonden worden.</p>
     <p class="text-lg md:text-xl leading-relaxed">Kijkers zijn geen kopers. Maar mensen die googelen op "loodgieter Groningen" of "boekhouder Groningen centrum" - die zijn er klaar voor.</p>
     <div class="h-1 w-24 bg-primary-container"></div>
@@ -83,8 +83,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="space-y-6 order-2">
     <h2 class="text-4xl font-black mb-8">Reviews tellen mee. Echt.</h2>
     <p class="text-lg md:text-xl leading-relaxed">Hoe meer reviews, hoe vaker gevonden. Hoe vaker gevonden, hoe meer klanten. Hoe meer klanten, hoe meer reviews.</p>
-    <p class="text-lg md:text-xl leading-relaxed">Dat is de cirkel waar je in wilt zitten. Reviews zijn niet alleen voor je gevoel. Ze zijn onderdeel van hoe Google beslist wie er bovenaan staat in Groningen.</p>
-    <p class="text-lg md:text-xl leading-relaxed">En het begint gewoon met vragen. Niet met een dure tool.</p>
+    <p class="text-lg md:text-xl leading-relaxed">Dat is de flow waar je in wilt zitten. Reviews zijn niet alleen voor je gevoel. Ze zijn onderdeel van hoe Google beslist wie er bovenaan staat in Groningen.</p>
+    <p class="text-lg md:text-xl leading-relaxed">En het begint gewoon met vragen. Dus dat gaan we doen.</p>
     <div class="h-1 w-36 bg-primary-container -rotate-1 translate-x-2"></div>
   </div>
   <div class="relative order-1" style="transform:translateY(16px)">
@@ -133,8 +133,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section class="py-16 md:py-[100px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
   <div class="space-y-8 text-xl leading-relaxed order-1 md:order-2">
     <h2 class="text-4xl font-black leading-tight mb-4">Iedereen belooft pagina 1.<br/>Wij niet.</h2>
-    <p class="text-xl leading-relaxed">Elke SEO-partij garandeert pagina 1. Dat klinkt mooi. Het is ook onzin - niemand kan dat garanderen.</p>
-    <p class="text-xl leading-relaxed">Wij zeggen wat realistisch is. Wat we verwachten. Wat we doen als het anders loopt. En daarna halen we het gewoon.</p>
+    <p class="text-xl leading-relaxed">Elke SEO-partij belooft je de eerste plek. Dat klinkt mooi. Het is ook onzin. Niemand kan dat garanderen.</p>
+    <p class="text-xl leading-relaxed">Wij zeggen wat realistisch is. Wat we verwachten. Wat op een klein budget niet gaat lukken. En als iets niet lukt, verzinnen we iets veel beter.</p>
     <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-8 py-3 text-lg font-bold rounded drift-on-hover inline-block">
       Gratis website-analyse<span class="sr-only"> (opent e-mailprogramma)</span>
     </a>
@@ -163,8 +163,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section id="contact" class="py-16 md:py-[100px] text-center relative overflow-hidden">
   <div class="relative z-10 space-y-12">
     <div class="space-y-4">
-      <p class="text-2xl md:text-3xl font-bold opacity-60">Benieuwd wat jouw website nu scoort?</p>
-      <h2 class="text-5xl md:text-7xl font-black">We kijken het gratis na.</h2>
+      <p class="text-2xl md:text-3xl font-bold opacity-60">Benieuwd hoe jouw site het doet?</p>
+      <h2 class="text-5xl md:text-7xl font-black">We kijken het na.</h2>
     </div>
     <a href="mailto:ferdi@degrotemarketing.nl"
        class="bg-primary-container text-white px-12 py-6 text-2xl font-bold rounded-lg drift-on-hover shadow-xl shadow-primary-container/20 inline-block md:rotate-1">
@@ -191,23 +191,25 @@ if (!empty($dgm_posts)) :
     <div>
       <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
       <h2 class="text-3xl font-black">Blogs. Zelf geschreven.</h2>
+      <div style="width:40px;height:3px;background:#078930;margin-top:10px;transform:rotate(-1.5deg)"></div>
     </div>
     <a href="<?php echo home_url('/blog/'); ?>" class="hidden md:block text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">Alle blogs &rarr;</a>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <?php foreach ($dgm_posts as $dgm_post) :
+    <?php foreach ($dgm_posts as $dgm_i => $dgm_post) :
       $dgm_thumb   = get_the_post_thumbnail_url($dgm_post, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
       $dgm_title   = esc_html(get_the_title($dgm_post));
       $dgm_excerpt = get_the_excerpt($dgm_post);
       $dgm_link    = get_permalink($dgm_post);
+      if ($dgm_i === 0)     { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border-top:4px solid #078930'; }
+      elseif ($dgm_i === 2) { $dgm_card = 'background:#f9fafb;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb'; }
+      else                  { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb'; }
     ?>
-    <article class="bg-white rounded-xl overflow-hidden border border-gray-100">
+    <article style="<?php echo $dgm_card; ?>">
       <a href="<?php echo esc_url($dgm_link); ?>" class="group block">
-        <div style="overflow:hidden">
-          <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
-               class="w-full transition-transform duration-500 group-hover:scale-105"
-               width="512" height="512" loading="lazy"/>
-        </div>
+        <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
+             class="w-full"
+             width="512" height="512" loading="lazy"/>
         <div class="p-6">
           <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors" style="font-size:20px;line-height:1.2"><?php echo $dgm_title; ?></h3>
           <p class="text-base leading-relaxed opacity-70"><?php echo $dgm_excerpt; ?></p>
@@ -215,9 +217,6 @@ if (!empty($dgm_posts)) :
       </a>
     </article>
     <?php endforeach; ?>
-  </div>
-  <div class="mt-8 md:hidden">
-    <a href="<?php echo home_url('/blog/'); ?>" class="text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5">Alle blogs &rarr;</a>
   </div>
 </section>
 <?php endif; ?>

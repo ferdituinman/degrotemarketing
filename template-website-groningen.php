@@ -41,7 +41,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
-  <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3"><?php the_title(); ?></h1>
+  <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Website laten maken</h1>
   <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</p>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Geen jaar wachten. Niet onnodig duur. Een website die doet wat hij moet doen.</p>
@@ -49,7 +49,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   </div>
   <div class="mt-12">
     <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
-      Bak pleur?<span class="sr-only"> (opent e-mailprogramma)</span>
+      Daag ons uit. Graag.<span class="sr-only"> (opent e-mailprogramma)</span>
     </a>
   </div>
 </div>
@@ -63,9 +63,9 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
     <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Website laten maken Groningen</p>
     <h2 class="text-4xl font-black mb-8">EEN WEBSITE DIE WERKT</h2>
-    <p class="text-lg md:text-xl leading-relaxed">De meeste websites zijn digitale brochures. Ze zien er mooi uit, maar ze doen niets. Niemand leest ze. Niemand belt erna.</p>
+    <p class="text-lg md:text-xl leading-relaxed">De meeste websites zijn digitale brochures. Ze zien er mooi uit, maar ze doen niets. Niemand leest ze. Niemand belt.</p>
     <p class="text-lg md:text-xl leading-relaxed">Wij bouwen websites die werken. Die klanten aanspreken. Die snel laden. Die gevonden worden in Google. En die mensen overtuigen om contact op te nemen.</p>
-    <p class="text-lg md:text-xl leading-relaxed">Niet de duurste. Wel de beste voor jou.</p>
+    <p class="text-lg md:text-xl leading-relaxed">Niet de duurste. Wel de beste.</p>
     <div class="h-1 w-24 bg-primary-container"></div>
   </div>
   <div class="md:col-start-2 md:col-span-5 relative order-2 md:order-1">
@@ -81,8 +81,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section class="py-16 md:pt-[80px] md:pb-[130px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
   <div class="space-y-6">
     <h2 class="text-4xl font-black mb-8">Geen dure website nodig. Echt niet.</h2>
-    <p class="text-lg md:text-xl leading-relaxed">Je hebt geen website van 15.000 euro nodig. Dat is niet erg als je Coolblue bent. Maar jij bent geen Coolblue.</p>
-    <p class="text-lg md:text-xl leading-relaxed">De meeste Groningse ondernemers hebben een website nodig die snel laadt, makkelijk te vinden is en duidelijk uitlegt wat je doet. Punt.</p>
+    <p class="text-lg md:text-xl leading-relaxed">Je hebt geen website van tienduizend euro nodig. Zo'n bedrag is prima te doen voor de Primark. Maar jij bent de Primark niet.</p>
+    <p class="text-lg md:text-xl leading-relaxed">De meeste Groningse ondernemers hebben een website nodig die snel laadt, makkelijk te vinden is en goed vertelt wat je doet. Punt.</p>
     <p class="text-lg md:text-xl leading-relaxed">Hoe simpeler de uitleg, hoe meer mensen je bellen. Hoe meer mensen je bellen, hoe minder je hoeft te adverteren. Hoe minder je adverteert, hoe meer je overhoudt.</p>
     <div class="h-1 w-36 bg-primary-container -rotate-1 translate-x-2"></div>
   </div>
@@ -100,8 +100,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-24">
     <div class="flex-1 space-y-8 md:translate-y-6">
       <h2 class="text-4xl font-black italic">VAN IDEE NAAR LIVE</h2>
-      <p class="text-xl leading-relaxed">We gaan niet overleggen over overleggen. We vragen wat je nodig hebt. We bouwen het. En we zorgen dat Google je vindt.</p>
-      <p class="text-xl leading-relaxed">Kleine stapjes, echte resultaten. Geen halfjaarsproject. Gewoon een website die klaarstaat als jij dat wil.</p>
+      <p class="text-xl leading-relaxed">We gaan niet overleggen over overleggen. We achterhalen wat je nodig hebt. We bouwen het. En we zorgen dat Google je vindt.</p>
+      <p class="text-xl leading-relaxed">In korte sprints naar resultaat. Geen halfjaarsproject. Gewoon een website die klaarstaat als jij dat wil.</p>
       <p class="font-bold text-primary-container">Kloar.</p>
     </div>
     <div class="w-full kaartje-45">
@@ -132,11 +132,11 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch md:gap-0">
     <div class="bg-surface-container-low p-6 md:p-12 flex flex-col justify-center md:rounded-l rounded relative overflow-hidden order-1 md:order-2">
       <span class="absolute -top-8 -right-4 text-[10rem] font-black text-black/5 select-none leading-none">Web</span>
-      <h2 class="text-4xl font-black mb-6 relative z-10">WE LEVEREN NIET OP EN ZIJN WEG</h2>
+      <h2 class="text-4xl font-black mb-6 relative z-10">JOUW VERHAAL IS BELANGRIJKER DAN DE TECHNIEK.</h2>
       <div class="space-y-4 relative z-10">
-        <p class="text-xl leading-relaxed">We leveren geen kale website op en spareren daarna. Als je drie maanden later iets wil aanpassen, kom je bij ons.</p>
-        <p class="text-xl leading-relaxed">Heb je al een website die niet goed werkt? Of nog helemaal geen? Hetzelfde gesprek. Hetzelfde adres.</p>
-        <p class="text-xl font-bold text-primary-container">Wij staan naast je. Niet boven je.</p>
+        <p class="text-xl leading-relaxed">Techniek is een trucje. HTML? Dat kun je een aap nog leren. Bij ons is de techniek gewoon een manier om te doen wat we moeten doen. Jouw verhaal vertellen.</p>
+        <p class="text-xl leading-relaxed">Daarom draait een nieuwe site niet om abracadabra en onzichtbare code. Die doen we wel, maar dat is niet de kern. De kern is wat jij doet en wat je klant daaraan heeft.</p>
+        <p class="text-xl font-bold text-primary-container">Geen bullshit. We doen wat werkt.</p>
       </div>
     </div>
     <img src="<?php echo esc_url($web_img3); ?>"
@@ -162,12 +162,12 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section id="contact" class="py-16 md:py-[100px] text-center relative overflow-hidden">
   <div class="relative z-10 space-y-12">
     <div class="space-y-4">
-      <p class="text-2xl md:text-3xl font-bold opacity-60">Zullen we gewoon beginnen?</p>
-      <h2 class="text-5xl md:text-7xl font-black">We komen jouw koffie proeven.</h2>
+      <p class="text-2xl md:text-3xl font-bold opacity-60">Morgen beginnen</p>
+      <h2 class="text-5xl md:text-7xl font-black">We komen je zaak bekijken en sturen je een ontwerp</h2>
     </div>
     <a href="mailto:ferdi@degrotemarketing.nl"
        class="bg-primary-container text-white px-12 py-6 text-2xl font-bold rounded-lg drift-on-hover shadow-xl shadow-primary-container/20 inline-block md:rotate-1">
-      Nodig ons uit<span class="sr-only"> (opent e-mailprogramma)</span>
+      Doe maar<span class="sr-only"> (opent e-mailprogramma)</span>
     </a>
     <p class="text-sm italic opacity-80 mt-6">Eerste gesprek, altijd vrijblijvend.</p>
   </div>
@@ -188,25 +188,25 @@ if (!empty($dgm_posts)) :
 <section class="py-16 md:py-[100px]">
   <div class="flex items-end justify-between gap-8 flex-wrap mb-12">
     <div>
-      <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
-      <h2 class="text-3xl font-black">Blogs. Zelf geschreven.</h2>
+      <h2 class="text-4xl font-black">Blogs. Zelf geschreven.</h2>
     </div>
     <a href="<?php echo home_url('/blog/'); ?>" class="hidden md:block text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">Alle blogs &rarr;</a>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <?php foreach ($dgm_posts as $dgm_post) :
+    <?php foreach ($dgm_posts as $dgm_i => $dgm_post) :
       $dgm_thumb   = get_the_post_thumbnail_url($dgm_post, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
       $dgm_title   = esc_html(get_the_title($dgm_post));
       $dgm_excerpt = get_the_excerpt($dgm_post);
       $dgm_link    = get_permalink($dgm_post);
+      if ($dgm_i === 1)     { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border-left:3px solid #078930'; }
+      elseif ($dgm_i === 2) { $dgm_card = 'background:#f9fafb;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb'; }
+      else                  { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb'; }
     ?>
-    <article class="bg-white rounded-xl overflow-hidden border border-gray-100">
+    <article style="<?php echo $dgm_card; ?>">
       <a href="<?php echo esc_url($dgm_link); ?>" class="group block">
-        <div style="overflow:hidden">
-          <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
-               class="w-full transition-transform duration-500 group-hover:scale-105"
-               width="512" height="512" loading="lazy"/>
-        </div>
+        <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
+             class="w-full"
+             width="512" height="512" loading="lazy"/>
         <div class="p-6">
           <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors" style="font-size:20px;line-height:1.2"><?php echo $dgm_title; ?></h3>
           <p class="text-base leading-relaxed opacity-70"><?php echo $dgm_excerpt; ?></p>
@@ -214,9 +214,6 @@ if (!empty($dgm_posts)) :
       </a>
     </article>
     <?php endforeach; ?>
-  </div>
-  <div class="mt-8 md:hidden">
-    <a href="<?php echo home_url('/blog/'); ?>" class="text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5">Alle blogs &rarr;</a>
   </div>
 </section>
 <?php endif; ?>

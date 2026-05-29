@@ -31,10 +31,10 @@ $services = [
   ['label' => 'Facebouk',       'url' => home_url('/contentmarketing-groningen/')],
   ['label' => 'Webstek',      'url' => home_url('/website-groningen/')],
 ];
-$lnk  = "font-['Public_Sans'] text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 opacity-80 hover:translate-y-[-2px] transition-transform duration-200";
+$lnk  = "font-['Public_Sans'] text-lg font-bold tracking-tight text-zinc-900 opacity-80 hover:translate-y-[-2px] transition-transform duration-200";
 $lnka = "font-['Public_Sans'] text-lg font-bold tracking-tight text-[#078930] underline decoration-wavy decoration-2 underline-offset-4 hover:translate-y-[-2px] transition-transform duration-200";
 ?>
-<header class="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-sm docked full-width top-0 sticky z-50 no-border">
+<header class="bg-white/90 backdrop-blur-sm top-0 sticky z-50">
 <nav class="flex justify-between items-center w-full px-8 py-4 md:py-3 max-w-full">
 <a href="<?php echo $home_url; ?>" class="ml-0 mr-auto">
 <img src="<?php echo content_url('uploads/2026/05/logo.png'); ?>"

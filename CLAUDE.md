@@ -50,3 +50,20 @@ Classic WordPress template hierarchy (not a block/FSE theme):
 - Primary color: `#078930` (green)
 - Font: Public Sans (self-hosted)
 - Breakpoint: `md` = 48rem (768px)
+
+## Bewust Slordig
+
+Design principle: after the hero, no block may be identical to the same block on another page. Intentionally varied, not random.
+
+Rules:
+- Hero is uniform across all pages
+- Variations are subtle: direction flip, vertical offset (30-80px range), decorative element rotation
+- Blocks are labelled via HTML comments (`<!-- BLOK: s1 -->` etc.)
+- Use inline styles for values not in compiled Tailwind
+
+Variation matrix (as of 2026-05-28):
+
+s1 (grid-cols-12 opener): home=beeld links -48px / SEO=tekst links +32px / Google Ads=beeld links +24px / Content=tekst links +16px / Website=beeld links geen offset
+s2 (55/45 split): home=tekst links +48px / SEO=beeld links +16px / Google Ads=tekst links -24px / Content=beeld links +32px / Website=tekst links geen offset
+s3 (flex tekst + stappenkaart): SEO=tekst links / Google Ads=kaart links / Website=tekst links andere rotatie
+s5 (quote border-left): home=max-w-4xl ml-14 / SEO=max-w-4xl ml-24px / Website=max-w-2xl ml-14

@@ -5,7 +5,7 @@
              <?php echo content_url('uploads/2026/05/footerstrip-300x152.png'); ?> 300w"
      alt="De Grote Marketing" class="w-full block md:hidden ml-[-calc(100vw-100%)] mr-[-calc(100vw-100%)]"
      width="1761" height="893" sizes="100vw" loading="lazy"/>
-<footer class="bg-[#1a1c1c] text-white full-width mt-20">
+<footer class="bg-[#1a1c1c] text-white mt-20">
 <img src="<?php echo content_url('uploads/2026/05/stripdesktop.png'); ?>"
      srcset="<?php echo content_url('uploads/2026/05/stripdesktop-1536x735.png'); ?> 1536w,
              <?php echo content_url('uploads/2026/05/stripdesktop-1024x490.png'); ?> 1024w,
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div>
-        <p class="text-xs font-bold uppercase tracking-widest bg-primary-container text-white mb-6 inline-block px-2 py-1">Diensten</p>
+        <p class="text-xs font-bold uppercase tracking-widest bg-primary-container text-white mb-6 inline-block px-2 py-1">Dingen</p>
         <nav class="space-y-3">
           <p><a href="<?php echo home_url('/seo-groningen/'); ?>" class="text-white/80 hover:text-white transition-colors text-lg">SEO Groningen</a></p>
           <p><a href="<?php echo home_url('/google-ads-groningen/'); ?>" class="text-white/80 hover:text-white transition-colors text-lg">Google Ads</a></p>

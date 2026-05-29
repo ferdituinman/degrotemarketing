@@ -49,7 +49,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   </div>
   <div class="mt-12">
     <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
-      Hoeveel mensen zoeken er al?<span class="sr-only"> (opent e-mailprogramma)</span>
+      Vraag ons om een proefberekening<span class="sr-only"> (opent e-mailprogramma)</span>
     </a>
   </div>
 </div>
@@ -82,8 +82,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="space-y-6">
     <h2 class="text-4xl font-black mb-8">Jouw budget gaat naar klanten. Niet naar lucht.</h2>
     <p class="text-lg md:text-xl leading-relaxed">Hoe meer je weet wat je uitgeeft, hoe beter je kunt bijsturen. Hoe beter je bijstuurt, hoe verder je budget komt. Hoe verder je budget komt, hoe meer klanten je binnenkrijgt.</p>
-    <p class="text-lg md:text-xl leading-relaxed">We kijken maandelijks wat werkt en wat niet. Campagnes die niets opleveren, stoppen we. Campagnes die werken, schalen we op.</p>
-    <p class="text-lg md:text-xl leading-relaxed">Geen rapport van 80 pagina's die in een la belandt. Gewoon een gesprek over wat het heeft opgeleverd.</p>
+    <p class="text-lg md:text-xl leading-relaxed">We kijken maandelijks wat werkt en wat niet. Zoekwoorden die niets opleveren, stoppen we. Zoekwoorden die werken, schalen we op.</p>
+    <p class="text-lg md:text-xl leading-relaxed">Einde van de maand een rapportage op 1 A4, zodat je weet wat werkt en wat niet. En tussendoor komen we langs, om te vragen hoe het gaat. <strong>Kloar.</strong></p>
     <div class="h-1 w-36 bg-primary-container -rotate-1 translate-x-2"></div>
   </div>
   <div class="relative" style="transform:translateY(-24px)">
@@ -101,8 +101,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-24">
     <div class="flex-1 space-y-8 md:translate-y-6 order-2">
       <h2 class="text-4xl font-black italic">WAT WE DOEN</h2>
-      <p class="text-xl leading-relaxed">Google Ads is niet ingewikkeld. Maar het kost wel aandacht. Verkeerde instellingen en je gooit geld weg.</p>
-      <p class="text-xl leading-relaxed">Wij doen het goed. Van het begin af aan.</p>
+      <p class="text-xl leading-relaxed">Google Ads is niet ingewikkeld. Maar het kost wel aandacht. Verkeerde instellingen En je steekt geld in de brand.</p>
+      <p class="text-xl leading-relaxed">Wij zitten er bovenop. Van het begin af aan.</p>
       <p class="font-bold text-primary-container">Kloar.</p>
     </div>
     <div class="w-full kaartje-45 order-1">
@@ -117,7 +117,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
         </div>
         <div class="flex gap-4 items-start mt-4">
           <span class="text-primary-container font-black text-xl w-8 shrink-0">03</span>
-          <p class="text-lg leading-relaxed">Campagnes instellen zodat het budget niet verspild wordt</p>
+          <p class="text-lg leading-relaxed">Campagnes instellen zodat we meer geld verdienen dan we uitgeven</p>
         </div>
         <div class="flex gap-4 items-start mt-4">
           <span class="text-primary-container font-black text-xl w-8 shrink-0">04</span>
@@ -132,10 +132,10 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch md:gap-0">
   <div class="bg-surface-container-low p-6 md:p-12 flex flex-col justify-center md:rounded-l rounded relative overflow-hidden order-1 md:order-1">
     <span class="absolute -top-8 -right-4 text-[10rem] font-black text-black/5 select-none leading-none">Ads</span>
-    <h2 class="text-4xl font-black mb-6 relative z-10">GEEN LEVERANCIER</h2>
+    <h2 class="text-4xl font-black mb-6 relative z-10">GEEN ADS BURO</h2>
     <div class="space-y-4 relative z-10">
-      <p class="text-xl leading-relaxed">We zijn geen bureau dat elke maand een factuur stuurt voor werk dat je niet ziet.</p>
-      <p class="text-xl leading-relaxed">We zitten naast je. We leggen uit wat we doen en waarom. En als iets niet werkt, zeggen we dat ook gewoon.</p>
+      <p class="text-xl leading-relaxed">Wij zijn geen advertising-agency die je maandelijks een dik rapport stuurt over hoeveel je nu weer hebt uitgegeven.</p>
+      <p class="text-xl leading-relaxed">En we vragen je hoe je zelf vindt dat het gaat.</p>
       <p class="text-xl font-bold text-primary-container">Dezelfde taal. Dezelfde hoogte.</p>
     </div>
   </div>
@@ -150,8 +150,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section id="contact" class="py-16 md:py-[100px] text-center relative overflow-hidden">
   <div class="relative z-10 space-y-12">
     <div class="space-y-4">
-      <p class="text-2xl md:text-3xl font-bold opacity-60">Benieuwd hoeveel mensen nu al zoeken op jouw dienst?</p>
-      <h2 class="text-5xl md:text-7xl font-black">We laten het zien.</h2>
+      <p class="text-2xl md:text-3xl font-bold opacity-60">Benieuwd hoeveel Stadjers nu al zoeken op jouw dienst?</p>
+      <h2 class="text-5xl md:text-7xl font-black">We rekenen het uit.</h2>
     </div>
     <a href="mailto:ferdi@degrotemarketing.nl"
        class="bg-primary-container text-white px-12 py-6 text-2xl font-bold rounded-lg drift-on-hover shadow-xl shadow-primary-container/20 inline-block md:rotate-1">
@@ -176,25 +176,25 @@ if (!empty($dgm_posts)) :
 <section class="py-16 md:py-[100px]">
   <div class="flex items-end justify-between gap-8 flex-wrap mb-12">
     <div>
-      <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
-      <h2 class="text-3xl font-black">Blogs. Zelf geschreven.</h2>
+      <h2 class="text-4xl font-black italic">Blogs. Zelf geschreven.</h2>
     </div>
     <a href="<?php echo home_url('/blog/'); ?>" class="hidden md:block text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">Alle blogs &rarr;</a>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <?php foreach ($dgm_posts as $dgm_post) :
+    <?php foreach ($dgm_posts as $dgm_i => $dgm_post) :
       $dgm_thumb   = get_the_post_thumbnail_url($dgm_post, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
       $dgm_title   = esc_html(get_the_title($dgm_post));
       $dgm_excerpt = get_the_excerpt($dgm_post);
       $dgm_link    = get_permalink($dgm_post);
+      if ($dgm_i === 0)     { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.08);transform:translateY(-8px)'; }
+      elseif ($dgm_i === 2) { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;transform:translateY(12px)'; }
+      else                  { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb'; }
     ?>
-    <article class="bg-white rounded-xl overflow-hidden border border-gray-100">
+    <article style="<?php echo $dgm_card; ?>">
       <a href="<?php echo esc_url($dgm_link); ?>" class="group block">
-        <div style="overflow:hidden">
-          <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
-               class="w-full transition-transform duration-500 group-hover:scale-105"
-               width="512" height="512" loading="lazy"/>
-        </div>
+        <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
+             class="w-full"
+             width="512" height="512" loading="lazy"/>
         <div class="p-6">
           <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors" style="font-size:20px;line-height:1.2"><?php echo $dgm_title; ?></h3>
           <p class="text-base leading-relaxed opacity-70"><?php echo $dgm_excerpt; ?></p>
@@ -202,9 +202,6 @@ if (!empty($dgm_posts)) :
       </a>
     </article>
     <?php endforeach; ?>
-  </div>
-  <div class="mt-8 md:hidden">
-    <a href="<?php echo home_url('/blog/'); ?>" class="text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5">Alle blogs &rarr;</a>
   </div>
 </section>
 <?php endif; ?>

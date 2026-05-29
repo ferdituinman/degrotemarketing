@@ -43,12 +43,12 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3"><?php the_title(); ?></h1>
   <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</p>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
-    <p>Jij weet wat je doet. Maar hoe zeg je dat online op een manier die mensen aanspreekt?</p>
+    <p>Jij weet wat je doet. Maar hoe vertel je iets op Facebook op een manier die mensen aanspreekt?</p>
     <p>Wij helpen je om jouw verhaal te vertellen. Niet met mooipraterij. Gewoon eerlijk en herkenbaar.</p>
   </div>
   <div class="mt-12">
     <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
-      Stuur een zin over wat je doet<span class="sr-only"> (opent e-mailprogramma)</span>
+      Mail ons eens wat je doet<span class="sr-only"> (opent e-mailprogramma)</span>
     </a>
   </div>
 </div>
@@ -60,7 +60,6 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s1 - eerste inhoudssectie: eyebrow + H2 + paragrafen + foto links (12-kol grid) -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-start-2 md:col-span-5 space-y-6">
-    <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Content marketing Groningen</p>
     <h2 class="text-4xl font-black mb-8">ALS MARKETING VOELT ALS WERK</h2>
     <p class="text-lg md:text-xl leading-relaxed">Je hebt al geprobeerd iets te schrijven voor je website. Het voelde als een schooltaak. Dat is het probleem.</p>
     <p class="text-lg md:text-xl leading-relaxed">Teksten die aanvoelen als werk, voelen ook zo voor de lezer. Mensen haken af. Ze klikken weg. Niet omdat ze niet geinteresseerd zijn, maar omdat de tekst ze niet aanspreekt.</p>
@@ -79,7 +78,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s2 - tweede sectie 55/45: tekst links + foto rechts -->
 <section class="py-16 md:pt-[80px] md:pb-[130px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
   <div class="space-y-6 order-2">
-    <h2 class="text-4xl font-black mb-8">Jouw verhaal is beter dan wat wij bedenken.</h2>
+    <h2 class="text-4xl font-black mb-8">Jouw verhaal is sterker dan alles wat wij kunnen bedenken.</h2>
     <p class="text-lg md:text-xl leading-relaxed">Je hebt bestaande klanten die blij zijn. Concrete resultaten die je geleverd hebt. Dingen die echt zijn.</p>
     <p class="text-lg md:text-xl leading-relaxed">Een goed idee voelt te simpel omdat je er zelf al jaren middenin zit. Maar een buitenstaander ziet het meteen.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is precies wat wij doen. Wij kijken naar buiten. Wij zien wat jij al hebt. En wij schrijven dat op een manier die mensen herkennen.</p>
@@ -110,7 +109,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s4 - statement 55/45: tekst rechts + stappenkaart links + inline CTA-knop -->
 <section class="py-16 md:py-[100px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
   <div class="space-y-8 text-xl leading-relaxed order-1 md:order-2">
-    <h2 class="text-4xl font-black leading-tight mb-4">Content die werkt.<br/>Niet content die er staat.</h2>
+    <h2 class="text-4xl font-black leading-tight mb-4">Content die werkt.<br/>Niet schrijven om het schrijven.</h2>
     <p class="text-xl leading-relaxed">We schrijven teksten die gevonden worden in Google. En teksten die mensen ook echt lezen als ze er eenmaal zijn.</p>
     <p class="text-xl leading-relaxed">Dat is niet hetzelfde. De meeste websites doen maar een van de twee. Wij doen allebei.</p>
     <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-8 py-3 text-lg font-bold rounded drift-on-hover inline-block">
@@ -133,7 +132,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
       </div>
       <div class="flex gap-4 items-start mt-4">
         <span class="text-primary-container font-black text-xl w-8 shrink-0">04</span>
-        <p class="text-lg leading-relaxed">E-mails en nieuwsbrieven die mensen echt lezen</p>
+        <p class="text-lg leading-relaxed">Gewoon teksten die mensen echt lezen</p>
       </div>
     </div>
   </div>
@@ -186,25 +185,25 @@ if (!empty($dgm_posts)) :
 <section class="py-16 md:py-[100px]">
   <div class="flex items-end justify-between gap-8 flex-wrap mb-12">
     <div>
-      <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
+      <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Leesvoer.</p>
       <h2 class="text-3xl font-black">Blogs. Zelf geschreven.</h2>
     </div>
     <a href="<?php echo home_url('/blog/'); ?>" class="hidden md:block text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">Alle blogs &rarr;</a>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <?php foreach ($dgm_posts as $dgm_post) :
+    <?php foreach ($dgm_posts as $dgm_i => $dgm_post) :
       $dgm_thumb   = get_the_post_thumbnail_url($dgm_post, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
       $dgm_title   = esc_html(get_the_title($dgm_post));
       $dgm_excerpt = get_the_excerpt($dgm_post);
       $dgm_link    = get_permalink($dgm_post);
+      if ($dgm_i === 0) { $dgm_card = 'background:rgba(7,137,48,0.07);border-radius:12px;overflow:hidden'; }
+      else              { $dgm_card = 'background:white;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb'; }
     ?>
-    <article class="bg-white rounded-xl overflow-hidden border border-gray-100">
+    <article style="<?php echo $dgm_card; ?>">
       <a href="<?php echo esc_url($dgm_link); ?>" class="group block">
-        <div style="overflow:hidden">
-          <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
-               class="w-full transition-transform duration-500 group-hover:scale-105"
-               width="512" height="512" loading="lazy"/>
-        </div>
+        <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
+             class="w-full"
+             width="512" height="512" loading="lazy"/>
         <div class="p-6">
           <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors" style="font-size:20px;line-height:1.2"><?php echo $dgm_title; ?></h3>
           <p class="text-base leading-relaxed opacity-70"><?php echo $dgm_excerpt; ?></p>
@@ -212,9 +211,6 @@ if (!empty($dgm_posts)) :
       </a>
     </article>
     <?php endforeach; ?>
-  </div>
-  <div class="mt-8 md:hidden">
-    <a href="<?php echo home_url('/blog/'); ?>" class="text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5">Alle blogs &rarr;</a>
   </div>
 </section>
 <?php endif; ?>

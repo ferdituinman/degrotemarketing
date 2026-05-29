@@ -604,28 +604,6 @@ mobileMenu.querySelectorAll('a').forEach(function(link){
   });
 });
 })();
-
-(function(){
-  var ids=['aanpak','plezier','contact'];
-  var secs=ids.map(function(id){return document.getElementById(id);});
-  if(!secs[0])return;
-  var links={};
-  ids.forEach(function(id){links[id]=document.querySelector('[data-spy-link="'+id+'"]');});
-  var on=['text-[#078930]','underline','decoration-wavy','decoration-2','underline-offset-4'];
-  var off=['text-zinc-900','opacity-80'];
-  function activate(id){
-    ids.forEach(function(s){
-      var l=links[s];if(!l)return;
-      if(s===id){l.classList.remove.apply(l.classList,off);l.classList.add.apply(l.classList,on);}
-      else{l.classList.remove.apply(l.classList,on);l.classList.add.apply(l.classList,off);}
-    });
-  }
-  activate('aanpak');
-  var observer=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting)activate(e.target.id);});
-  },{rootMargin:'-10% 0px -80% 0px',threshold:0});
-  secs.forEach(function(s){if(s)observer.observe(s);});
-})();
 </script>
     <?php
 });

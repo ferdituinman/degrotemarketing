@@ -116,7 +116,7 @@ $ri = 0;
 
 <?php if (!empty($posts_arr)) : ?>
 <!-- POSTS GRID -->
-<section style="padding-top:24px;padding-bottom:48px">
+<section style="padding-top:48px;padding-bottom:64px">
   <div class="archief-kolommen">
     <div class="archief-links">
       <?php
