@@ -68,10 +68,10 @@ $up = content_url('uploads/2026/05/');
     <p>Het contactformulier is gebouwd met Contact Form 7. Berichten worden opgeslagen in WordPress en per e-mail doorgestuurd naar ons. Er zijn geen externe koppelingen aan dit formulier.</p>
 
     <h2>Cookies</h2>
-    <p>Deze website gebruikt alleen een technisch cookie van WordPress (sessiecookie). Dat cookie verdwijnt zodra je de browser sluit. Wij gebruiken geen tracking cookies, geen Google Analytics, geen Facebook Pixel.</p>
+    <p>Deze website gebruikt een technisch cookie van WordPress (sessiecookie) en Google Analytics om anoniem bij te houden hoeveel bezoekers er zijn en welke pagina's goed worden bekeken. Wij gebruiken geen Facebook Pixel of andere advertentie-trackers. Meer lees je op de <a href="<?php echo home_url('/koukjes/'); ?>">cookiepagina</a>.</p>
 
     <h2>Jouw rechten</h2>
-    <p>Je hebt het recht om te weten welke gegevens wij van jou bewaren, om die te laten corrigeren of verwijderen. Neem daarvoor contact op via ons <a href="/contact/">contactformulier</a>. Wij reageren binnen 4 weken.</p>
+    <p>Je hebt het recht om te weten welke gegevens wij van jou bewaren, om die te laten corrigeren of verwijderen. Neem daarvoor contact op via ons <a href="/contact/">contactformulier</a>. Wij reageren in een paar dagen of sneller.</p>
     <p>Ben je het niet eens met hoe wij omgaan met jouw gegevens? Dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens via <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a>.</p>
 
     <h2>Beveiliging</h2>

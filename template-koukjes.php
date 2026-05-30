@@ -43,17 +43,18 @@ $up = content_url('uploads/2026/05/');
 
     <h2>Welke cookies gebruikt deze website?</h2>
 
+    <?php echo do_shortcode('[cmplz-document type="cookie-statement" region="eu"]'); ?>
+
     <h3>Technisch noodzakelijke cookies</h3>
     <p>WordPress plaatst een sessiecookie als je deze website bezoekt. Dat cookie verdwijnt zodra je je browser sluit. Zonder dit cookie werkt WordPress niet. Er is geen manier om dit uit te zetten zonder de website te breken.</p>
     <ul>
       <li><strong>wordpress_test_cookie</strong> - controleert of cookies werken in je browser</li>
-      <li><strong>wp-settings-*</strong> - alleen aanwezig als je bent ingelogd in het WordPress-beheer (niet relevant voor gewone bezoekers)</li>
     </ul>
     <p>Deze cookies zijn strikt noodzakelijk. Ze vallen buiten de toestemmingsverplichting van de AVG.</p>
 
-    <h3>Analytische of tracking cookies</h3>
-    <p>Geen. Wij gebruiken geen Google Analytics, geen Facebook Pixel, geen heatmap-tools, geen remarketingpixels. Niks.</p>
-    <p>We weten niet wie je bent als je deze website bezoekt. En dat is prima.</p>
+    <h3>Analytische cookies</h3>
+    <p>Wij gebruiken Google Analytics om anoniem bij te houden hoeveel bezoekers er zijn en welke pagina's goed worden bekeken. Geen Facebook Pixel, geen heatmap-tools, geen remarketingpixels.</p>
+    <p>Google Analytics plaatst een cookie om herhaalde bezoeken te onderscheiden. De gegevens zijn geanonimiseerd en worden niet gebruikt om jou persoonlijk te volgen.</p>
 
     <h3>Social media cookies</h3>
     <p>Geen ingebedde social media content. Geen YouTube-iframes, geen Instagram-widgets, geen Twitter-tijdlijn. De Facebook-link in de footer is een gewone hyperlink, geen ingesloten script.</p>
