@@ -76,7 +76,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
       ['name' => 'De Grote Marketing', 'initials' => 'DGM'],
     ];
     $pinned = get_post_meta(get_the_ID(), 'dgm_author', true);
-    $author = $authors[($pinned !== '') ? (int)$pinned : array_rand($authors)];
+    $author = $authors[($pinned !== '') ? (int)$pinned : 0];
     ?>
     <div class="w-24 h-24 bg-primary-container text-white font-black flex items-center justify-center text-2xl shrink-0" style="border-radius:50%"><?php echo esc_html($author['initials']); ?></div>
     <div>

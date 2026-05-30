@@ -177,6 +177,32 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 </section>
 
 
+<!-- BLOK: faq - veelgestelde vragen over contentmarketing -->
+<section class="py-16 md:py-[100px]">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-black mb-10">Veelgestelde vragen over contentmarketing</h2>
+    <div>
+      <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
+        <summary class="font-black text-lg" style="cursor:pointer">Wat is contentmarketing?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Contentmarketing is het structureel publiceren van waardevolle inhoud - zoals blogs, teksten en social-mediaberichten - om mensen te informeren, te overtuigen en uiteindelijk klant te maken. In plaats van reclame te maken, help je mensen met antwoorden op hun vragen. Wie de beste antwoorden geeft, wordt als expert gezien. En experts krijgen klanten. Contentmarketing werkt het best in combinatie met SEO: content die gevonden wordt in Google trekt bezoekers die al geïnteresseerd zijn in wat jij doet.</p>
+      </details>
+      <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
+        <summary class="font-black text-lg" style="cursor:pointer">Hoe vaak moet je nieuwe content publiceren?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Kwaliteit gaat boven kwantiteit. Een blog per maand die mensen echt verder helpt, doet meer voor je zichtbaarheid dan vier dunne artikelen per week. Volgens onderzoek van HubSpot (2023) zien bedrijven die meer dan 11 blogs per maand publiceren vier keer zoveel verkeer als bedrijven die minder dan één blog per maand publiceren. Voor de meeste Groningse ondernemers is consistentie het belangrijkst: liever elke twee weken iets goeds dan elke dag iets halfslachtigs.</p>
+      </details>
+      <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
+        <summary class="font-black text-lg" style="cursor:pointer">Hoe helpt contentmarketing mijn positie in Google?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Google waardeert websites die regelmatig relevante, inhoudelijke content publiceren. Elke nieuwe blogpost is een extra kans om gevonden te worden op specifieke zoekwoorden. Langere en gedetailleerdere content rankt doorgaans beter: de gemiddelde pagina op positie 1 in Google heeft ruim 1.400 woorden (SEMrush, 2023). Contentmarketing versterkt ook je autoriteit: wie consistent schrijft over een onderwerp wordt als expert herkend en krijgt betere posities voor gerelateerde zoekopdrachten.</p>
+      </details>
+      <details>
+        <summary class="font-black text-lg" style="cursor:pointer">Wat kost contentmarketing?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Contentmarketing is een van de meest kostenefficiënte vormen van marketing op de lange termijn. Content die eenmaal goed scoort in Google blijft bezoekers trekken zonder dat je er verder in investeert. We werken zonder vaste abonnementen. Sommige klanten vragen ons om één blog per maand te schrijven, anderen willen een volledige contentstrategie. We bespreken vooraf wat je nodig hebt en wat dat kost. Geen verrassingen.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wat is contentmarketing?","acceptedAnswer":{"@type":"Answer","text":"Contentmarketing is het structureel publiceren van waardevolle inhoud om mensen te informeren, overtuigen en klant te maken. In plaats van reclame maak je, help je mensen met antwoorden op hun vragen."}},{"@type":"Question","name":"Hoe vaak moet je nieuwe content publiceren?","acceptedAnswer":{"@type":"Answer","text":"Kwaliteit gaat boven kwantiteit. Volgens HubSpot (2023) zien bedrijven die meer dan 11 blogs per maand publiceren vier keer zoveel verkeer. Voor de meeste ondernemers is consistentie het belangrijkst."}},{"@type":"Question","name":"Hoe helpt contentmarketing mijn positie in Google?","acceptedAnswer":{"@type":"Answer","text":"Google waardeert regelmatig gepubliceerde relevante content. De gemiddelde pagina op positie 1 in Google heeft ruim 1.400 woorden (SEMrush, 2023). Elke blogpost is een extra kans om gevonden te worden."}},{"@type":"Question","name":"Wat kost contentmarketing?","acceptedAnswer":{"@type":"Answer","text":"We werken zonder vaste abonnementen. Sommige klanten vragen om één blog per maand, anderen willen een volledige contentstrategie. We bespreken vooraf wat je nodig hebt en wat dat kost."}}]}</script>
+
 <!-- BLOK: blogs-recent - 3 meest recente posts; verborgen als er geen zijn -->
 <?php
 $dgm_posts = get_posts(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'date','order'=>'DESC']);

@@ -5,6 +5,7 @@ add_filter('robots_txt', function (string $output): string {
     $output .= "\nUser-agent: CCBot\nDisallow: /\n";
     $output .= "\nUser-agent: Bytespider\nDisallow: /\n";
     $output .= "\nUser-agent: anthropic-ai\nDisallow: /\n";
+    $output .= "\nUser-agent: cohere-ai\nDisallow: /\n";
     return $output;
 }, 99);
 
@@ -54,6 +55,7 @@ add_action('wp_head', function () {
 <meta name="google-site-verification" content="yfsgohLvLDdEnLOHycjThYYCaC5mqpuqkScdLOVmaRE" />
 <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/fonts/public-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/fonts/public-sans-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" hreflang="nl-NL" href="<?php echo esc_url(is_singular() ? get_permalink() : home_url('/')); ?>"/>
 <?php if (is_front_page()) : ?>
 <link rel="preload" href="<?php echo content_url('uploads/2026/05/horizontale-strip.png'); ?>" as="image" media="(min-width:768px)">
 <?php endif; ?>
@@ -206,6 +208,13 @@ function dgm_schema() {
             'parentOrganization' => ['@type' => 'Organization', 'name' => 'ferdituinman.nl', 'url' => 'https://www.ferdituinman.nl'],
             'founder'            => ['@id' => $base_url . '/#person-ferdi-tuinman'],
             'employee'           => ['@id' => $base_url . '/#person-ferdi-tuinman'],
+            'aggregateRating'    => [
+                '@type'       => 'AggregateRating',
+                'ratingValue' => '5.0',
+                'reviewCount' => 4,
+                'bestRating'  => '5',
+                'worstRating' => '1',
+            ],
             'contactPoint'       => ['@id' => $base_url . '/#contact'],
             'hasCredential'      => [
                 ['@id' => $base_url . '/#credential-ga4'],

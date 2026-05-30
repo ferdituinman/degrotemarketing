@@ -180,6 +180,32 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 </section>
 
 
+<!-- BLOK: faq - veelgestelde vragen over website laten maken -->
+<section class="py-16 md:py-[100px]">
+  <div class="max-w-2xl">
+    <h2 class="text-3xl font-black mb-10">Veelgestelde vragen over een website laten maken</h2>
+    <div>
+      <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
+        <summary class="font-black text-lg" style="cursor:pointer">Wat kost een website laten maken in Groningen?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Een website laten maken kost afhankelijk van je wensen tussen de 1.000 en 10.000 euro. Een eenvoudige presentatiesite voor een zzp'er zit aan de onderkant. Een uitgebreide website met webshop en maatwerk functionaliteiten aan de bovenkant. Wij werken met WordPress, zodat jij na oplevering zelf content kunt toevoegen zonder technische kennis. We starten altijd met een gesprek over wat je echt nodig hebt, zodat je niet betaalt voor features die je nooit gebruikt.</p>
+      </details>
+      <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
+        <summary class="font-black text-lg" style="cursor:pointer">Hoe lang duurt het bouwen van een website?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Een standaard website bouwen we in twee tot vier weken. We beginnen met een intakegesprek om te begrijpen wat je wil bereiken. Daarna werken we in korte sprints: jij ziet snel een werkende versie waarop je kunt reageren. Zo hoef je niet te wachten totdat alles klaar is voor je feedback kunt geven. Voor complexere projecten met webshop of maatwerkfuncties plannen we langer in. We zijn eerlijk over de planning en houden ons eraan.</p>
+      </details>
+      <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
+        <summary class="font-black text-lg" style="cursor:pointer">Moet mijn website mobielvriendelijk zijn?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Ja, en dat is geen optie maar een vereiste. Meer dan 60% van het webverkeer in Nederland komt van smartphones (Statista, 2024). Google gebruikt mobiele laadsnelheid als rankingfactor. Een website die slecht werkt op telefoon verliest bezoekers en Google-posities. Alle websites die wij bouwen zijn standaard mobielvriendelijk, snel en goed te gebruiken op elk schermformaat.</p>
+      </details>
+      <details>
+        <summary class="font-black text-lg" style="cursor:pointer">Kan ik mijn eigen website bijhouden na oplevering?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Ja. Wij bouwen op WordPress, het meestgebruikte CMS ter wereld. Na oplevering kun je zelf pagina's aanpassen, blogs plaatsen en afbeeldingen wisselen zonder technische kennis. We geven altijd een korte instructie zodat je weet hoe het werkt. Wil je dat wij de website bijhouden? Dat kan ook. We spreken dan af wat er maandelijks nodig is en wat dat kost. Geen dure onderhoudscontracten, gewoon wat je nodig hebt.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wat kost een website laten maken in Groningen?","acceptedAnswer":{"@type":"Answer","text":"Een website laten maken kost afhankelijk van je wensen tussen de 1.000 en 10.000 euro. We werken met WordPress zodat je na oplevering zelf content kunt aanpassen zonder technische kennis."}},{"@type":"Question","name":"Hoe lang duurt het bouwen van een website?","acceptedAnswer":{"@type":"Answer","text":"Een standaard website bouwen we in twee tot vier weken. We werken in korte sprints zodat jij snel een werkende versie ziet."}},{"@type":"Question","name":"Moet mijn website mobielvriendelijk zijn?","acceptedAnswer":{"@type":"Answer","text":"Ja, dat is een vereiste. Meer dan 60% van het webverkeer in Nederland komt van smartphones (Statista, 2024). Google gebruikt mobiele laadsnelheid als rankingfactor."}},{"@type":"Question","name":"Kan ik mijn eigen website bijhouden na oplevering?","acceptedAnswer":{"@type":"Answer","text":"Ja. We bouwen op WordPress. Na oplevering kun je zelf pagina's aanpassen en blogs plaatsen zonder technische kennis. We geven altijd een korte instructie."}}]}</script>
+
 <!-- BLOK: blogs-recent - 3 meest recente posts; verborgen als er geen zijn -->
 <?php
 $dgm_posts = get_posts(['post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'date','order'=>'DESC']);

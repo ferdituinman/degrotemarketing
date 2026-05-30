@@ -65,7 +65,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="md:col-start-2 md:col-span-5 space-y-6">
     <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">SEO bureau Groningen</p>
     <h2 class="text-4xl font-black mb-8">GEVONDEN WORDEN OF NIET</h2>
-    <p class="text-lg md:text-xl leading-relaxed">Als iemand googelt op jouw dienst in Groningen, wil je erbij zijn. Niet op pagina 2. Op de eerste pagina. En in het kaartje.</p>
+    <p class="text-lg md:text-xl leading-relaxed">Als iemand googelt op jouw dienst in Groningen, wil je erbij zijn. Op de eerste pagina. En in het kaartje.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is waar SEO over gaat. Gevonden worden door mensen die al zoeken naar wat jij doet. Niet adverteren. Niet betalen per klik. Gewoon gevonden worden.</p>
     <p class="text-lg md:text-xl leading-relaxed">Kijkers zijn geen kopers. Maar mensen die googelen op "loodgieter Groningen" of "boekhouder Groningen centrum" - die zijn er klaar voor.</p>
     <div class="h-1 w-24 bg-primary-container"></div>
@@ -102,7 +102,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-24">
     <div class="flex-1 space-y-8 md:translate-y-6">
       <h2 class="text-4xl font-black italic">WAT WE DOEN</h2>
-      <p class="text-xl leading-relaxed">SEO is geen magie. Het is logica. En een beetje doorzetten.</p>
+      <p class="text-xl leading-relaxed">SEO is geen magie. Het is logica. En doorzetten. Duurt even, heb je ook wat.</p>
       <p class="text-xl leading-relaxed">We kijken wat klanten intikken als ze naar jou zoeken. We zorgen dat jouw website dat ook snapt. En dan wachten we tot Google het doorheeft.</p>
       <p class="font-bold text-primary-container">Geen geheimzinnige trucjes. Gewoon werk dat werkt.</p>
     </div>
@@ -181,6 +181,32 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   </div>
 </section>
 
+
+<!-- BLOK: faq - veelgestelde vragen over SEO in Groningen -->
+<section class="py-16 md:py-[100px]">
+  <div class="max-w-3xl">
+    <h2 class="text-3xl font-black mb-10">Veelgestelde vragen over SEO</h2>
+    <div>
+      <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
+        <summary class="font-black text-lg" style="cursor:pointer">Hoe lang duurt het voordat SEO werkt?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Gemiddeld duurt het 3 tot 6 maanden voordat je merkbare resultaten ziet in Google. Lokale SEO in Groningen gaat doorgaans sneller dan landelijke campagnes omdat de concurrentie beperkter is. We zorgen vanaf dag één dat Google de juiste signalen krijgt: een geoptimaliseerde pagina, correcte bedrijfsgegevens en reviews die binnenkomen. Resultaten zie je gradueel, niet ineens. Wie vroeg begint, heeft later de voorsprong.</p>
+      </details>
+      <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
+        <summary class="font-black text-lg" style="cursor:pointer">Wat kost SEO voor een lokaal bedrijf?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Dat hangt af van je situatie. We werken zonder vaste pakketten, omdat elk bedrijf anders is. Een startende ondernemer die lokaal gevonden wil worden heeft andere behoeften dan een gevestigd bedrijf dat zijn positie wil verdedigen. We beginnen altijd met een gratis website-analyse. Daarna maken we samen een plan dat past bij je wensen en je budget. Eerlijk, geen verrassingen achteraf.</p>
+      </details>
+      <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
+        <summary class="font-black text-lg" style="cursor:pointer">Wat is het verschil tussen SEO en Google Ads?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">SEO zorgt dat je organisch gevonden wordt in Google, zonder per klik te betalen. Dat kost tijd maar bouwt een duurzame positie op. Google Ads geeft je direct zichtbaarheid bovenaan Google maar stopt zodra je stopt met betalen. De twee vullen elkaar goed aan: Ads voor direct resultaat, SEO voor de lange termijn.</p>
+      </details>
+      <details>
+        <summary class="font-black text-lg" style="cursor:pointer">Welke factoren bepalen mijn positie in Google?</summary>
+        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Voor lokale bedrijven in Groningen wegen een paar factoren het zwaarst. Je Google Mijn Bedrijf-profiel is cruciaal: completeer het volledig met openingstijden, foto's en een beschrijving. Volgens onderzoek van Moz (2023) is Google Mijn Bedrijf-optimalisatie de zwaarste factor voor lokale zoekresultaten. Reviews tellen ook zwaar mee: BrightLocal (2024) toonde aan dat 98% van de consumenten reviews leest bij lokale bedrijven. En verder: de relevantie en laadsnelheid van je website.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hoe lang duurt het voordat SEO werkt?","acceptedAnswer":{"@type":"Answer","text":"Gemiddeld duurt het 3 tot 6 maanden voordat je merkbare resultaten ziet in Google. Lokale SEO in Groningen gaat doorgaans sneller dan landelijke campagnes omdat de concurrentie beperkter is."}},{"@type":"Question","name":"Wat kost SEO voor een lokaal bedrijf?","acceptedAnswer":{"@type":"Answer","text":"We werken zonder vaste pakketten. We beginnen altijd met een gratis website-analyse en maken daarna een plan dat past bij je wensen en budget."}},{"@type":"Question","name":"Wat is het verschil tussen SEO en Google Ads?","acceptedAnswer":{"@type":"Answer","text":"SEO zorgt dat je organisch gevonden wordt in Google, zonder per klik te betalen. Google Ads geeft direct zichtbaarheid maar stopt zodra je stopt met betalen. De twee vullen elkaar goed aan."}},{"@type":"Question","name":"Welke factoren bepalen mijn positie in Google?","acceptedAnswer":{"@type":"Answer","text":"Voor lokale bedrijven in Groningen wegen Google Mijn Bedrijf-optimalisatie en reviews het zwaarst. Volgens Moz (2023) is Google Mijn Bedrijf de zwaarste lokale rankingfactor. BrightLocal (2024) toonde aan dat 98% van consumenten reviews leest bij lokale bedrijven."}}]}</script>
 
 <!-- BLOK: blogs-recent - 3 meest recente posts; verborgen als er geen zijn -->
 <?php
