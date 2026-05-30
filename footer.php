@@ -23,7 +23,7 @@
       <div>
         <p class="text-xs font-bold uppercase tracking-widest bg-primary-container text-white mb-6 inline-block px-2 py-1">Contact</p>
         <div class="space-y-4">
-          <p class="text-white text-lg">06-24602947</p>
+          <a href="tel:+31624602947" class="text-white text-lg hover:text-white/80 transition-colors">06-24602947</a>
           <a href="mailto:ferdi@degrotemarketing.nl" class="text-white/80 hover:text-white transition-colors text-lg">ferdi@degrotemarketing.nl</a>
         </div>
       </div>
@@ -53,7 +53,7 @@
     </div>
     <div class="pt-6 md:pt-12 border-t border-white/10 flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-8">
       <div class="flex items-center gap-4">
-        <p class="text-sm text-white">© De Grote Marketing. Eerlijke dialoog aan de keukentafel.</p>
+        <p class="text-sm text-white">© De Grote Marketing. Eerlijke dialoog aan de keukentafel. <a href="<?php echo home_url('/privacy/'); ?>" class="underline hover:text-white/80 transition-colors">Privacybeleid</a> &middot; <a href="<?php echo home_url('/koukjes/'); ?>" class="underline hover:text-white/80 transition-colors">Koukjes</a></p>
         <a href="https://www.facebook.com/profile.php?id=61589915847593" target="_blank" rel="noopener" aria-label="Facebook" class="text-white/60 hover:text-white transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>

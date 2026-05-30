@@ -203,11 +203,10 @@ if ($related->have_posts()) :
   <div class="relative z-10 space-y-8 max-w-3xl mx-auto">
     <p class="text-2xl md:text-3xl font-bold opacity-60">Genoeg gelezen?</p>
     <h2 class="text-4xl md:text-6xl font-black italic">Dan beginnen we gewoon.</h2>
-    <a href="mailto:ferdi@degrotemarketing.nl"
+    <a href="<?php echo home_url('/contact/'); ?>"
        class="inline-block px-4 py-2 border-2 border-primary-container -rotate-3 translate-x-3 text-lg font-bold"
        style="border-radius:9999px">
-      Bak pleur?<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+      Bak pleur?    </a>
     <p class="text-sm italic opacity-80">Eerste gesprek, altijd vrijblijvend.</p>
   </div>
 </section>

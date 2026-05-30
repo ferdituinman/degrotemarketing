@@ -35,9 +35,8 @@ $up = content_url('uploads/2026/05/');
     <p>We bedenken samen wat gaaf is. En dan doen we het gewoon. Kloar.</p>
   </div>
   <div class="mt-12">
-    <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
-      Bak pleur?<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+    <a href="<?php echo home_url('/contact/'); ?>" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
+      Bak pleur?    </a>
   </div>
 </div>
 </section>
@@ -132,9 +131,8 @@ $up = content_url('uploads/2026/05/');
     <h2 class="text-4xl font-black leading-tight mb-4">Nait soezen.<br/>Deurbroezen.</h2>
     <p class="text-xl leading-relaxed">We verkopen niet jouw dienst of product, we verkopen jouw waarde. We gaan helemaal niet vertellen wat je doet.<br/>We gaan laten zien wat je te bieden hebt.</p>
     <p class="text-xl leading-relaxed">Bullshit vegen we van de tafel. We doen wat werkt.</p>
-    <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-8 py-3 text-lg font-bold rounded drift-on-hover inline-block">
-      Kop d'r veur.<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+    <a href="<?php echo home_url('/contact/'); ?>" class="bg-primary-container text-white px-8 py-3 text-lg font-bold rounded drift-on-hover inline-block">
+      Kop d'r veur.    </a>
   </div>
   <div class="relative order-2 md:order-1 md:translate-y-4">
     <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-5 translate-y-5 rounded-xl -z-10 scale-110"></div>
@@ -197,10 +195,9 @@ $up = content_url('uploads/2026/05/');
       <p class="text-2xl md:text-3xl font-bold opacity-60">Zullen we gewoon beginnen?</p>
       <h2 class="text-5xl md:text-7xl font-black">We komen jouw koffie proeven.</h2>
     </div>
-    <a href="mailto:ferdi@degrotemarketing.nl"
+    <a href="<?php echo home_url('/contact/'); ?>"
        class="bg-primary-container text-white px-12 py-6 text-2xl font-bold rounded-lg drift-on-hover shadow-xl shadow-primary-container/20 inline-block md:rotate-1">
-      Nodig ons uit<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+      Nodig ons uit    </a>
     <p class="text-sm italic opacity-80 mt-6">Eerste gesprek, altijd vrijblijvend.</p>
   </div>
   <div class="absolute inset-0 -z-10 pointer-events-none">

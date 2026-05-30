@@ -94,11 +94,7 @@ $up = content_url('uploads/2026/05/');
       <p class="text-lg leading-relaxed mb-10 opacity-80">Vertel wat je bezighoudt. Wij lezen het, denken er even over na, en sturen je een eerlijk antwoord. Geen salespitch. Geen druk.</p>
 
       <?php
-      if (function_exists('wpcf7_get_tag')) {
-          echo do_shortcode('[contact-form-7 id="contact-formulier" title="Contactformulier"]');
-      } else {
-          echo '<p class="text-base opacity-70">Contact Form 7 is nog niet geactiveerd. Installeer en activeer de plugin, maak daarna een formulier aan met de naam "Contactformulier".</p>';
-      }
+      echo do_shortcode('[contact-form-7 id="22395c1" title="Contact form 1"]');
       ?>
     </div>
 
@@ -118,6 +114,16 @@ $up = content_url('uploads/2026/05/');
       <div>
         <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-4">Adres</p>
         <p class="text-lg leading-relaxed">Leonard Springerlaan 35<br>9727 KB Groningen</p>
+        <div class="mt-4 rounded-lg overflow-hidden" style="height:220px">
+          <iframe
+            title="De Grote Marketing op de kaart"
+            src="https://maps.google.com/maps?q=Leonard+Springerlaan+35,+9727+KB+Groningen&hl=nl&output=embed"
+            width="100%" height="220"
+            style="border:0;display:block"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Kaart met locatie van De Grote Marketing"></iframe>
+        </div>
       </div>
 
       <div class="border-l-4 border-primary-container pl-6">

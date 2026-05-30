@@ -48,9 +48,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
     <p>Wij bouwen websites voor Groningse ondernemers. Snel te vinden, makkelijk te begrijpen, klaar voor klanten.</p>
   </div>
   <div class="mt-12">
-    <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
-      Daag ons uit. Graag.<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+    <a href="<?php echo home_url('/contact/'); ?>" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
+      Daag ons uit. Graag.    </a>
   </div>
 </div>
 </section>
@@ -165,10 +164,9 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
       <p class="text-2xl md:text-3xl font-bold opacity-60">Morgen beginnen</p>
       <h2 class="text-5xl md:text-7xl font-black">We komen je zaak bekijken en sturen je een ontwerp</h2>
     </div>
-    <a href="mailto:ferdi@degrotemarketing.nl"
+    <a href="<?php echo home_url('/contact/'); ?>"
        class="bg-primary-container text-white px-12 py-6 text-2xl font-bold rounded-lg drift-on-hover shadow-xl shadow-primary-container/20 inline-block md:rotate-1">
-      Doe maar<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+      Doe maar    </a>
     <p class="text-sm italic opacity-80 mt-6">Eerste gesprek, altijd vrijblijvend.</p>
   </div>
   <div class="absolute inset-0 -z-10 pointer-events-none">

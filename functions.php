@@ -29,7 +29,12 @@ add_filter('the_excerpt',       fn($t) => str_replace(['—', '–'], '-', $t));
 add_filter('the_content',       fn($t) => str_replace(['—', '–'], '-', $t));
 add_filter('wp_title',          fn($t) => str_replace(['—', '–'], '-', $t));
 add_filter('document_title_parts', function($p) {
-    return array_map(fn($v) => str_replace(['—', '–'], '-', $v), $p);
+    $p = array_map(fn($v) => str_replace(['—', '–'], '-', $v), $p);
+    if (is_front_page()) {
+        $p['title'] = 'Online marketing Groningen';
+        unset($p['tagline']);
+    }
+    return $p;
 });
 
 
@@ -360,7 +365,11 @@ function dgm_schema() {
         $permalink     = get_permalink();
         $date_pub      = get_the_date('Y-m-d', $post);
         $date_mod      = get_the_modified_date('Y-m-d', $post);
-        $img_url       = get_the_post_thumbnail_url($post, 'full') ?: content_url('uploads/2026/05/voorgroningers.png');
+        $img_id        = get_post_thumbnail_id($post);
+        $img_src       = $img_id ? wp_get_attachment_image_src($img_id, 'full') : null;
+        $img_url       = $img_src ? $img_src[0] : content_url('uploads/2026/05/voorgroningers.png');
+        $img_w         = $img_src ? (int) $img_src[1] : 1200;
+        $img_h         = $img_src ? (int) $img_src[2] : 630;
         $excerpt       = get_the_excerpt($post);
         $categories    = get_the_category($post->ID);
         $cat_name      = $categories ? $categories[0]->name : 'Blog';
@@ -379,12 +388,14 @@ function dgm_schema() {
             'breadcrumb'        => ['@id' => $permalink . '#breadcrumb'],
         ];
         $org_nodes[] = [
-            '@type'  => 'ImageObject',
-            '@id'    => $permalink . '#primaryimage',
-            'url'    => $img_url,
+            '@type'               => 'ImageObject',
+            '@id'                 => $permalink . '#primaryimage',
+            'url'                 => $img_url,
             'contentUrl'          => $img_url,
             'caption'             => get_the_title($post),
             'representativeOfPage'=> true,
+            'width'               => $img_w,
+            'height'              => $img_h,
         ];
         $word_count    = str_word_count(strip_tags(get_the_content()));
         $read_min      = max(1, (int) ceil($word_count / 200));
@@ -444,7 +455,7 @@ function dgm_schema() {
             'description'        => $page_desc ?: 'Online marketing voor ondernemers in Groningen.',
             'isPartOf'           => ['@id' => $base_url . '/#website'],
             'about'              => ['@id' => $base_url . '/#service-' . $svc['slug']],
-            'primaryImageOfPage' => ['@id' => $base_url . '/#primaryimage'],
+            'primaryImageOfPage' => ['@id' => $base_url . '/#orgimage'],
             'inLanguage'         => 'nl-NL',
             'breadcrumb'         => ['@id' => $permalink . '#breadcrumb'],
         ];
@@ -837,9 +848,99 @@ function dgm_post1_content(): string {
 
 <p>Echt. Verder hoeft het niet ingewikkeld. Doe deze drie dingen consequent een half jaar lang en je staat verder dan 80% van de Groningse ondernemers in jouw vak.</p>
 
-<p>Heb je hulp nodig? <a href="mailto:ferdi@degrotemarketing.nl">Stuur me even een mailtje</a>. Eerste gesprek altijd vrijblijvend. Aan de keukentafel.</p>
+<p>Heb je hulp nodig? <a href="/contact/">Neem contact op</a>. Eerste gesprek altijd vrijblijvend. Aan de keukentafel.</p>
 
 <p class="font-bold text-primary-container text-xl mt-12">Kloar.</p>';
+}
+
+// ─── Sitemap ──────────────────────────────────────────────────────────────────
+add_filter('wp_sitemaps_enabled', '__return_false');
+
+add_filter('robots_txt', function (string $output): string {
+    return $output . "\nSitemap: " . home_url('/sitemap_index.xml') . "\n";
+});
+
+add_action('template_redirect', 'dgm_sitemap_handler');
+function dgm_sitemap_handler(): void {
+    $path = rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+    $map  = [
+        '/sitemap_index' => 'index',
+        '/sitemap-pages' => 'pages',
+        '/sitemap-posts' => 'posts',
+    ];
+    $key = preg_replace('/\.xml$/', '', $path);
+    if (!isset($map[$key])) return;
+    dgm_sitemap_output($map[$key]);
+}
+
+function dgm_sitemap_output(string $type): void {
+    header('Content-Type: application/xml; charset=UTF-8');
+    header('X-Robots-Tag: noindex');
+
+    if ($type === 'index') {
+        $last = dgm_sitemap_last_mod();
+        echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        echo '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        echo '  <sitemap><loc>' . esc_url(home_url('/sitemap-pages.xml')) . '</loc><lastmod>' . date('Y-m-d') . '</lastmod></sitemap>' . "\n";
+        echo '  <sitemap><loc>' . esc_url(home_url('/sitemap-posts.xml')) . '</loc><lastmod>' . esc_html($last) . '</lastmod></sitemap>' . "\n";
+        echo '</sitemapindex>' . "\n";
+        exit;
+    }
+
+    if ($type === 'pages') {
+        $urls = dgm_sitemap_page_urls();
+        echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        foreach ($urls as $u) {
+            echo '  <url><loc>' . esc_url($u['url']) . '</loc><lastmod>' . esc_html($u['mod']) . '</lastmod></url>' . "\n";
+        }
+        echo '</urlset>' . "\n";
+        exit;
+    }
+
+    if ($type === 'posts') {
+        $posts = get_posts(['numberposts' => -1, 'post_status' => 'publish', 'orderby' => 'modified', 'order' => 'DESC']);
+        echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        foreach ($posts as $post) {
+            echo '  <url><loc>' . esc_url(get_permalink($post)) . '</loc><lastmod>' . esc_html(mysql2date('Y-m-d', $post->post_modified_gmt)) . '</lastmod></url>' . "\n";
+        }
+        echo '</urlset>' . "\n";
+        exit;
+    }
+}
+
+function dgm_sitemap_page_urls(): array {
+    $urls = [['url' => home_url('/'), 'mod' => date('Y-m-d')]];
+
+    $templates = [
+        'template-seo-groningen.php',
+        'template-google-ads-groningen.php',
+        'template-contentmarketing-groningen.php',
+        'template-website-groningen.php',
+        'template-contact.php',
+    ];
+    foreach ($templates as $tpl) {
+        $pages = get_pages(['meta_key' => '_wp_page_template', 'meta_value' => $tpl, 'post_status' => 'publish']);
+        foreach ($pages as $page) {
+            $urls[] = [
+                'url' => get_permalink($page->ID),
+                'mod' => mysql2date('Y-m-d', $page->post_modified_gmt ?: $page->post_date_gmt),
+            ];
+        }
+    }
+
+    $blog_id = (int) get_option('page_for_posts');
+    if ($blog_id) {
+        $urls[] = ['url' => get_permalink($blog_id), 'mod' => dgm_sitemap_last_mod()];
+    }
+
+    return $urls;
+}
+
+function dgm_sitemap_last_mod(): string {
+    $posts = get_posts(['numberposts' => 1, 'post_status' => 'publish', 'orderby' => 'modified', 'order' => 'DESC']);
+    return $posts ? mysql2date('Y-m-d', $posts[0]->post_modified_gmt) : date('Y-m-d');
 }
 
 function dgm_post2_content(): string {
@@ -870,7 +971,7 @@ function dgm_post2_content(): string {
 
 <p>Dat is soms alles wat nodig is.</p>
 
-<p>Benieuwd wat er bij jou op tafel komt? <a href="mailto:ferdi@degrotemarketing.nl">Stuur ons een mail</a>. Eerste gesprek altijd vrijblijvend.</p>
+<p>Benieuwd wat er bij jou op tafel komt? <a href="/contact/">Neem contact op</a>. Eerste gesprek altijd vrijblijvend.</p>
 
 <p class="font-bold text-primary-container text-xl mt-12">Kloar.</p>';
 }

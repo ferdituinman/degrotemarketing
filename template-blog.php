@@ -230,10 +230,9 @@ $ri = 0;
       <p class="text-2xl md:text-3xl font-bold opacity-60">Zullen we gewoon beginnen?</p>
       <h2 class="text-5xl md:text-7xl font-black">We komen jouw koffie proeven.</h2>
     </div>
-    <a href="mailto:ferdi@degrotemarketing.nl"
+    <a href="<?php echo home_url('/contact/'); ?>"
        class="bg-primary-container text-white px-12 py-6 text-2xl font-bold rounded-lg drift-on-hover shadow-xl shadow-primary-container/20 inline-block md:rotate-1">
-      Nodig ons uit<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+      Nodig ons uit    </a>
     <p class="text-sm italic opacity-80 mt-6">Eerste gesprek, altijd vrijblijvend.</p>
   </div>
 </section>

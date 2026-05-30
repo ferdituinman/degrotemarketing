@@ -42,7 +42,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
-  <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Hoger in Google</h1>
+  <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Hoger in Google in Groningen</h1>
   <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</p>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Je weet dat meer mensen jou moeten kunnen vinden. Maar hoe dat werkt met Google, dat is een ander verhaal.</p>
@@ -50,9 +50,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
     <p>We gaan doen wat werkt.</p>
   </div>
   <div class="mt-12">
-    <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
-      Hoger in Google?<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+    <a href="<?php echo home_url('/contact/'); ?>" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
+      Hoger in Google?    </a>
   </div>
 </div>
 </section>
@@ -136,9 +135,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
     <h2 class="text-4xl font-black leading-tight mb-4">Iedereen belooft pagina 1.<br/>Wij niet.</h2>
     <p class="text-xl leading-relaxed">Elke SEO-partij belooft je de eerste plek. Dat klinkt mooi. Het is ook onzin. Niemand kan dat garanderen.</p>
     <p class="text-xl leading-relaxed">Wij zeggen wat realistisch is. Wat we verwachten. Wat op een klein budget niet gaat lukken. En als iets niet lukt, verzinnen we iets veel beter.</p>
-    <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-8 py-3 text-lg font-bold rounded drift-on-hover inline-block">
-      Gratis website-analyse<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+    <a href="<?php echo home_url('/contact/'); ?>" class="bg-primary-container text-white px-8 py-3 text-lg font-bold rounded drift-on-hover inline-block">
+      Gratis website-analyse    </a>
   </div>
   <div class="relative order-2 md:order-1 md:translate-y-4">
     <div class="bg-[#078930]/15 absolute inset-0 -rotate-1 -translate-x-5 translate-y-5 rounded-xl -z-10 scale-110"></div>
@@ -167,10 +165,9 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
       <p class="text-2xl md:text-3xl font-bold opacity-60">Benieuwd hoe jouw site het doet?</p>
       <h2 class="text-5xl md:text-7xl font-black">We kijken het na.</h2>
     </div>
-    <a href="mailto:ferdi@degrotemarketing.nl"
+    <a href="<?php echo home_url('/contact/'); ?>"
        class="bg-primary-container text-white px-12 py-6 text-2xl font-bold rounded-lg drift-on-hover shadow-xl shadow-primary-container/20 inline-block md:rotate-1">
-      Stuur een berichtje<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+      Stuur een berichtje    </a>
     <p class="text-sm italic opacity-80 mt-6">Eerste gesprek, altijd vrijblijvend.</p>
   </div>
   <div class="absolute inset-0 -z-10 pointer-events-none">

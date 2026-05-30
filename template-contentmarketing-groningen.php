@@ -47,9 +47,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
     <p>Wij helpen je om jouw verhaal te vertellen. Niet met mooipraterij. Gewoon eerlijk en herkenbaar.</p>
   </div>
   <div class="mt-12">
-    <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
-      Mail ons eens wat je doet<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+    <a href="<?php echo home_url('/contact/'); ?>" class="bg-primary-container text-white px-10 py-4 text-xl font-bold rounded shadow-none drift-on-hover inline-block">
+      Mail ons eens wat je doet    </a>
   </div>
 </div>
 </section>
@@ -112,9 +111,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
     <h2 class="text-4xl font-black leading-tight mb-4">Content die werkt.<br/>Niet schrijven om het schrijven.</h2>
     <p class="text-xl leading-relaxed">We schrijven teksten die gevonden worden in Google. En teksten die mensen ook echt lezen als ze er eenmaal zijn.</p>
     <p class="text-xl leading-relaxed">Dat is niet hetzelfde. De meeste websites doen maar een van de twee. Wij doen allebei.</p>
-    <a href="mailto:ferdi@degrotemarketing.nl" class="bg-primary-container text-white px-8 py-3 text-lg font-bold rounded drift-on-hover inline-block">
-      Kop d'r veur.<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+    <a href="<?php echo home_url('/contact/'); ?>" class="bg-primary-container text-white px-8 py-3 text-lg font-bold rounded drift-on-hover inline-block">
+      Kop d'r veur.    </a>
   </div>
   <div class="order-2 md:order-1">
     <div class="p-8 bg-surface-container-low border border-black/5 rounded-lg shadow-sm" style="transform: rotate(-1deg)">
@@ -162,10 +160,9 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
       <p class="text-2xl md:text-3xl font-bold opacity-60">Stuur ons een zin over wat je doet.</p>
       <h2 class="text-5xl md:text-7xl font-black">We schrijven terug.</h2>
     </div>
-    <a href="mailto:ferdi@degrotemarketing.nl"
+    <a href="<?php echo home_url('/contact/'); ?>"
        class="bg-primary-container text-white px-12 py-6 text-2xl font-bold rounded-lg drift-on-hover shadow-xl shadow-primary-container/20 inline-block md:rotate-1">
-      Nodig ons uit<span class="sr-only"> (opent e-mailprogramma)</span>
-    </a>
+      Nodig ons uit    </a>
     <p class="text-sm italic opacity-80 mt-6">Eerste gesprek, altijd vrijblijvend.</p>
   </div>
   <div class="absolute inset-0 -z-10 pointer-events-none">
