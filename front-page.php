@@ -25,7 +25,7 @@ $up = content_url('uploads/2026/05/');
 
 <!-- BLOK: Hero - grote intro met CTA-knop "Bak pleur?" en achtergrondafbeelding op desktop -->
 <div id="herov2" class="w-full">
-<section class="pb-6 md:pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
+<section class="pb-6 md:pb-20 md:flex md:items-center max-w-screen-xl mx-auto md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-full md:w-auto">
   <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Online marketing voor Groningen</h1>
   <h2 class="text-[50px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Gewoon doen.</h2>
