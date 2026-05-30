@@ -42,7 +42,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
   <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Website laten maken</h1>
-  <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</p>
+  <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Niet duur. Wel goed.</p>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Geen jaar wachten. Niet onnodig duur. Een website die doet wat hij moet doen.</p>
     <p>Wij bouwen websites voor Groningse ondernemers. Snel te vinden, makkelijk te begrijpen, klaar voor klanten.</p>
