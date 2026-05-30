@@ -20,6 +20,7 @@ $up = content_url('uploads/2026/05/');
     align-items:center
   }
   #herov2 section{width:100%;padding-top:0;padding-bottom:0}
+  #contact-grid{grid-template-columns:55fr 45fr;gap:80px}
 }
 .wpcf7-form input[type="text"],
 .wpcf7-form input[type="email"],
@@ -61,6 +62,18 @@ $up = content_url('uploads/2026/05/');
 .wpcf7-form .form-field{margin-bottom:20px}
 .wpcf7-not-valid-tip{color:#dc2626;font-size:14px;margin-top:4px}
 .wpcf7-response-output{margin-top:16px;padding:12px 16px;border-radius:6px;font-size:15px}
+
+.cinfo-item{padding-bottom:24px;margin-bottom:24px;border-bottom:1px solid #e5e7eb}
+.cinfo-item:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+
+.expect-item{padding-bottom:36px;margin-bottom:36px;border-bottom:2px solid #f3f4f6}
+.expect-item:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+@media(min-width:768px){
+  #expect-grid{grid-template-columns:repeat(3,1fr)}
+  .expect-item{padding:0 40px;margin-bottom:0;border-bottom:0;border-right:2px solid #f3f4f6}
+  .expect-item:first-child{padding-left:0}
+  .expect-item:last-child{padding-right:0;border-right:0}
+}
 </style>
 
 <!-- Hero mobile -->
@@ -83,42 +96,44 @@ $up = content_url('uploads/2026/05/');
 
 <p id="mobile-eyebrow" class="text-sm font-semibold uppercase tracking-widest text-primary-container mt-10 mb-0">Aan de keukentafel</p>
 
-<!-- HOOFDSECTIE: FORMULIER + CONTACTINFO -->
-<section class="py-16 md:py-[100px]" style="display:grid;grid-template-columns:1fr;gap:64px">
+<!-- BLOK: Formulier + contactinfo -->
+<section class="py-16 md:py-[100px]">
   <div style="display:grid;grid-template-columns:1fr;gap:64px" id="contact-grid">
-    <style>@media(min-width:768px){#contact-grid{grid-template-columns:55fr 45fr;gap:80px}}</style>
 
     <!-- Formulier links -->
     <div>
-      <h2 class="text-3xl font-black mb-4">Stuur ons een bericht</h2>
+      <h2 class="text-3xl font-black mb-2">Stuur ons een bericht</h2>
+      <div class="h-1 w-16 bg-primary-container mb-6" style="margin-top:12px"></div>
       <p class="text-lg leading-relaxed mb-10 opacity-80">Vertel wat je bezighoudt. Wij lezen het, denken er even over na, en sturen je een eerlijk antwoord. Geen salespitch. Geen druk.</p>
-
-      <?php
-      echo do_shortcode('[contact-form-7 id="22395c1" title="Contact form 1"]');
-      ?>
+      <?php echo do_shortcode('[contact-form-7 id="22395c1" title="Contact form 1"]'); ?>
     </div>
 
     <!-- Contactinfo rechts -->
-    <div class="space-y-10">
-      <div>
-        <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-4">Liever bellen?</p>
-        <p class="text-2xl font-black mb-1"><a href="tel:+31624602947" class="hover:text-primary-container transition-colors">06-24602947</a></p>
-        <p class="text-base opacity-70">Beschikbaar op werkdagen.</p>
+    <div>
+
+      <!-- Bellen -->
+      <div class="cinfo-item">
+        <p class="text-xs font-bold uppercase tracking-widest text-primary-container" style="margin-bottom:10px">Liever bellen?</p>
+        <a href="tel:+31624602947" class="hover:text-primary-container transition-colors font-black" style="font-size:2.2rem;line-height:1.1;display:block">06-24602947</a>
+        <p style="font-size:15px;margin-top:6px;opacity:.6">Bereikbaar op werkdagen</p>
       </div>
 
-      <div>
-        <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-4">Mailen?</p>
-        <p class="text-xl font-bold"><a href="mailto:ferdi@degrotemarketing.nl" class="hover:text-primary-container transition-colors">ferdi@degrotemarketing.nl</a></p>
+      <!-- Mailen -->
+      <div class="cinfo-item">
+        <p class="text-xs font-bold uppercase tracking-widest text-primary-container" style="margin-bottom:10px">Mailen?</p>
+        <a href="mailto:ferdi@degrotemarketing.nl" class="font-bold hover:text-primary-container transition-colors" style="font-size:1.15rem;display:block">ferdi@degrotemarketing.nl</a>
       </div>
 
-      <div>
-        <p class="text-xs font-bold uppercase tracking-widest text-primary-container mb-4">Adres</p>
-        <p class="text-lg leading-relaxed">Leonard Springerlaan 35<br>9727 KB Groningen</p>
-        <div class="mt-4 rounded-lg overflow-hidden" style="height:220px">
+      <!-- Adres + kaart -->
+      <div class="cinfo-item">
+        <p class="text-xs font-bold uppercase tracking-widest text-primary-container" style="margin-bottom:10px">Adres</p>
+        <p class="font-bold" style="font-size:1.1rem">Leonard Springerlaan 35</p>
+        <p style="opacity:.65;margin-bottom:16px">9727 KB Groningen</p>
+        <div style="border-radius:10px;overflow:hidden;height:200px">
           <iframe
             title="De Grote Marketing op de kaart"
             src="https://maps.google.com/maps?q=Leonard+Springerlaan+35,+9727+KB+Groningen&hl=nl&output=embed"
-            width="100%" height="220"
+            width="100%" height="200"
             style="border:0;display:block"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -126,32 +141,42 @@ $up = content_url('uploads/2026/05/');
         </div>
       </div>
 
-      <div class="border-l-4 border-primary-container pl-6">
-        <p class="text-lg italic leading-relaxed">"Wij beslissen aan de keukentafel. Niet in een boardroom, niet achter een presentatie van 40 slides. Gewoon praten over wat jij nodig hebt."</p>
-        <p class="text-sm font-bold mt-4 text-primary-container">Ferdi Tuinman - De Grote Marketing</p>
+      <!-- Quote -->
+      <div style="background:rgba(7,137,48,0.06);border-radius:12px;padding:28px 28px 24px;position:relative;overflow:hidden">
+        <span style="position:absolute;top:-20px;right:-10px;font-size:7rem;font-weight:900;line-height:1;opacity:.07;pointer-events:none;select:none">"</span>
+        <p class="text-lg italic leading-relaxed" style="position:relative;z-index:1">Wij beslissen aan de keukentafel. Niet in een boardroom, niet achter een presentatie van 40 slides. Gewoon praten over wat jij nodig hebt.</p>
+        <p class="text-sm font-bold text-primary-container" style="margin-top:16px;position:relative;z-index:1">Ferdi Tuinman - De Grote Marketing</p>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- WAAROM CONTACT OPNEMEN -->
-<section class="py-16 md:py-[80px]">
-  <div class="max-w-4xl">
-    <h2 class="text-3xl font-black mb-10">Wat je kunt verwachten.</h2>
-    <div style="display:grid;grid-template-columns:1fr;gap:32px" id="expect-grid">
-      <style>@media(min-width:768px){#expect-grid{grid-template-columns:repeat(3,1fr)}}</style>
-      <div class="border-l-4 border-primary-container pl-6">
-        <p class="font-black text-xl mb-2">Eerlijk antwoord</p>
+<!-- BLOK: Wat je kunt verwachten -->
+<section class="py-16 md:py-[80px] relative overflow-hidden">
+  <span style="position:absolute;top:-30px;right:-50px;font-size:10rem;font-weight:900;line-height:1;color:rgba(0,0,0,0.04);pointer-events:none;select:none;z-index:0">OK</span>
+  <div style="position:relative;z-index:1">
+    <h2 class="text-3xl font-black" style="margin-bottom:48px">Wat je kunt verwachten.</h2>
+    <div style="display:grid;grid-template-columns:1fr" id="expect-grid">
+
+      <div class="expect-item">
+        <span class="text-primary-container font-black" style="font-size:2.8rem;line-height:1;display:block;margin-bottom:16px">01</span>
+        <p class="font-black" style="font-size:20px;margin-bottom:10px">Eerlijk antwoord</p>
         <p class="text-base leading-relaxed opacity-80">Als we denken dat iets niet bij je past, zeggen we dat gewoon. Geen product verkopen dat je niet nodig hebt.</p>
       </div>
-      <div class="border-l-4 border-primary-container pl-6">
-        <p class="font-black text-xl mb-2">Geen verplichtingen</p>
+
+      <div class="expect-item">
+        <span class="text-primary-container font-black" style="font-size:2.8rem;line-height:1;display:block;margin-bottom:16px">02</span>
+        <p class="font-black" style="font-size:20px;margin-bottom:10px">Geen verplichtingen</p>
         <p class="text-base leading-relaxed opacity-80">Een eerste gesprek is altijd vrijblijvend. Geen druk, geen deadlines, geen vervolgmails als je niks hoort.</p>
       </div>
-      <div class="border-l-4 border-primary-container pl-6">
-        <p class="font-black text-xl mb-2">Snel reactie</p>
-        <p class="text-base leading-relaxed opacity-80">We reageren binnen een werkdag. Gewoon. Niet met een automatische bevestiging, maar met een echt antwoord.</p>
+
+      <div class="expect-item">
+        <span class="text-primary-container font-black" style="font-size:2.8rem;line-height:1;display:block;margin-bottom:16px">03</span>
+        <p class="font-black" style="font-size:20px;margin-bottom:10px">Snel reactie</p>
+        <p class="text-base leading-relaxed opacity-80">We reageren binnen een werkdag. Niet met een automatische bevestiging, maar met een echt antwoord.</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -176,7 +201,7 @@ if (!empty($dgm_posts)) :
       $dgm_excerpt = get_the_excerpt($dgm_post);
       $dgm_link    = get_permalink($dgm_post);
     ?>
-    <article class="bg-white rounded-xl overflow-hidden border border-gray-100">
+    <article class="bg-white rounded-xl overflow-hidden" style="border:1px solid #f3f4f6">
       <a href="<?php echo esc_url($dgm_link); ?>" class="group block">
         <div style="overflow:hidden">
           <img src="<?php echo esc_url($dgm_thumb); ?>" alt="<?php echo $dgm_title; ?>"
