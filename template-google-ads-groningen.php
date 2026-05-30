@@ -174,19 +174,19 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
     <div>
       <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
         <summary class="font-black text-lg" style="cursor:pointer">Hoe snel zie ik resultaat van Google Ads?</summary>
-        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Google Ads is de snelste route naar zichtbaarheid in Google. Zodra je campagne live gaat, kun je al dezelfde dag klikken en bezoekers ontvangen. De eerste twee tot vier weken gebruikt Google je campagnegegevens om te leren welke advertenties en zoekwoorden het beste werken. Na die leerfase presteren campagnes doorgaans een stuk beter. We bouwen altijd met dat leermoment rekening in de planning.</p>
+        <p class="text-lg leading-relaxed opacity-80" style="padding-top:14px">Google Ads is de snelste route naar zichtbaarheid in Google. Zodra je campagne live gaat, kun je al dezelfde dag klikken en bezoekers ontvangen. De eerste twee tot vier weken gebruikt Google je campagnegegevens om te leren welke advertenties en zoekwoorden het beste werken. Na die leerfase presteren campagnes doorgaans een stuk beter. We bouwen altijd met dat leermoment rekening in de planning.</p>
       </details>
       <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
         <summary class="font-black text-lg" style="cursor:pointer">Hoeveel budget heb ik nodig voor Google Ads?</summary>
-        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Er is geen verplicht minimumbudget, maar een te klein budget levert weinig bruikbare data op. Voor een lokale campagne in Groningen raden we een startbudget aan van minimaal 300 tot 500 euro per maand om genoeg klikken te genereren voor optimalisatie. Hoe competitief je markt is, bepaalt ook hoeveel een klik kost. We analyseren je markt vooraf zodat je precies weet wat je kunt verwachten.</p>
+        <p class="text-lg leading-relaxed opacity-80" style="padding-top:14px">Er is geen verplicht minimumbudget, maar een te klein budget levert weinig bruikbare data op. Voor een lokale campagne in Groningen raden we een startbudget aan van minimaal 300 tot 500 euro per maand om genoeg klikken te genereren voor optimalisatie. Hoe competitief je markt is, bepaalt ook hoeveel een klik kost. We analyseren je markt vooraf zodat je precies weet wat je kunt verwachten.</p>
       </details>
       <details style="border-bottom:1px solid #e5e7eb;padding-bottom:20px;margin-bottom:20px">
         <summary class="font-black text-lg" style="cursor:pointer">Betaal ik per klik of per vertoning?</summary>
-        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Standaard betaal je bij Google Ads per klik, niet per vertoning. Dat heet CPC: Cost Per Click. Je advertentie kan duizenden keren getoond worden zonder dat je een cent betaalt. Pas als iemand klikt, wordt het budget aangesproken. Dat maakt Google Ads bijzonder efficiënt voor lokale bedrijven: je bereikt mensen die actief op zoek zijn naar jouw dienst.</p>
+        <p class="text-lg leading-relaxed opacity-80" style="padding-top:14px">Standaard betaal je bij Google Ads per klik, niet per vertoning. Dat heet CPC: Cost Per Click. Je advertentie kan duizenden keren getoond worden zonder dat je een cent betaalt. Pas als iemand klikt, wordt het budget aangesproken. Dat maakt Google Ads bijzonder efficiënt voor lokale bedrijven: je bereikt mensen die actief op zoek zijn naar jouw dienst.</p>
       </details>
       <details>
         <summary class="font-black text-lg" style="cursor:pointer">Wat is het verschil tussen Google Ads en SEO?</summary>
-        <p class="text-base leading-relaxed opacity-80" style="padding-top:14px">Google Ads geeft je directe, betaalde zichtbaarheid bovenaan de zoekresultaten. Stop je met betalen, dan verdwijnt je advertentie. SEO bouwt organische posities op die je houdt, ook als je er niets meer aan doet. Ze vullen elkaar aan: Ads voor direct resultaat en om te testen welke boodschappen werken, SEO voor een duurzame positie op de lange termijn.</p>
+        <p class="text-lg leading-relaxed opacity-80" style="padding-top:14px">Google Ads geeft je directe, betaalde zichtbaarheid bovenaan de zoekresultaten. Stop je met betalen, dan verdwijnt je advertentie. SEO bouwt organische posities op die je houdt, ook als je er niets meer aan doet. Ze vullen elkaar aan: Ads voor direct resultaat en om te testen welke boodschappen werken, SEO voor een duurzame positie op de lange termijn.</p>
       </details>
     </div>
   </div>

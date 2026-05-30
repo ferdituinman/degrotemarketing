@@ -41,9 +41,6 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
       </h1>
       <p class="text-sm font-semibold uppercase tracking-widest opacity-50 mb-6" style="letter-spacing:0.08em">
         <time datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('j F Y'); ?></time>
-        <?php $mod = get_the_modified_date('c'); $pub = get_the_date('c'); if ($mod !== $pub) : ?>
-          <span class="opacity-60"> &middot; bijgewerkt <time datetime="<?php echo $mod; ?>"><?php echo get_the_modified_date('j F Y'); ?></time></span>
-        <?php endif; ?>
       </p>
       <div class="text-xl md:text-2xl leading-relaxed opacity-90"><?php echo apply_filters('the_content', $extended['main']); ?></div>
     </div>
