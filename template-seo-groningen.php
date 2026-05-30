@@ -41,9 +41,9 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: hero - intro "Gewoon doen." met service-specifieke CTA-knop -->
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
-<div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
+<div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-full md:w-auto">
   <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Hoger in Google in Groningen</h1>
-  <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Groningen zoekt. Ben jij er?</p>
+  <p class="text-[56px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Groningen zoekt. Ben jij er?</p>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Je weet dat meer mensen jou moeten kunnen vinden. Maar hoe dat werkt met Google, dat is een ander verhaal.</p>
     <p>Wij maken dat makkelijk. Geen abracadabra. Gewoon gevonden worden. SEO noemen we dat, maar die term mag je gelijk weer vergeten.</p>
@@ -62,7 +62,6 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s1 - eerste inhoudssectie: eyebrow + H2 + paragrafen + foto links (12-kol grid) -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-start-2 md:col-span-5 space-y-6">
-    <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">SEO bureau Groningen</p>
     <h2 class="text-4xl font-black mb-8">GEVONDEN WORDEN OF NIET</h2>
     <p class="text-lg md:text-xl leading-relaxed">Als iemand googelt op jouw dienst in Groningen, wil je erbij zijn. Op de eerste pagina. En in het kaartje.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is waar SEO over gaat. Gevonden worden door mensen die al zoeken naar wat jij doet. Niet adverteren. Niet betalen per klik. Gewoon gevonden worden.</p>

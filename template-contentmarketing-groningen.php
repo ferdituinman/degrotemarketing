@@ -39,9 +39,9 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: hero - intro "Gewoon doen." met service-specifieke CTA-knop -->
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
-<div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
+<div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-full md:w-auto">
   <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3"><?php the_title(); ?></h1>
-  <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Jij weet het. Wij schrijven het.</p>
+  <p class="text-[56px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Jij weet het. Wij schrijven het.</p>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Jij weet wat je doet. Maar hoe vertel je iets op Facebook op een manier die mensen aanspreekt?</p>
     <p>Wij helpen je om jouw verhaal te vertellen. Niet met mooipraterij. Gewoon eerlijk en herkenbaar.</p>
@@ -59,7 +59,6 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s1 - eerste inhoudssectie: eyebrow + H2 + paragrafen + foto links (12-kol grid) -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-start-2 md:col-span-5 space-y-6">
-    <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Contentmarketing bureau Groningen</p>
     <h2 class="text-4xl font-black mb-8">ALS MARKETING VOELT ALS WERK</h2>
     <p class="text-lg md:text-xl leading-relaxed">Je hebt al geprobeerd iets te schrijven voor je website. Het voelde als een schooltaak. Dat is het probleem.</p>
     <p class="text-lg md:text-xl leading-relaxed">Teksten die aanvoelen als werk, voelen ook zo voor de lezer. Mensen haken af. Ze klikken weg. Niet omdat ze niet geinteresseerd zijn, maar omdat de tekst ze niet aanspreekt.</p>
@@ -94,7 +93,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 </section>
 
 <!-- BLOK: s3 - gecentreerd statement-blok met achtergrondtekst en "Gewoon doen." badge -->
-<section class="py-16 md:py-[100px] relative">
+<section class="py-16 md:py-[100px] relative overflow-hidden">
   <div class="absolute -left-20 top-0 text-[10rem] font-black text-black/5 select-none -z-10 rotate-12">TEKST</div>
   <div class="max-w-2xl mx-auto text-center space-y-8">
     <h2 class="text-4xl font-black">TEKST DIE KLINKT ALS JIJ</h2>

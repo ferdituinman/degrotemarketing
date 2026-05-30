@@ -26,9 +26,9 @@ $up = content_url('uploads/2026/05/');
 <!-- BLOK: Hero - grote intro met CTA-knop "Bak pleur?" en achtergrondafbeelding op desktop -->
 <div id="herov2" class="w-full">
 <section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
-<div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
+<div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-full md:w-auto">
   <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Online marketing voor Groningen</h1>
-  <h2 class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</h2>
+  <h2 class="text-[56px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Gewoon doen.</h2>
   <div class="space-y-8 text-lg md:text-xl leading-relaxed">
     <p>Je weet dat er meer in internet zit. Je moet alleen de juiste kant op.</p>
     <p>Wij maken online marketing simpel.</p>
@@ -47,7 +47,6 @@ $up = content_url('uploads/2026/05/');
 <!-- BLOK: Aanpak - tekst links/rechts met foto; nadruk op samenwerken zonder hierarchie -->
 <section id="aanpak" class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
-    <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Online marketing voor Groningen</p>
     <h2 class="text-4xl font-black mb-8">BESLISSEN AAN DE KEUKENTAFEL</h2>
     <p class="text-lg md:text-xl leading-relaxed">We doen het samen. Zonder hierarchie, zonder dikke rapporten die in een lade belanden. Wij staan naast jou, niet boven je.</p>
     <p class="text-lg md:text-xl leading-relaxed">We zitten bij jou aan tafel. Dezelfde hoogte, dezelfde taal.</p>
@@ -87,7 +86,7 @@ $up = content_url('uploads/2026/05/');
 </section>
 
 <!-- BLOK: Plezier als richting - gecentreerd tekstblok; marketing moet leuk zijn -->
-<section id="plezier" class="py-16 md:py-[100px] relative">
+<section id="plezier" class="py-16 md:py-[100px] relative overflow-hidden">
   <div class="absolute -left-20 top-0 text-[10rem] font-black text-black/5 select-none -z-10 rotate-12">FUN</div>
   <div class="max-w-2xl mx-auto text-center space-y-8">
     <h2 class="text-4xl font-black">PLEZIER ALS RICHTING</h2>
