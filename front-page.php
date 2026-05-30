@@ -61,7 +61,7 @@ $up = content_url('uploads/2026/05/');
                  <?php echo $up; ?>geen-leverancier-768x768.png 768w,
                  <?php echo $up; ?>geen-leverancier-300x300.png 300w"
          sizes="(min-width: 768px) 42vw, 100vw"
-         alt="Geen Leverancier" width="1024" height="1024" loading="lazy"/>
+         alt="Geen Leverancier" width="1024" height="1024" loading="lazy" decoding="async"/>
   </div>
 </section>
 
@@ -82,7 +82,7 @@ $up = content_url('uploads/2026/05/');
                  <?php echo $up; ?>voorgroningers-768x768.png 768w,
                  <?php echo $up; ?>voorgroningers-300x300.png 300w"
          sizes="(min-width: 768px) 42vw, 100vw"
-         alt="Voor Groningen, door Groningen" width="1536" height="1536" loading="lazy"/>
+         alt="Voor Groningen, door Groningen" width="1536" height="1536" loading="lazy" decoding="async"/>
   </div>
 </section>
 
@@ -142,7 +142,7 @@ $up = content_url('uploads/2026/05/');
                  <?php echo $up; ?>als-marketing-voelt-als-werk-300x300.png 300w"
          sizes="(min-width: 768px) 50vw, 100vw"
          alt="Als marketing voelt als werk"
-         class="w-full object-contain scale-90" width="1024" height="1024" loading="lazy"/>
+         class="w-full object-contain scale-90" width="1024" height="1024" loading="lazy" decoding="async"/>
   </div>
 </section>
 
@@ -184,7 +184,7 @@ $up = content_url('uploads/2026/05/');
          sizes="(min-width: 768px) 50vw, 100vw"
          alt="Simone"
          class="w-full h-full object-cover md:rounded-r rounded min-h-[400px] order-2 md:order-1 scale-90 md:-translate-x-3"
-         width="1275" height="1536" loading="lazy"/>
+         width="1275" height="1536" loading="lazy" decoding="async"/>
   </div>
 </section>
 
@@ -232,10 +232,12 @@ if (!empty($recent_posts)) :
 
   <div id="blog-grid" style="display:grid;align-items:start">
     <?php foreach ($recent_posts as $i => $rpost) :
-      $rthumb   = get_the_post_thumbnail_url($rpost, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
-      $rtitle   = esc_html(get_the_title($rpost));
-      $rexcerpt = get_the_excerpt($rpost);
-      $rlink    = get_permalink($rpost);
+      $rthumb_id  = get_post_thumbnail_id($rpost);
+      $rthumb     = get_the_post_thumbnail_url($rpost, 'dgm-square-md') ?: ($up . 'voorgroningers-768x768.png');
+      $rthumb_ss  = $rthumb_id ? wp_get_attachment_image_srcset($rthumb_id, 'dgm-square-md') : '';
+      $rtitle     = esc_html(get_the_title($rpost));
+      $rexcerpt   = get_the_excerpt($rpost);
+      $rlink      = get_permalink($rpost);
     ?>
 
     <?php if ($i === 0) : ?>
@@ -244,10 +246,11 @@ if (!empty($recent_posts)) :
         <h3 class="font-black leading-tight group-hover:text-primary-container transition-colors duration-200" style="font-size:22px;line-height:1.15;margin-bottom:25px"><?php echo $rtitle; ?></h3>
         <div style="overflow:hidden;border-radius:10px;margin-bottom:24px">
           <img src="<?php echo esc_url($rthumb); ?>"
+               <?php if ($rthumb_ss) : ?>srcset="<?php echo esc_attr($rthumb_ss); ?>" sizes="(min-width: 768px) 33vw, 100vw"<?php endif; ?>
                alt="<?php echo $rtitle; ?>"
                class="w-full transition-transform duration-500 group-hover:scale-105"
                style="display:block"
-               width="512" height="512" loading="lazy"/>
+               width="512" height="512" loading="lazy" decoding="async"/>
         </div>
         <p class="text-base leading-relaxed opacity-70"><?php echo $rexcerpt; ?></p>
       </a>
@@ -258,10 +261,11 @@ if (!empty($recent_posts)) :
       <a href="<?php echo esc_url($rlink); ?>" class="group block">
         <div style="overflow:hidden;border-radius:10px;margin-bottom:24px">
           <img src="<?php echo esc_url($rthumb); ?>"
+               <?php if ($rthumb_ss) : ?>srcset="<?php echo esc_attr($rthumb_ss); ?>" sizes="(min-width: 768px) 33vw, 100vw"<?php endif; ?>
                alt="<?php echo $rtitle; ?>"
                class="w-full transition-transform duration-500 group-hover:scale-105"
                style="display:block"
-               width="512" height="341" loading="lazy"/>
+               width="512" height="341" loading="lazy" decoding="async"/>
         </div>
         <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200" style="font-size:22px;line-height:1.15"><?php echo $rtitle; ?></h3>
         <p class="text-base leading-relaxed opacity-70"><?php echo $rexcerpt; ?></p>
@@ -273,10 +277,11 @@ if (!empty($recent_posts)) :
       <a href="<?php echo esc_url($rlink); ?>" class="group block">
         <div style="overflow:hidden;border-radius:10px;margin-bottom:24px">
           <img src="<?php echo esc_url($rthumb); ?>"
+               <?php if ($rthumb_ss) : ?>srcset="<?php echo esc_attr($rthumb_ss); ?>" sizes="(min-width: 768px) 33vw, 100vw"<?php endif; ?>
                alt="<?php echo $rtitle; ?>"
                class="w-full transition-transform duration-500 group-hover:scale-105"
                style="display:block"
-               width="512" height="384" loading="lazy"/>
+               width="512" height="384" loading="lazy" decoding="async"/>
         </div>
         <h3 class="font-black leading-tight mb-3 group-hover:text-primary-container transition-colors duration-200" style="font-size:22px;line-height:1.15"><?php echo $rtitle; ?></h3>
         <p class="text-base leading-relaxed opacity-70"><?php echo $rexcerpt; ?></p>
