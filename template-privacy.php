@@ -57,7 +57,7 @@ $up = content_url('uploads/2026/05/');
     <p>Wij vragen niet meer dan nodig. Geen verborgen tracking, geen profielen.</p>
 
     <h2>Waarom bewaren wij die gegevens?</h2>
-    <p>Alleen om contact met je op te nemen naar aanleiding van jouw vraag. Niet voor nieuwsbrieven, niet voor remarketing, niet voor lijstjes. Als je niks hoort van ons, hoor je niks van ons.</p>
+    <p>Alleen om contact met je op te nemen naar aanleiding van jouw vraag. Niet voor nieuwsbrieven, niet voor remarketing, niet voor lijstjes.</p>
     <p>Juridische grondslag: gerechtvaardigd belang (contact afhandelen op jouw eigen verzoek).</p>
 
     <h2>Hoe lang bewaren wij jouw gegevens?</h2>
