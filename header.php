@@ -26,7 +26,7 @@ $home_url    = home_url('/');
 $blog_url    = home_url('/blog/');
 $contact_url = home_url('/contact/');
 $services = [
-  ['label' => 'Advertising',   'url' => home_url('/google-ads-groningen/')],
+  ['label' => 'Google Ads',   'url' => home_url('/google-ads-groningen/')],
   ['label' => 'Facebouk',      'url' => home_url('/contentmarketing-groningen/')],
   ['label' => 'Koekel',        'url' => home_url('/seo-groningen/')],
   ['label' => 'Webstek',       'url' => home_url('/website-groningen/')],

@@ -61,7 +61,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
     <p class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Google Ads bureau Groningen</p>
-    <h2 class="text-4xl font-black mb-8">MORGEN BOVENAAN IN GOOGLE</h2>
+    <h2 class="text-4xl font-black mb-8" style="line-height:0.9">MORGEN BOVENAAN IN GOOGLE</h2>
     <p class="text-lg md:text-xl leading-relaxed">Met Google Ads sta je morgen bovenaan. Niet over drie maanden. Morgen.</p>
     <p class="text-lg md:text-xl leading-relaxed">Je betaalt per klik. Niet per vertoning, niet per maand. Alleen als iemand daadwerkelijk naar jouw website gaat.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is precies waarom het werkt. Je bereikt mensen die nu al zoeken naar wat jij levert in Groningen.</p>
@@ -100,7 +100,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-24">
     <div class="flex-1 space-y-8 md:translate-y-6 order-2">
       <h2 class="text-4xl font-black italic">WAT WE DOEN</h2>
-      <p class="text-xl leading-relaxed">Google Ads is niet ingewikkeld. Maar het kost wel aandacht. Verkeerde instellingen En je steekt geld in de brand.</p>
+      <p class="text-xl leading-relaxed">Google Ads is niet ingewikkeld. Maar het kost wel aandacht. Verkeerde instellingen en je steekt geld in de brand.</p>
       <p class="text-xl leading-relaxed">Wij zitten er bovenop. Van het begin af aan.</p>
       <p class="font-bold text-primary-container">Kloar.</p>
     </div>
@@ -134,8 +134,8 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
     <h2 class="text-4xl font-black mb-6 relative z-10">GEEN ADS BURO</h2>
     <div class="space-y-4 relative z-10">
       <p class="text-xl leading-relaxed">Wij zijn geen advertising-agency die je maandelijks een dik rapport stuurt over hoeveel je nu weer hebt uitgegeven.</p>
-      <p class="text-xl leading-relaxed">We sturen. En bellen je om te vragen of het lukt.</p>
-      <p class="text-xl font-bold text-primary-container">Of we komen bij je langs. Op de fiets.</p>
+      <p class="text-xl leading-relaxed">We adverteren. We bellen je dan om te vragen of het lukt.</p>
+      <p class="text-xl font-bold text-primary-container">En we komen bij je langs. Op de fiets.</p>
     </div>
   </div>
   <img src="<?php echo esc_url($ads_img3); ?>"
