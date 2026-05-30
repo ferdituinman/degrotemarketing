@@ -27,6 +27,7 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
 </style>
 
 <article>
+<style>@media(max-width:767px){.prose-dgm{padding-left:24px!important;padding-right:31px!important}.px-single-header{padding-left:24px!important;padding-right:31px!important}}</style>
 
 <!-- POST HEADER -->
 <header class="max-w-screen-xl mx-auto px-10 md:px-12 pb-16 md:pb-24" style="padding-top:39px">
