@@ -1,10 +1,14 @@
 <?php
 
 // ─── robots.txt: blokkeer AI-trainingscrawlers ─────────────────────────────────
+// Geblokkeerd: training (GPTBot, ClaudeBot, Google-Extended, CCBot, Bytespider, cohere-ai)
+// Toegestaan:  inferentie/citaties (ChatGPT-User, PerplexityBot, Googlebot)
 add_filter('robots_txt', function (string $output): string {
+    $output .= "\nUser-agent: GPTBot\nDisallow: /\n";
+    $output .= "\nUser-agent: ClaudeBot\nDisallow: /\n";
+    $output .= "\nUser-agent: Google-Extended\nDisallow: /\n";
     $output .= "\nUser-agent: CCBot\nDisallow: /\n";
     $output .= "\nUser-agent: Bytespider\nDisallow: /\n";
-    $output .= "\nUser-agent: anthropic-ai\nDisallow: /\n";
     $output .= "\nUser-agent: cohere-ai\nDisallow: /\n";
     return $output;
 }, 99);

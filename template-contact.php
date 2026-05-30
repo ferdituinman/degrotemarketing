@@ -6,21 +6,18 @@ get_header();
 $up = content_url('uploads/2026/05/');
 ?>
 <style>
-#hero-eyebrow{display:none}
-#mobile-eyebrow{display:block}
 @media (min-width:768px){
-  #hero-eyebrow{display:block}
-  #mobile-eyebrow{display:none}
   #herov2{
     background-image:url('<?php echo $up; ?>horizontale-strip.png');
     background-position:50%;
     background-size:cover;
-    height:500px;
+    height:660px;
     display:flex;
     align-items:center
   }
   #herov2 section{width:100%;padding-top:0;padding-bottom:0}
   #contact-grid{grid-template-columns:55fr 45fr;gap:80px}
+  #contact-info-col{margin-top:40px}
 }
 .wpcf7-form input[type="text"],
 .wpcf7-form input[type="email"],
@@ -83,22 +80,23 @@ $up = content_url('uploads/2026/05/');
 
 <!-- Hero -->
 <div id="herov2" class="w-full">
-<section class="pb-16 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
+<section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-screen -ml-10 md:w-auto md:ml-0">
-  <p id="hero-eyebrow" class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Aan de keukentafel</p>
-  <h1 class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</h1>
-  <p class="text-lg md:text-xl leading-relaxed">Geen offerte-aanvraagformulier van 12 velden. Geen driedaagse reactietijd. Gewoon even contact opnemen en kijken of het klikt.</p>
+  <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Aan de keukentafel</h1>
+  <p class="text-[70px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.96] md:leading-normal">Gewoon doen.</p>
+  <div class="space-y-4 text-lg md:text-xl leading-relaxed">
+    <p>Geen offerte-aanvraagformulier van 12 velden. Geen driedaagse reactietijd.</p>
+    <p>Gewoon even contact opnemen en kijken of het klikt.</p>
+  </div>
 </div>
 </section>
 </div>
 
 <main class="max-w-screen-xl mx-auto px-10 md:px-12">
 
-<p id="mobile-eyebrow" class="text-sm font-semibold uppercase tracking-widest text-primary-container mt-10 mb-0">Aan de keukentafel</p>
-
-<!-- BLOK: Formulier + contactinfo -->
+<!-- BLOK: contact-grid - form links, info rechts +40px offset -->
 <section class="py-16 md:py-[100px]">
-  <div style="display:grid;grid-template-columns:1fr;gap:64px" id="contact-grid">
+  <div style="display:grid;gap:64px" id="contact-grid">
 
     <!-- Formulier links -->
     <div>
@@ -109,7 +107,7 @@ $up = content_url('uploads/2026/05/');
     </div>
 
     <!-- Contactinfo rechts -->
-    <div>
+    <div id="contact-info-col">
 
       <!-- Bellen -->
       <div class="cinfo-item">
@@ -152,12 +150,12 @@ $up = content_url('uploads/2026/05/');
   </div>
 </section>
 
-<!-- BLOK: Wat je kunt verwachten -->
+<!-- BLOK: verwachten - "OK" deco linksonder, gedraaid -->
 <section class="py-16 md:py-[80px] relative overflow-hidden">
-  <span style="position:absolute;top:-30px;right:-50px;font-size:10rem;font-weight:900;line-height:1;color:rgba(0,0,0,0.04);pointer-events:none;select:none;z-index:0">OK</span>
+  <span style="position:absolute;bottom:-20px;left:-30px;font-size:10rem;font-weight:900;line-height:1;color:rgba(0,0,0,0.04);pointer-events:none;select:none;z-index:0;transform:rotate(-8deg)">OK</span>
   <div style="position:relative;z-index:1">
     <h2 class="text-3xl font-black" style="margin-bottom:48px">Wat je kunt verwachten.</h2>
-    <div style="display:grid;grid-template-columns:1fr" id="expect-grid">
+    <div style="display:grid" id="expect-grid">
 
       <div class="expect-item">
         <span class="text-primary-container font-black" style="font-size:2.8rem;line-height:1;display:block;margin-bottom:16px">01</span>

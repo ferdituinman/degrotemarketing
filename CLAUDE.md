@@ -61,9 +61,11 @@ Rules:
 - Blocks are labelled via HTML comments (`<!-- BLOK: s1 -->` etc.)
 - Use inline styles for values not in compiled Tailwind
 
-Variation matrix (as of 2026-05-28):
+Variation matrix (as of 2026-05-30):
 
 s1 (grid-cols-12 opener): home=beeld links -48px / SEO=tekst links +32px / Google Ads=beeld links +24px / Content=tekst links +16px / Website=beeld links geen offset
 s2 (55/45 split): home=tekst links +48px / SEO=beeld links +16px / Google Ads=tekst links -24px / Content=beeld links +32px / Website=tekst links geen offset
 s3 (flex tekst + stappenkaart): SEO=tekst links / Google Ads=kaart links / Website=tekst links andere rotatie
 s5 (quote border-left): home=max-w-4xl ml-14 / SEO=max-w-4xl ml-24px / Website=max-w-2xl ml-14
+contact-grid (55/45 form+info): form links, info-kolom +40px naar beneden
+contact-verwachten (3-col): "OK" deco linksonder -8deg (vs rechtsboven geen rotatie op andere pagina's)
