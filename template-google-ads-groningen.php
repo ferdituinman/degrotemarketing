@@ -39,10 +39,10 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 
 <!-- BLOK: hero - intro "Gewoon doen." met service-specifieke CTA-knop -->
 <div id="herov2" class="w-full">
-<section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
+<section class="pb-6 md:pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-full md:w-auto">
   <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3"><?php the_title(); ?></h1>
-  <p class="text-[56px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Morgen bovenaan.</p>
+  <h2 class="text-[56px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Morgen bovenaan.</h2>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>SEO kost tijd. Google Ads niet. Morgen bovenaan in Google. Vandaag nog beginnen.</p>
     <p>Je betaalt alleen als iemand klikt. En wij zorgen dat de juiste mensen klikken.</p>
@@ -60,7 +60,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s1 - eerste inhoudssectie: eyebrow + H2 + paragrafen + foto links (12-kol grid) -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
-    <h2 class="text-4xl font-black mb-8" style="line-height:0.9">MORGEN BOVENAAN IN GOOGLE</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8" style="line-height:0.9">MORGEN BOVENAAN IN GOOGLE</h2>
     <p class="text-lg md:text-xl leading-relaxed">Met Google Ads sta je morgen bovenaan. Niet over drie maanden. Morgen.</p>
     <p class="text-lg md:text-xl leading-relaxed">Je betaalt per klik. Niet per vertoning, niet per maand. Alleen als iemand daadwerkelijk naar jouw website gaat.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is precies waarom het werkt. Je bereikt mensen die nu al zoeken naar wat jij levert in Groningen.</p>
@@ -78,7 +78,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s2 - tweede sectie 55/45: tekst links + foto rechts -->
 <section class="py-16 md:pt-[80px] md:pb-[130px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
   <div class="space-y-6">
-    <h2 class="text-4xl font-black mb-8">Jouw budget gaat naar klanten. Niet naar lucht.</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8">Jouw budget gaat naar klanten. Niet naar lucht.</h2>
     <p class="text-lg md:text-xl leading-relaxed">Hoe meer je weet wat je uitgeeft, hoe beter je kunt bijsturen. Hoe beter je bijstuurt, hoe verder je budget komt. Hoe verder je budget komt, hoe meer klanten je binnenkrijgt.</p>
     <p class="text-lg md:text-xl leading-relaxed">We kijken maandelijks wat werkt en wat niet. Zoekwoorden die niets opleveren, stoppen we. Zoekwoorden die werken, schalen we op.</p>
     <p class="text-lg md:text-xl leading-relaxed">Einde van de maand een rapportage op 1 A4, zodat je weet wat werkt en wat niet. En tussendoor komen we langs, om te vragen hoe het gaat. <strong>Kloar.</strong></p>
@@ -98,7 +98,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="absolute -left-20 top-0 text-[10rem] font-black text-black/5 select-none -z-10 rotate-12">ADS</div>
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-24">
     <div class="flex-1 space-y-8 md:translate-y-6 order-2">
-      <h2 class="text-4xl font-black italic">WAT WE DOEN</h2>
+      <h2 class="text-2xl md:text-4xl font-black italic">WAT WE DOEN</h2>
       <p class="text-xl leading-relaxed">Google Ads is niet ingewikkeld. Maar het kost wel aandacht. Verkeerde instellingen en je steekt geld in de brand.</p>
       <p class="text-xl leading-relaxed">Wij zitten er bovenop. Van het begin af aan.</p>
       <p class="font-bold text-primary-container">Kloar.</p>
@@ -130,7 +130,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch md:gap-0">
   <div class="bg-surface-container-low p-6 md:p-12 flex flex-col justify-center md:rounded-l rounded relative overflow-hidden order-1 md:order-1">
     <span class="absolute -top-8 -right-4 text-[10rem] font-black text-black/5 select-none leading-none">Ads</span>
-    <h2 class="text-4xl font-black mb-6 relative z-10">GEEN ADS BURO</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-6 relative z-10">GEEN ADS BURO</h2>
     <div class="space-y-4 relative z-10">
       <p class="text-xl leading-relaxed">Wij zijn geen advertising-agency die je maandelijks een dik rapport stuurt over hoeveel je nu weer hebt uitgegeven.</p>
       <p class="text-xl leading-relaxed">We adverteren. We bellen je dan om te vragen of het lukt.</p>
@@ -201,7 +201,7 @@ if (!empty($dgm_posts)) :
 <section class="py-16 md:py-[100px]">
   <div class="flex items-end justify-between gap-8 flex-wrap" style="margin-bottom:50px">
     <div>
-      <h2 class="text-4xl font-black italic">Blogs. Zelf geschreven.</h2>
+      <h2 class="text-2xl md:text-4xl font-black italic">Blogs. Zelf geschreven.</h2>
     </div>
     <a href="<?php echo home_url('/blog/'); ?>" class="hidden md:block text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">Alle blogs &rarr;</a>
   </div>

@@ -85,20 +85,21 @@ $lnka = "font-['Public_Sans'] text-lg font-bold tracking-tight text-[#078930] un
 </button>
 </nav>
 
-<div id="mobile-menu" class="hidden md:hidden fixed top-[120px] left-0 right-0 bg-white border-b border-black/5 px-8 py-6 flex flex-col gap-5 z-40" aria-hidden="true">
-  <a class="font-['Public_Sans'] text-lg font-bold tracking-tight<?php echo $is_home_active ? ' text-[#078930]' : ' text-zinc-900 opacity-80'; ?>"
-     href="<?php echo $home_url; ?>">Aanpak</a>
-  <span class="nav-mobile-section">Dingen</span>
-  <?php foreach ($services as $s):
-    $is_active_service = ($current_slug === basename(rtrim($s['url'], '/')));
-  ?>
-  <a class="font-['Public_Sans'] text-base font-bold tracking-tight<?php echo $is_active_service ? ' text-[#078930]' : ' text-zinc-900 opacity-80'; ?>"
-     href="<?php echo esc_url($s['url']); ?>"
-     style="padding-left:1rem"><?php echo esc_html($s['label']); ?></a>
-  <?php endforeach; ?>
-  <a class="font-['Public_Sans'] text-lg font-bold tracking-tight<?php echo $is_blog_active ? ' text-[#078930]' : ' text-zinc-900 opacity-80'; ?>"
-     href="<?php echo $blog_url; ?>">Blog</a>
-  <a class="font-['Public_Sans'] text-lg font-bold tracking-tight<?php echo $is_contact_active ? ' text-[#078930]' : ' text-zinc-900 opacity-80'; ?>"
-     href="<?php echo $contact_url; ?>">Contact</a>
+<div id="mobile-menu" aria-hidden="true" style="position:fixed;inset:0;z-index:60;background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform 0.45s cubic-bezier(0.77,0,0.175,1);overflow-y:auto;-webkit-overflow-scrolling:touch;">
+  <nav style="flex:1;display:flex;flex-direction:column;justify-content:space-evenly;padding:7.5rem 2.5rem 3rem;min-height:100dvh;">
+    <a class="mm-item" href="<?php echo $home_url; ?>" style="font-size:2.75rem;font-weight:800;letter-spacing:-0.03em;text-decoration:none;color:<?php echo $is_home_active ? '#078930' : '#18181b'; ?>;opacity:0;transform:translateX(40px);transition:opacity 0.35s ease,transform 0.35s ease;">Aanpak</a>
+    <div class="mm-item" style="opacity:0;transform:translateX(40px);transition:opacity 0.35s ease,transform 0.35s ease;">
+      <span style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#078930;display:block;margin-bottom:0.75rem;">Dingen</span>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;">
+        <?php foreach ($services as $s):
+          $is_active_service = ($current_slug === basename(rtrim($s['url'], '/')));
+        ?>
+        <a href="<?php echo esc_url($s['url']); ?>" style="font-size:1.5rem;font-weight:700;text-decoration:none;color:<?php echo $is_active_service ? '#078930' : '#18181b'; ?>;"><?php echo esc_html($s['label']); ?></a>
+        <?php endforeach; ?>
+      </div>
+    </div>
+    <a class="mm-item" href="<?php echo $blog_url; ?>" style="font-size:2.75rem;font-weight:800;letter-spacing:-0.03em;text-decoration:none;color:<?php echo $is_blog_active ? '#078930' : '#18181b'; ?>;opacity:0;transform:translateX(40px);transition:opacity 0.35s ease,transform 0.35s ease;">Blog</a>
+    <a class="mm-item" href="<?php echo $contact_url; ?>" style="font-size:2.75rem;font-weight:800;letter-spacing:-0.03em;text-decoration:none;color:<?php echo $is_contact_active ? '#078930' : '#18181b'; ?>;opacity:0;transform:translateX(40px);transition:opacity 0.35s ease,transform 0.35s ease;">Contact</a>
+  </nav>
 </div>
 </header>

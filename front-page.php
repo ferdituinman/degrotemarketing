@@ -25,7 +25,7 @@ $up = content_url('uploads/2026/05/');
 
 <!-- BLOK: Hero - grote intro met CTA-knop "Bak pleur?" en achtergrondafbeelding op desktop -->
 <div id="herov2" class="w-full">
-<section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
+<section class="pb-6 md:pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-full md:w-auto">
   <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Online marketing voor Groningen</h1>
   <h2 class="text-[56px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Gewoon doen.</h2>
@@ -47,7 +47,7 @@ $up = content_url('uploads/2026/05/');
 <!-- BLOK: Aanpak - tekst links/rechts met foto; nadruk op samenwerken zonder hierarchie -->
 <section id="aanpak" class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
-    <h2 class="text-4xl font-black mb-8">BESLISSEN AAN DE KEUKENTAFEL</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8">BESLISSEN AAN DE KEUKENTAFEL</h2>
     <p class="text-lg md:text-xl leading-relaxed">We doen het samen. Zonder hierarchie, zonder dikke rapporten die in een lade belanden. Wij staan naast jou, niet boven je.</p>
     <p class="text-lg md:text-xl leading-relaxed">We zitten bij jou aan tafel. Dezelfde hoogte, dezelfde taal.</p>
     <div class="h-1 w-24 bg-primary-container"></div>
@@ -67,7 +67,7 @@ $up = content_url('uploads/2026/05/');
 <!-- BLOK: Voor Groningen - lokaal argument; foto van stad; tekst over fiets/geen beeldbellen -->
 <section class="py-16 md:pt-[80px] md:pb-[130px] grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
   <div class="space-y-6">
-    <h2 class="text-4xl font-black mb-8">Wij komen hier vandaan.</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8">Wij komen hier vandaan.</h2>
     <p class="text-lg md:text-xl leading-relaxed">We kennen de grachten, de mensen, Stadjers, studenten.</p>
     <p class="text-lg md:text-xl leading-relaxed">Geen bureau uit Amsterdam met een lulverhaal via beeldbellen. Gewoon iemand die op de fiets bij je langskomt.</p>
     <div class="h-1 w-36 bg-primary-container -rotate-1 translate-x-2"></div>
@@ -89,7 +89,7 @@ $up = content_url('uploads/2026/05/');
 <section id="plezier" class="py-16 md:py-[100px] relative overflow-hidden">
   <div class="absolute -left-20 top-0 text-[10rem] font-black text-black/5 select-none -z-10 rotate-12">FUN</div>
   <div class="max-w-2xl mx-auto text-center space-y-8">
-    <h2 class="text-4xl font-black">PLEZIER ALS RICHTING</h2>
+    <h2 class="text-2xl md:text-4xl font-black">PLEZIER ALS RICHTING</h2>
     <p class="text-xl leading-relaxed">Energie beslist de richting. Als marketing voelt als trekken aan een dood paard, dan doen we het niet. Marketing moet leuk zijn voor jou en voor je klant. We gaan het pas doen als we het leuk vinden.</p>
     <div class="inline-block px-4 py-2 border-2 border-primary-container rounded-full -rotate-3 translate-x-3">
       <p class="text-lg font-bold">Gewoon doen.</p>
@@ -101,7 +101,7 @@ $up = content_url('uploads/2026/05/');
 <section class="py-16 md:py-[100px] border-none">
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-24">
     <div class="flex-1 space-y-8 md:translate-y-6">
-      <h2 class="text-4xl font-black italic">VAN DENKEN NAAR DOEN</h2>
+      <h2 class="text-2xl md:text-4xl font-black italic">VAN DENKEN NAAR DOEN</h2>
       <p class="text-xl leading-relaxed">We gaan niet overleggen over overleggen. We beginnen. Kleine stapjes, grote resultaten. Als het werkt, gaan we door. Als het niet werkt, bedenken we wat beters. Direct.</p>
       <p class="font-bold text-primary-container">Kloar.</p>
     </div>
@@ -127,7 +127,7 @@ $up = content_url('uploads/2026/05/');
 <!-- BLOK: Nait soezen - Gronings statement; foto links; CTA "Kop d'r veur" -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
   <div class="space-y-8 text-xl leading-relaxed order-1 md:order-2">
-    <h2 class="text-4xl font-black leading-tight mb-4">Nait soezen.<br/>Deurbroezen.</h2>
+    <h2 class="text-2xl md:text-4xl font-black leading-tight mb-4">Nait soezen.<br/>Deurbroezen.</h2>
     <p class="text-xl leading-relaxed">We verkopen niet jouw dienst of product, we verkopen jouw waarde. We gaan helemaal niet vertellen wat je doet.<br/>We gaan laten zien wat je te bieden hebt.</p>
     <p class="text-xl leading-relaxed">Bullshit vegen we van de tafel. We doen wat werkt.</p>
     <a href="<?php echo home_url('/contact/'); ?>" class="bg-primary-container text-white px-8 py-3 text-lg font-bold rounded drift-on-hover inline-block">
@@ -148,7 +148,7 @@ $up = content_url('uploads/2026/05/');
 <!-- BLOK: Lokaal - geen pak - quote-stijl met groene border links; nuchter/eerlijk statement -->
 <section class="py-16 md:py-[100px] text-left">
   <div class="max-w-4xl border-l-4 border-primary-container pl-6 md:pl-12 py-8 ml-0 md:ml-14">
-    <h2 class="text-4xl font-black mb-8">LOKAAL > Geen pak</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8">LOKAAL > Geen pak</h2>
     <div class="space-y-6 text-xl leading-relaxed opacity-90">
       <p>Je krijgt een sparringspartner die weet hoe het werkt. Nuchter. Eerlijk. Als je verwacht dat we in een strak pak aankomen, dan moet je iemand anders bellen.</p>
       <p>Droge humor inbegrepen. Gratis.</p>
@@ -161,7 +161,7 @@ $up = content_url('uploads/2026/05/');
   <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch md:gap-0">
     <div class="bg-surface-container-low p-6 md:p-12 flex flex-col justify-center md:rounded-r rounded relative overflow-hidden order-1 md:order-2">
       <span class="absolute -top-8 -right-4 text-[10rem] font-black text-black/5 select-none leading-none">Echt</span>
-      <h2 class="text-4xl font-black mb-6 relative z-10">ECHTE DINGEN</h2>
+      <h2 class="text-2xl md:text-4xl font-black mb-6 relative z-10">ECHTE DINGEN</h2>
       <div class="flex gap-4 items-start relative z-10 mt-2">
         <span class="text-primary-container font-black text-xl w-8 shrink-0">01</span>
         <p class="text-xl leading-relaxed">Eerlijk. Direct. Zonder trucjes.</p>
@@ -222,7 +222,7 @@ if (!empty($recent_posts)) :
   <div class="flex items-end justify-between gap-8 flex-wrap" style="margin-bottom:64px">
     <div>
       <p class="text-sm font-bold uppercase tracking-widest text-primary-container mb-3">Proatjes.</p>
-      <h2 class="text-4xl font-black" style="margin-bottom:50px">Blogs. Zelf geschreven.</h2>
+      <h2 class="text-2xl md:text-4xl font-black" style="margin-bottom:50px">Blogs. Zelf geschreven.</h2>
     </div>
     <a href="<?php echo home_url('/blog/'); ?>" class="hidden md:block text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">
       Alle blogs →

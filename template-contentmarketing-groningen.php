@@ -38,10 +38,10 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 
 <!-- BLOK: hero - intro "Gewoon doen." met service-specifieke CTA-knop -->
 <div id="herov2" class="w-full">
-<section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
+<section class="pb-6 md:pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-full md:w-auto">
   <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3"><?php the_title(); ?></h1>
-  <p class="text-[56px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Jij weet het. Wij schrijven het.</p>
+  <h2 class="text-[56px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Jij weet het. Wij schrijven het.</h2>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Jij weet wat je doet. Maar hoe vertel je iets op Facebook op een manier die mensen aanspreekt?</p>
     <p>Wij helpen je om jouw verhaal te vertellen. Niet met mooipraterij. Gewoon eerlijk en herkenbaar.</p>
@@ -59,7 +59,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s1 - eerste inhoudssectie: eyebrow + H2 + paragrafen + foto links (12-kol grid) -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-start-2 md:col-span-5 space-y-6">
-    <h2 class="text-4xl font-black mb-8">ALS MARKETING VOELT ALS WERK</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8">ALS MARKETING VOELT ALS WERK</h2>
     <p class="text-lg md:text-xl leading-relaxed">Je hebt al geprobeerd iets te schrijven voor je website. Het voelde als een schooltaak. Dat is het probleem.</p>
     <p class="text-lg md:text-xl leading-relaxed">Teksten die aanvoelen als werk, voelen ook zo voor de lezer. Mensen haken af. Ze klikken weg. Niet omdat ze niet geinteresseerd zijn, maar omdat de tekst ze niet aanspreekt.</p>
     <p class="text-lg md:text-xl leading-relaxed">Wij schrijven zoals jij praat. En dat werkt.</p>
@@ -77,7 +77,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s2 - tweede sectie 55/45: tekst links + foto rechts -->
 <section class="py-16 md:pt-[80px] md:pb-[130px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
   <div class="space-y-6 order-2">
-    <h2 class="text-4xl font-black mb-8">Jouw verhaal is sterker dan alles wat wij kunnen bedenken.</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8">Jouw verhaal is sterker dan alles wat wij kunnen bedenken.</h2>
     <p class="text-lg md:text-xl leading-relaxed">Je hebt bestaande klanten die blij zijn. Concrete resultaten die je geleverd hebt. Dingen die echt zijn.</p>
     <p class="text-lg md:text-xl leading-relaxed">Een goed idee voelt te simpel omdat je er zelf al jaren middenin zit. Maar een buitenstaander ziet het meteen.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is precies wat wij doen. Wij kijken naar buiten. Wij zien wat jij al hebt. En wij schrijven dat op een manier die mensen herkennen.</p>
@@ -96,7 +96,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section class="py-16 md:py-[100px] relative overflow-hidden">
   <div class="absolute -left-20 top-0 text-[10rem] font-black text-black/5 select-none -z-10 rotate-12">TEKST</div>
   <div class="max-w-2xl mx-auto text-center space-y-8">
-    <h2 class="text-4xl font-black">TEKST DIE KLINKT ALS JIJ</h2>
+    <h2 class="text-2xl md:text-4xl font-black">TEKST DIE KLINKT ALS JIJ</h2>
     <p class="text-xl leading-relaxed">Hoe herkenbaarder de tekst, hoe langer mensen lezen. Hoe langer mensen lezen, hoe eerder ze iets doen. Hoe eerder ze iets doen, hoe sneller je resultaat hebt.</p>
     <p class="text-xl leading-relaxed">Groningse tekst snijdt ergens doorheen. Direct. Eerlijk. Zonder gedoe. Geen vijf alinea's voor het antwoord. Geen wollige taal om het groter te laten lijken dan het is.</p>
     <div class="inline-block px-4 py-2 border-2 border-primary-container rounded-full -rotate-3 translate-x-3">
@@ -108,7 +108,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s4 - statement 55/45: tekst rechts + stappenkaart links + inline CTA-knop -->
 <section class="py-16 md:py-[100px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
   <div class="space-y-8 text-xl leading-relaxed order-1 md:order-2">
-    <h2 class="text-4xl font-black leading-tight mb-4">Content die werkt.<br/>Niet schrijven om het schrijven.</h2>
+    <h2 class="text-2xl md:text-4xl font-black leading-tight mb-4">Content die werkt.<br/>Niet schrijven om het schrijven.</h2>
     <p class="text-xl leading-relaxed">We schrijven teksten die gevonden worden in Google. En teksten die mensen ook echt lezen als ze er eenmaal zijn.</p>
     <p class="text-xl leading-relaxed">Dat is niet hetzelfde. De meeste websites doen maar een van de twee. Wij doen allebei.</p>
     <a href="<?php echo home_url('/contact/'); ?>" class="bg-primary-container text-white px-8 py-3 text-lg font-bold rounded drift-on-hover inline-block">
@@ -146,7 +146,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
          alt="Content marketing voor Groningse ondernemers" width="1536" height="1536" loading="lazy"/>
   </div>
   <div class="space-y-6">
-    <h2 class="text-4xl font-black mb-8">Voor Groningers, door Groningers.</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8">Voor Groningers, door Groningers.</h2>
     <p class="text-lg md:text-xl leading-relaxed">We kennen de stad. We kennen de mensen. We weten hoe Stadjers communiceren.</p>
     <p class="text-lg md:text-xl leading-relaxed">Dat is niet niks. Een bureau uit Rotterdam schrijft anders dan wij. Niet beter of slechter. Maar minder herkenbaar voor jouw klant om de hoek.</p>
     <div class="h-1 w-24 bg-primary-container"></div>

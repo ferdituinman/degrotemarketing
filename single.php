@@ -39,9 +39,6 @@ $thumb_md   = $thumb_url === ($up . 'voorgroningers.png')
       <h1 class="blog-h1 font-bold text-on-surface italic mb-8 fade-in-up" style="font-size:60px;line-height:1.20">
         <?php the_title(); ?>
       </h1>
-      <p class="text-sm font-semibold uppercase tracking-widest opacity-50 mb-6" style="letter-spacing:0.08em">
-        <time datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('j F Y'); ?></time>
-      </p>
       <div class="text-xl md:text-2xl leading-relaxed opacity-90"><?php echo apply_filters('the_content', $extended['main']); ?></div>
     </div>
     <figure id="post-hero-figure" style="flex:52;min-width:0">
@@ -125,8 +122,8 @@ if ($related->have_posts()) :
 <section class="max-w-screen-xl mx-auto px-10 md:px-12 pb-20" style="padding-top:50px">
   <div class="flex items-end justify-between gap-6 border-b border-black/10 pb-12 md:pb-20 mb-12">
     <div>
-      <p class="text-4xl font-black text-primary-container mb-2" style="margin-top:25px">Verder lezen</p>
-      <h2 class="text-3xl md:text-4xl font-black italic" style="margin:25px 0">Misschien ook wat.</h2>
+      <p class="text-2xl md:text-4xl font-black text-primary-container mb-2" style="margin-top:25px">Verder lezen</p>
+      <h2 class="text-3xl md:text-2xl md:text-4xl font-black italic" style="margin:25px 0">Misschien ook wat.</h2>
     </div>
     <a href="<?php echo $blog_url; ?>" class="hidden md:inline-flex items-center gap-2 font-bold text-primary-container hover:underline underline-offset-4">
       Alle artikelen

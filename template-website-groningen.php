@@ -39,10 +39,10 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 
 <!-- BLOK: hero - intro "Gewoon doen." met service-specifieke CTA-knop -->
 <div id="herov2" class="w-full">
-<section class="pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
+<section class="pb-6 md:pb-20 md:flex md:items-center max-w-screen-xl mx-auto px-10 md:px-12">
 <div class="relative z-10 bg-white/[0.98] pt-5 pr-10 pb-10 pl-10 md:p-8 rounded-lg max-w-2xl fade-in-up w-full md:w-auto">
   <h1 class="text-sm font-semibold uppercase tracking-widest text-primary-container mb-3">Website laten maken</h1>
-  <p class="text-[56px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Niet duur. Wel goed.</p>
+  <h2 class="text-[56px] md:text-[5rem] font-bold text-primary-container mb-6 italic leading-[0.77] md:leading-normal">Niet duur. Wel goed.</h2>
   <div class="space-y-4 text-lg md:text-xl leading-relaxed">
     <p>Geen jaar wachten. Niet onnodig duur. Een website die doet wat hij moet doen.</p>
     <p>Wij bouwen websites voor Groningse ondernemers. Snel te vinden, makkelijk te begrijpen, klaar voor klanten.</p>
@@ -60,7 +60,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s1 - eerste inhoudssectie: eyebrow + H2 + paragrafen + foto links (12-kol grid) -->
 <section class="py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
   <div class="md:col-span-5 space-y-6 order-1 md:order-2">
-    <h2 class="text-4xl font-black mb-8">EEN WEBSITE DIE WERKT</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8">EEN WEBSITE DIE WERKT</h2>
     <p class="text-lg md:text-xl leading-relaxed">De meeste websites zijn digitale brochures. Ze zien er mooi uit, maar ze doen niets. Niemand leest ze. Niemand belt.</p>
     <p class="text-lg md:text-xl leading-relaxed">Wij bouwen websites die werken. Die klanten aanspreken. Die snel laden. Die gevonden worden in Google. En die mensen overtuigen om contact op te nemen.</p>
     <p class="text-lg md:text-xl leading-relaxed">Niet de duurste. Wel de beste.</p>
@@ -78,7 +78,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s2 - tweede sectie 55/45: tekst links + foto rechts -->
 <section class="py-16 md:pt-[80px] md:pb-[130px] sect5545 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
   <div class="space-y-6">
-    <h2 class="text-4xl font-black mb-8">Geen dure website nodig. Echt niet.</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8">Geen dure website nodig. Echt niet.</h2>
     <p class="text-lg md:text-xl leading-relaxed">Je hebt geen website van tienduizend euro nodig. Zo'n bedrag is prima te doen voor de Primark. Maar jij bent de Primark niet.</p>
     <p class="text-lg md:text-xl leading-relaxed">De meeste Groningse ondernemers hebben een website nodig die snel laadt, makkelijk te vinden is en goed vertelt wat je doet. Punt.</p>
     <p class="text-lg md:text-xl leading-relaxed">Hoe simpeler de uitleg, hoe meer mensen je bellen. Hoe meer mensen je bellen, hoe minder je hoeft te adverteren. Hoe minder je adverteert, hoe meer je overhoudt.</p>
@@ -97,7 +97,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <section class="py-16 md:py-[100px] border-none">
   <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start gap-12 md:gap-24">
     <div class="flex-1 space-y-8 md:translate-y-6">
-      <h2 class="text-4xl font-black italic">VAN IDEE NAAR LIVE</h2>
+      <h2 class="text-2xl md:text-4xl font-black italic">VAN IDEE NAAR LIVE</h2>
       <p class="text-xl leading-relaxed">We gaan niet overleggen over overleggen. We achterhalen wat je nodig hebt. We bouwen het. En we zorgen dat Google je vindt.</p>
       <p class="text-xl leading-relaxed">In korte sprints naar resultaat. Geen halfjaarsproject. Gewoon een website die klaarstaat als jij dat wil.</p>
       <p class="font-bold text-primary-container">Kloar.</p>
@@ -130,7 +130,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
   <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch md:gap-0">
     <div class="bg-surface-container-low p-6 md:p-12 flex flex-col justify-center md:rounded-l rounded relative overflow-hidden order-1 md:order-2">
       <span class="absolute -top-8 -right-4 text-[10rem] font-black text-black/5 select-none leading-none">Web</span>
-      <h2 class="text-4xl font-black mb-6 relative z-10">JOUW VERHAAL IS BELANGRIJKER DAN DE TECHNIEK.</h2>
+      <h2 class="text-2xl md:text-4xl font-black mb-6 relative z-10">JOUW VERHAAL IS BELANGRIJKER DAN DE TECHNIEK.</h2>
       <div class="space-y-4 relative z-10">
         <p class="text-xl leading-relaxed">Techniek is een trucje. HTML? Dat kun je een aap nog leren. Bij ons is de techniek gewoon een manier om te doen wat we moeten doen. Jouw verhaal vertellen.</p>
         <p class="text-xl leading-relaxed">Daarom draait een nieuwe site niet om abracadabra en onzichtbare code. Die doen we wel, maar dat is niet de kern. De kern is wat jij doet en wat je klant daaraan heeft.</p>
@@ -148,7 +148,7 @@ $_hero_mob  = $_hero_full ? ['url' => $_hero_full[0], 'width' => (int)$_hero_ful
 <!-- BLOK: s5 - quote-blok met groene border links; lokaal argument -->
 <section class="py-16 md:py-[100px] text-left">
   <div class="max-w-2xl border-l-4 border-primary-container pl-6 md:pl-12 py-8 ml-0 md:ml-14">
-    <h2 class="text-4xl font-black mb-8">Gronings webdesign. Geen pak.</h2>
+    <h2 class="text-2xl md:text-4xl font-black mb-8">Gronings webdesign. Geen pak.</h2>
     <div class="space-y-6 text-xl leading-relaxed opacity-90">
       <p>We komen gewoon bij je langs. We praten met je over je klanten. We kijken naar wat je nu hebt. En dan bouwen we iets beters.</p>
       <p>Geen bureau uit Utrecht dat je website via een formulier afneemt. Gewoon iemand die weet hoe het voelt om als ondernemer in Groningen te werken.</p>
@@ -212,7 +212,7 @@ if (!empty($dgm_posts)) :
 <section class="py-16 md:py-[100px]">
   <div class="flex items-end justify-between gap-8 flex-wrap" style="margin-bottom:50px">
     <div>
-      <h2 class="text-4xl font-black">Blogs. Zelf geschreven.</h2>
+      <h2 class="text-2xl md:text-4xl font-black">Blogs. Zelf geschreven.</h2>
     </div>
     <a href="<?php echo home_url('/blog/'); ?>" class="hidden md:block text-base font-bold text-primary-container border-b-2 border-primary-container pb-0.5 shrink-0">Alle blogs &rarr;</a>
   </div>

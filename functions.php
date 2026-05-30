@@ -610,22 +610,41 @@ add_action('wp_footer', function () {
 <script>
 (function(){
 var hamburger=document.getElementById('hamburger');
+var iconMenu=document.getElementById('icon-menu');
+var iconClose=document.getElementById('icon-close');
 var mobileMenu=document.getElementById('mobile-menu');
 if(!hamburger||!mobileMenu)return;
+function mmOpen(){
+  mobileMenu.style.transform='translateX(0)';
+  mobileMenu.setAttribute('aria-hidden','false');
+  hamburger.setAttribute('aria-expanded','true');
+  iconMenu.style.display='none';
+  iconClose.style.display='';
+  document.body.style.overflow='hidden';
+  mobileMenu.querySelectorAll('.mm-item').forEach(function(el,i){
+    el.style.transitionDelay=(80+i*80)+'ms';
+    el.style.opacity='1';
+    el.style.transform='translateX(0)';
+  });
+}
+function mmClose(){
+  mobileMenu.querySelectorAll('.mm-item').forEach(function(el){
+    el.style.transitionDelay='0ms';
+    el.style.opacity='0';
+    el.style.transform='translateX(40px)';
+  });
+  mobileMenu.style.transform='translateX(100%)';
+  mobileMenu.setAttribute('aria-hidden','true');
+  hamburger.setAttribute('aria-expanded','false');
+  iconMenu.style.display='';
+  iconClose.style.display='none';
+  document.body.style.overflow='';
+}
 hamburger.addEventListener('click',function(){
-  var isOpen=!mobileMenu.classList.contains('hidden');
-  mobileMenu.classList.toggle('hidden',isOpen);
-  mobileMenu.setAttribute('aria-hidden',isOpen?'true':'false');
-  hamburger.setAttribute('aria-expanded',isOpen?'false':'true');
-  document.getElementById('icon-menu').style.display=isOpen?'':'none';
-  document.getElementById('icon-close').style.display=isOpen?'none':'';
+  mobileMenu.getAttribute('aria-hidden')==='false'?mmClose():mmOpen();
 });
 mobileMenu.querySelectorAll('a').forEach(function(link){
-  link.addEventListener('click',function(){
-    mobileMenu.classList.add('hidden');
-    document.getElementById('icon-menu').style.display='';
-    document.getElementById('icon-close').style.display='none';
-  });
+  link.addEventListener('click',mmClose);
 });
 })();
 </script>
